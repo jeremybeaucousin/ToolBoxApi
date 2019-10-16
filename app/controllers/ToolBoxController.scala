@@ -38,7 +38,7 @@ class ToolBoxController @Inject() (cc: ControllerComponents, val reactiveMongoAp
     val cursor = query.map(_.cursor[JsObject]())
     val result = cursor.flatMap(_.collect[List](Int.MaxValue, Cursor.FailOnError()))
     result.map({
-    case (toolBoxSheets) => {
+      case (toolBoxSheets) => {
         Ok(Json.toJson(toolBoxSheets))
       }
     })
