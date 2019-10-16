@@ -30,13 +30,13 @@ Add certificate in case of :
 
 #### Keytool
 > "%JAVA_HOME%\bin\keytool" -cacerts -import -file {nom_fichier} -alias {nom_alias}
-
 Default password : "changeit"
 
 ## Play Framework
 ### Init project
 > sbt new playframework/play-scala-seed.g8
-Set project name
+Set project name and domain
 
 ### Start server
-> sbt run
+> sbt "run 9001"
+Default url : http://localhost:9000/
