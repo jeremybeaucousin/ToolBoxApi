@@ -40,3 +40,7 @@ Set project name and domain
 ### Start server
 > sbt "run 9001"
 Default url : http://localhost:9000/
+
+### Unit Test
+Launch unit test :
+> sbt test
