@@ -44,3 +44,8 @@ Default url : http://localhost:9000/
 ### Unit Test
 Launch unit test :
 > sbt test
+
+### Integration with IDE
+#### Eclipse 
+> sbt compile
+> sbt eclipse
