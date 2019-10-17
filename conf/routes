@@ -3,12 +3,10 @@
 # https://www.playframework.com/documentation/latest/ScalaRouting
 # ~~~~
 
-# An example controller showing a sample home page
-GET     /                           controllers.HomeController.index
-
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 
-# Persons
+# toolboxes
+OPTIONS /toolboxes					controllers.ToolBoxController.documentation()
 GET		/toolboxes					controllers.ToolBoxController.index()
 GET		/toolboxes/:id				controllers.ToolBoxController.getToolBoxSheet(id: String)

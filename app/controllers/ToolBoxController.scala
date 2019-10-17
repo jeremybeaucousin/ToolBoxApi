@@ -34,6 +34,10 @@ class ToolBoxController @Inject() (
   
   val logger: Logger = Logger(this.getClass())
   
+  def documentation() = Action { implicit request: Request[AnyContent] =>
+    Ok(views.html.index())
+  }
+  
   def index() = Action.async { implicit request: Request[AnyContent] =>
     toolBoxDao.find().map({
       case (toolBoxSheets) => {
