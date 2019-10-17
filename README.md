@@ -18,7 +18,9 @@
 #### Créate container :
 > docker run --name {container_name} -d -e MONGO_INITDB_ROOT_USERNAME={user} -e MONGO_INITDB_ROOT_PASSWORD={password} -v {host_data_volume}:/etc/mongo -p "{host_port}:{container_port}" mongo:latest
 
-> docker run --name mongo-toolboxapi -d -e MONGO_INITDB_ROOT_USERNAME=toolBoxAdmin -e MONGO_INITDB_ROOT_PASSWORD=toolBoxAdmin -v "C:\Users\JBEAUCOU\docker\volumes\ToolBoxApi\MongoDb\data:/etc/mongo" -p "27017:27017" mongo:latest
+Primary :
+> docker run --name mongo-toolboxapi -d -e MONGO_INITDB_ROOT_USERNAME=toolBoxAdmin -e MONGO_INITDB_ROOT_PASSWORD=toolBoxAdmin -v "C:\Users\JBEAUCOU\docker\volumes\ToolBoxApi\MongoDb\primary:/etc/mongo" -p "27017:27017" mongo:latest
+
 
 #### Enter container
 > docker exec -it mongo-toolboxapi "/bin/bash"

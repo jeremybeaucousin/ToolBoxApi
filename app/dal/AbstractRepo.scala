@@ -1,15 +1,11 @@
 package controllers
 
 import javax.inject._
-import play.api._
-import play.api.mvc._
 
-import play.api.mvc.Controller
 import play.api.libs.json.{JsObject, Json}
 
 import play.modules.reactivemongo._
 
-import scala.concurrent.Future
 import scala.concurrent.{ ExecutionContext, Future, Promise }
 
 import reactivemongo.play.json._, collection._
@@ -26,18 +22,16 @@ import reactivemongo.bson.{BSONDocument, BSONRegex}
  * application's home page.
  */
 @Singleton
-class ToolBoxController @Inject() (
-    cc: ControllerComponents, 
-    val toolBoxDao: ToolBoxDao)
-    (implicit ec: ExecutionContext) 
-  extends AbstractController(cc) {
-  
-  def index() = Action.async { implicit request: Request[AnyContent] =>
-    toolBoxDao.find().map({
-      case (toolBoxSheets) => {
-        Ok(Json.toJson(toolBoxSheets))
-      }
-    })
+class AbstractRepo @Inject()
+  (val reactiveMongoApi: ReactiveMongoApi)
+  (implicit ec: ExecutionContext) {
+
+  val collection: Future[JSONCollection] = reactiveMongoApi.database.map(_.collection[JSONCollection]("toolBoxSheets"))
+ 
+  def find(jsonQuery: JsObject) = { 
+    val query = collection.map(_.find(jsonQuery))
+    val cursor = query.map(_.cursor[JsObject]())
+    cursor.flatMap(_.collect[List](Int.MaxValue, Cursor.FailOnError()))
   }
   
   
