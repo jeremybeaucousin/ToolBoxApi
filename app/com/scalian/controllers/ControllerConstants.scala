@@ -1,4 +1,4 @@
-package controllers
+package com.scalian.controllers
 
 import play.api.mvc.Accepting
 

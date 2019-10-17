@@ -1,4 +1,4 @@
-package controllers
+package com.scalian.dal
 
 import javax.inject._
 
