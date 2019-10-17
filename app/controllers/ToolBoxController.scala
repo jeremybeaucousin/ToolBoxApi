@@ -67,6 +67,27 @@ class ToolBoxController @Inject() (
     }
   }
   
+  def editToolBoxSheet(id: String) = Action.async { implicit request: Request[AnyContent] =>
+    val jsonBody: Option[JsValue] = request.body.asJson
+    val json = jsonBody.getOrElse(null)
+    // If there is a body we continue  
+    // else in case of empty body or write error send code error     
+    if(json != null) {
+      val data = json.as[JsObject]
+      toolBoxDao.update(id, data).map({
+        case (writeOk) => {
+          if(writeOk) {
+            Ok
+          } else {
+            UnprocessableEntity
+          }
+        }
+      })
+    } else {
+      Future.successful(UnprocessableEntity)
+    }
+  }
+  
   def addToolBoxSheet() = Action.async { implicit request: Request[AnyContent] =>
     val jsonBody: Option[JsValue] = request.body.asJson
     val json = jsonBody.getOrElse(null)

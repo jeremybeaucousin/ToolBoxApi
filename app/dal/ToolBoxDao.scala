@@ -25,6 +25,10 @@ class ToolBoxDao @Inject()
     abstractRepo.insert(jsonData)
   }
   
+  def update(id : String, jsonData: JsObject) = {
+    abstractRepo.update(id, jsonData)
+  }
+  
   def remove(id : String) = {
     abstractRepo.remove(id)
   }

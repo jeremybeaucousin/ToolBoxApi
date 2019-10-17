@@ -52,6 +52,12 @@ class AbstractRepo @Inject()
     handleWriteResult(futureWriteResult)
   }
   
+  def update(id: String, jsonData: JsObject) = { 
+    logger.debug(s"Call update for collection : $collectionName; with id: $id; data : $jsonData")
+    val futureWriteResult = collection.flatMap(_.update(createIdObject(id), jsonData))
+    handleWriteResult(futureWriteResult)
+  }
+  
   def remove(id: String) = { 
     logger.debug(s"Call remove for collection : $collectionName; with id : $id")
     val futureWriteResult = collection.flatMap(_.remove(createIdObject(id)))
