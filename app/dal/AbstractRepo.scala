@@ -2,6 +2,7 @@ package controllers
 
 import javax.inject._
 
+import play.api.Logger
 import play.api.libs.json.{JsObject, Json}
 
 import play.modules.reactivemongo._
@@ -25,11 +26,15 @@ import reactivemongo.bson.{BSONDocument, BSONRegex}
 class AbstractRepo @Inject()
   (val reactiveMongoApi: ReactiveMongoApi)
   (implicit ec: ExecutionContext) {
-
-  val collection: Future[JSONCollection] = reactiveMongoApi.database.map(_.collection[JSONCollection]("toolBoxSheets"))
+  
+  val logger: Logger = Logger(this.getClass())
+  
+  var collectionName: String = ""
+  val collection: Future[JSONCollection] = reactiveMongoApi.database.map(_.collection[JSONCollection](collectionName))
  
   def find(jsonQuery: JsObject) = { 
-    val query = collection.map(_.find(jsonQuery))
+    logger.debug(s"Call find for collection : $collectionName")
+    val query = collection.map(_.find(jsonQuery).projection(Json.obj()))
     val cursor = query.map(_.cursor[JsObject]())
     cursor.flatMap(_.collect[List](Int.MaxValue, Cursor.FailOnError()))
   }

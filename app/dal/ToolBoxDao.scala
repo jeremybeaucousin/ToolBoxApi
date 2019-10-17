@@ -11,6 +11,8 @@ import play.api.libs.json.{JsObject, Json}
 class ToolBoxDao @Inject()
   (val abstractRepo: AbstractRepo) {
   
+  abstractRepo.collectionName =  "toolBoxSheets"
+
   def find() = {
     abstractRepo.find(Json.obj())
   }
