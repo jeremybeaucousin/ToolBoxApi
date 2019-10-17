@@ -17,6 +17,7 @@ import reactivemongo.api.Cursor
 import reactivemongo.api.ReadPreference
 import reactivemongo.api.collections.bson.BSONCollection
 import reactivemongo.bson.{BSONDocument, BSONRegex}
+import reactivemongo.api.commands.WriteResult
 
 /**
  * This controller creates an `Action` to handle HTTP requests to the
@@ -49,6 +50,19 @@ class AbstractRepo @Inject()
         ))
     ).projection(Json.obj()))
     query.flatMap(_.one[JsObject])
+  }
+  
+  def insert(jsonData: JsObject) = { 
+    logger.debug(s"Call insert for collection : $collectionName; with data : $jsonData")
+    val futureWriteResult = collection.flatMap(_.insert(jsonData))
+    handleWriteResult(futureWriteResult)
+  }
+  
+  def handleWriteResult(futureWriteResult: Future[WriteResult]): Future[Boolean] = {
+    futureWriteResult.map(writeResult => {
+      logger.debug(s"Return after writing is : $writeResult")
+      WriteResult.lastError(writeResult) == None
+    })
   }
   
 }

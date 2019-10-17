@@ -10,3 +10,4 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 OPTIONS /toolboxes					controllers.ToolBoxController.documentation()
 GET		/toolboxes					controllers.ToolBoxController.index()
 GET		/toolboxes/:id				controllers.ToolBoxController.getToolBoxSheet(id: String)
+POST		/toolboxes				controllers.ToolBoxController.addToolBoxSheet()

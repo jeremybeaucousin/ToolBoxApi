@@ -21,5 +21,9 @@ class ToolBoxDao @Inject()
     abstractRepo.findById(id)
   }
   
+  def insert(jsonData: JsObject) = {
+    abstractRepo.insert(jsonData)
+  }
+  
   
 }

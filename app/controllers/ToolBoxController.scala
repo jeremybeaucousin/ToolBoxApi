@@ -5,7 +5,7 @@ import play.api._
 import play.api.mvc._
 
 import play.api.mvc.Controller
-import play.api.libs.json.{JsObject, Json}
+import play.api.libs.json.{JsObject, JsValue, Json}
 
 import play.modules.reactivemongo._
 
@@ -65,5 +65,28 @@ class ToolBoxController @Inject() (
         Future.successful(Ok("Test pdf"))
       }
     }
+  }
+  
+  def addToolBoxSheet() = Action.async { implicit request: Request[AnyContent] =>
+    val jsonBody: Option[JsValue] = request.body.asJson
+    val json = jsonBody.getOrElse(null)
+    // If there is a body we continue  
+    // else in case of empty body or write error send code error     
+    if(json != null) {
+      val data = json.as[JsObject]
+      toolBoxDao.insert(data).map({
+        case (writeOk) => {
+          if(writeOk) {
+            var returnedLocation = ControllerConstants.HeaderFields.location -> (routes.ToolBoxController.getToolBoxSheet("").absoluteURL())
+            Created.withHeaders(returnedLocation)
+          } else {
+            UnprocessableEntity
+          }
+        }
+      })
+    } else {
+      Future.successful(UnprocessableEntity)
+    }
+    
   }
 }
