@@ -47,16 +47,23 @@ class ToolBoxController @Inject() (
   }
   
   def getToolBoxSheet(id: String) = Action.async { implicit request: Request[AnyContent] =>
-    toolBoxDao.findById(id).map({
-      case (toolBoxSheet) => {
-        logger.debug(s"Result for id : $id; $toolBoxSheet")
-        if(toolBoxSheet != None) {
-          Ok(Json.toJson(toolBoxSheet))  
-        } else {
-          NotFound(Json.toJson(Json.obj()))
-        }
-        
+    render.async {
+      case Accepts.Json() => {
+        toolBoxDao.findById(id).map({
+          case (toolBoxSheet) => {
+            logger.debug(s"Result for id : $id; $toolBoxSheet")
+            if(toolBoxSheet != None) {
+              Ok(Json.toJson(toolBoxSheet))  
+            } else {
+              NotFound(Json.toJson(Json.obj()))
+            }
+          }
+        })
       }
-    })
+      case ControllerConstants.AcceptsPdf() => {
+        logger.debug(s"Test pdf")
+        Future.successful(Ok("Test pdf"))
+      }
+    }
   }
 }
