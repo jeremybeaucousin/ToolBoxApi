@@ -42,13 +42,7 @@ class AbstractRepo @Inject()
   
   def findById(id: String) = { 
     logger.debug(s"Call find By id for collection : $collectionName; with id : $id")
-    val query = collection.map(_.find(
-        JsObject(Seq(
-                "_id" -> JsObject(Seq(
-                        "$oid" -> JsString(id)
-                ))
-        ))
-    ).projection(Json.obj()))
+    val query = collection.map(_.find(createIdObject(id)).projection(Json.obj()))
     query.flatMap(_.one[JsObject])
   }
   
@@ -58,7 +52,21 @@ class AbstractRepo @Inject()
     handleWriteResult(futureWriteResult)
   }
   
-  def handleWriteResult(futureWriteResult: Future[WriteResult]): Future[Boolean] = {
+  def remove(id: String) = { 
+    logger.debug(s"Call remove for collection : $collectionName; with id : $id")
+    val futureWriteResult = collection.flatMap(_.remove(createIdObject(id)))
+    handleWriteResult(futureWriteResult)
+  }
+  
+  private def createIdObject(id: String) = {
+    JsObject(Seq(
+      "_id" -> JsObject(Seq(
+              "$oid" -> JsString(id)
+      ))
+    ))
+  }
+  
+  private def handleWriteResult(futureWriteResult: Future[WriteResult]): Future[Boolean] = {
     futureWriteResult.map(writeResult => {
       logger.debug(s"Return after writing is : $writeResult")
       WriteResult.lastError(writeResult) == None

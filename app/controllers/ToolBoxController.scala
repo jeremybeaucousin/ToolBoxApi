@@ -87,6 +87,17 @@ class ToolBoxController @Inject() (
     } else {
       Future.successful(UnprocessableEntity)
     }
-    
+  }
+  
+  def deleteToolBoxSheet(id: String) = Action.async { implicit request: Request[AnyContent] =>
+    toolBoxDao.remove(id).map({
+      case (writeOk) => {
+        if(writeOk) {
+          Ok
+        } else {
+          UnprocessableEntity
+        }
+      }
+    })
   }
 }

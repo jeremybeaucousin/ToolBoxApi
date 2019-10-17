@@ -25,5 +25,9 @@ class ToolBoxDao @Inject()
     abstractRepo.insert(jsonData)
   }
   
+  def remove(id : String) = {
+    abstractRepo.remove(id)
+  }
+  
   
 }
