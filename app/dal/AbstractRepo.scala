@@ -3,7 +3,7 @@ package controllers
 import javax.inject._
 
 import play.api.Logger
-import play.api.libs.json.{JsObject, Json}
+import play.api.libs.json.{JsObject, Json, JsString}
 
 import play.modules.reactivemongo._
 
@@ -39,5 +39,16 @@ class AbstractRepo @Inject()
     cursor.flatMap(_.collect[List](Int.MaxValue, Cursor.FailOnError()))
   }
   
+  def findById(id: String) = { 
+    logger.debug(s"Call find By id for collection : $collectionName; with id : $id")
+    val query = collection.map(_.find(
+        JsObject(Seq(
+                "_id" -> JsObject(Seq(
+                        "$oid" -> JsString(id)
+                ))
+        ))
+    ).projection(Json.obj()))
+    query.flatMap(_.one[JsObject])
+  }
   
 }

@@ -11,3 +11,4 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 
 # Persons
 GET		/toolboxes					controllers.ToolBoxController.index()
+GET		/toolboxes/:id				controllers.ToolBoxController.getToolBoxSheet(id: String)

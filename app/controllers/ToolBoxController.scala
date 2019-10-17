@@ -32,6 +32,8 @@ class ToolBoxController @Inject() (
     (implicit ec: ExecutionContext) 
   extends AbstractController(cc) {
   
+  val logger: Logger = Logger(this.getClass())
+  
   def index() = Action.async { implicit request: Request[AnyContent] =>
     toolBoxDao.find().map({
       case (toolBoxSheets) => {
@@ -40,5 +42,17 @@ class ToolBoxController @Inject() (
     })
   }
   
-  
+  def getToolBoxSheet(id: String) = Action.async { implicit request: Request[AnyContent] =>
+    toolBoxDao.findById(id).map({
+      case (toolBoxSheet) => {
+        logger.debug(s"Result for id : $id; $toolBoxSheet")
+        if(toolBoxSheet != None) {
+          Ok(Json.toJson(toolBoxSheet))  
+        } else {
+          NotFound(Json.toJson(Json.obj()))
+        }
+        
+      }
+    })
+  }
 }

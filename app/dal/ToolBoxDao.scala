@@ -17,5 +17,9 @@ class ToolBoxDao @Inject()
     abstractRepo.find(Json.obj())
   }
   
+  def findById(id : String) = {
+    abstractRepo.findById(id)
+  }
+  
   
 }
