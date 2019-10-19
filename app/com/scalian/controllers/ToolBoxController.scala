@@ -43,11 +43,12 @@ class ToolBoxController @Inject() (
     Ok(views.html.index())
   }
 
-  def find(optionalWordSequence: Option[String], optionalOffset: Option[Int], optionalLimit: Option[Int]) = Action.async { implicit request: Request[AnyContent] =>
+  def find(optionalWordSequence: Option[String], optionalOffset: Option[Int], optionalLimit: Option[Int], optionalsort: Option[String]) = Action.async { implicit request: Request[AnyContent] =>
     val wordSequence: String = optionalWordSequence.getOrElse(null)
     val offset: Int = optionalOffset.getOrElse(-1)
     val limit: Int = optionalLimit.getOrElse(-1)
-    toolBoxDao.find(wordSequence, offset, limit).map({
+    val sort: String = optionalsort.getOrElse(null)
+    toolBoxDao.find(wordSequence, offset, limit, sort).map({
       case (total: Int, toolBoxSheets: JsValue) => {
         Ok(Json.toJson(toolBoxSheets)).withHeaders(ControllerConstants.HeaderFields.xTotalCount -> total.toString())
       }

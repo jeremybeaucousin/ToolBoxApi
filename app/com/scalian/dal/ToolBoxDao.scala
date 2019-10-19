@@ -17,8 +17,8 @@ class ToolBoxDao @Inject() (
   
   this.indexRoute = config.get[String]("elasticsearch.route.catalog") + config.get[String]("elasticsearch.route.toolboxsheets")
   
-  override def find(wordSequence: String, offset: Int, limit: Int) = {
-    super.find(wordSequence, offset, limit)
+  override def find(wordSequence: String, offset: Int, limit: Int, sort: String) = {
+    super.find(wordSequence, offset, limit, sort)
   }
   
   override def findById(id : String) = {

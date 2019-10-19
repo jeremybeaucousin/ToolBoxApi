@@ -20,10 +20,16 @@ abstract class AbstractElasticsearchRepo @Inject() (
     final val search = "_search"
   }
   
+  private final object sortType {
+    final val asc = "asc"
+    final val desc = "desc"
+  }
+  
   private final object queryParams {
     final val q = "q"
     final val from = "from"
     final val size = "size"
+    final val sort = "sort"
   }
   
   private final object searchResponseKeys {
@@ -64,7 +70,7 @@ abstract class AbstractElasticsearchRepo @Inject() (
   val repoUrl = config.get[String]("elasticsearch.url")
   var indexRoute: String = ""
  
-  def find(wordSequence: String, offset: Int, limit: Int) = { 
+  def find(wordSequence: String, offset: Int, limit: Int, sort: String) = { 
     val uri = s"${getUri()}${routes.search}"
     var request: WSRequest = ws.url(uri)
     
@@ -79,6 +85,20 @@ abstract class AbstractElasticsearchRepo @Inject() (
         
     if(limit > -1) {
       request = request.addQueryStringParameters(queryParams.size -> limit.toString())
+    }
+    
+    if(sort != null) {
+      val lastChar = sort takeRight 1
+      var sortValue: String = ""
+      val field = sort.subSequence(0, (sort.length() - 1))
+      if(lastChar.equals("-")) {
+        sortValue = s"${field}:${sortType.desc}"
+      } else if (lastChar.equals("+")) {
+        sortValue = s"${field}:${sortType.asc}"
+      } else {
+        sortValue = s"${sort}:${sortType.asc}"
+      }
+      request = request.addQueryStringParameters(queryParams.sort -> sortValue)
     }
     logger.debug(s"call find for uri ${uri} with request ${request}")
     request.get().map(response => {
