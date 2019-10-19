@@ -1,0 +1,1 @@
+docker run -d --name elasticsearchToolBoxApi -p 9200:9200 -p 9300:9300 -v "C:\Users\a\DockerVolume\ToolBoxApi\elasticsearch\data:/usr/share/elasticsearch/data" -e "discovery.type=single-node" elasticsearch:7.4.0

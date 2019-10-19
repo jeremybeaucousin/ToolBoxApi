@@ -3,34 +3,31 @@ package com.scalian.dal
 import javax.inject._
 import play.api.libs.json.{JsObject, Json}
 
-/**
- * This controller creates an `Action` to handle HTTP requests to the
- * application's home page.
- */
-@Singleton
-class ToolBoxDao @Inject()
-  (val abstractRepo: AbstractRepo) {
-  
-  abstractRepo.collectionName =  "toolBoxSheets"
+import play.api.Configuration
 
-  def find() = {
-    abstractRepo.find(Json.obj())
+@Singleton
+class ToolBoxDao @Inject() (config: Configuration) extends AbstractElasticsearchRepo(config) {
+  
+  this.indexRoute =  "toolBoxSheets"
+  
+  override def find(jsonQuery: JsObject) = {
+    super.find(jsonQuery)
   }
   
-  def findById(id : String) = {
-    abstractRepo.findById(id)
+  override def findById(id : String) = {
+    super.findById(id)
   }
   
-  def insert(jsonData: JsObject) = {
-    abstractRepo.insert(jsonData)
+  override def insert(jsonData: JsObject) = {
+    super.insert(jsonData)
   }
   
-  def update(id : String, jsonData: JsObject) = {
-    abstractRepo.update(id, jsonData)
+  override def update(id : String, jsonData: JsObject) = {
+    super.update(id, jsonData)
   }
   
-  def remove(id : String) = {
-    abstractRepo.remove(id)
+  override def remove(id : String) = {
+    super.remove(id)
   }
   
   
