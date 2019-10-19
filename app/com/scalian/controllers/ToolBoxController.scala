@@ -49,8 +49,12 @@ class ToolBoxController @Inject() (
     val limit: Int = optionalLimit.getOrElse(-1)
     val sort: String = optionalsort.getOrElse(null)
     toolBoxDao.find(wordSequence, offset, limit, sort).map({
-      case (total: Int, toolBoxSheets: JsValue) => {
-        Ok(Json.toJson(toolBoxSheets)).withHeaders(ControllerConstants.HeaderFields.xTotalCount -> total.toString())
+      case (total, toolBoxSheets, error) => {
+        if(error) {
+          InternalServerError(Json.toJson(toolBoxSheets))
+        } else {
+          Ok(Json.toJson(toolBoxSheets)).withHeaders(ControllerConstants.HeaderFields.xTotalCount -> total.toString()) 
+        }
       }
     })
   }

@@ -1,7 +1,7 @@
 package com.scalian.dal
 
 import javax.inject._
-import play.api.libs.json.{JsObject, Json}
+import play.api.libs.json.{JsObject, Json, JsValue}
 
 import play.api.Configuration
 

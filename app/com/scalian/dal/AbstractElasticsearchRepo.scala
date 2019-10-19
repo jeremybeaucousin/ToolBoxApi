@@ -3,11 +3,14 @@ package com.scalian.dal
 import javax.inject._
 
 import play.api.Logger
+import play.api.http.Status
 import play.api.libs.ws._
 import play.api.Configuration
+
 import play.api.libs.json.{JsObject, Json, JsString, JsValue}
 
 import scala.concurrent.{ ExecutionContext, Future, Promise }
+import play.api.http.Status
 
 abstract class AbstractElasticsearchRepo @Inject() (
     config: Configuration, 
@@ -52,6 +55,32 @@ abstract class AbstractElasticsearchRepo @Inject() (
       }
       final val max_score = "max_score"
       final val hits = "hits"
+    }
+  }
+  
+  private final object errorResponseKeys {
+    // in array  
+    final val error = "error"
+    final object root_cause {
+      final val KEY = "root_cause"
+      final val TYPE = "type"
+      final val reason = "reason"
+    }
+    final val TYPE = "type"
+    final val reason = "reason"
+    final val phase = "phase"
+    final val grouped = "grouped"
+    // in array    
+    final object failed_shards {
+      final val KEY = "failed_shards"
+      final val shard = "shard"
+      final val index = "index"
+      final val node = "node"
+      final object reason {
+        final val KEY = "reason"
+        final val TYPE = "type"
+        final val reason = "reason"
+      }
     }
   }
   
@@ -131,12 +160,20 @@ abstract class AbstractElasticsearchRepo @Inject() (
     s"${repoUrl}${indexRoute}/"
   }
   
-  private def handleSearchResponse(response: WSResponse): (Int, JsValue) = {
+  private def handleSearchResponse(response: WSResponse): (Int, JsValue, Boolean) = {
     val jsonResponse = response.json
-    val hits = (jsonResponse \ searchResponseKeys.hits.KEY).get
-    val total = (hits \ searchResponseKeys.hits.total.KEY \ searchResponseKeys.hits.total.value).as[Int]
-    val results = (hits \ searchResponseKeys.hits.hits).get
-    (total, results)
+    var total = 0
+    var results = Json.parse("{}")
+    var error = false
+    if(response.status == Status.BAD_REQUEST) {
+      results = jsonResponse
+      error = true
+    } else {
+      val hits = (jsonResponse \ searchResponseKeys.hits.KEY).get
+      total = (hits \ searchResponseKeys.hits.total.KEY \ searchResponseKeys.hits.total.value).as[Int]
+      results = (hits \ searchResponseKeys.hits.hits).get
+    }
+    (total, results, error)
   }
   
   private def handleIdResponse(response: WSResponse): (Boolean, JsValue) = {
