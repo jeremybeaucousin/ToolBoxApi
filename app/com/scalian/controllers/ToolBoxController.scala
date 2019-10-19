@@ -46,8 +46,8 @@ class ToolBoxController @Inject() (
   def find(optionalWordSequence: Option[String]) = Action.async { implicit request: Request[AnyContent] =>
     val wordSequence = optionalWordSequence.getOrElse(null)
     toolBoxDao.find(wordSequence).map({
-      case (toolBoxSheets) => {
-        Ok(Json.toJson(toolBoxSheets))
+      case (total: Int, toolBoxSheets: JsValue) => {
+        Ok(Json.toJson(toolBoxSheets)).withHeaders(ControllerConstants.HeaderFields.xTotalCount -> total.toString())
       }
     })
   }

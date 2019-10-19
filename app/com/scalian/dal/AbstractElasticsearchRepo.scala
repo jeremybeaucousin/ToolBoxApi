@@ -39,7 +39,7 @@ abstract class AbstractElasticsearchRepo @Inject() (
       
       final object total {
         final val KEY = "total"
-        final val total = "total"
+        final val value = "value"
         final val relation = "relation"
       }
       final val max_score = "max_score"
@@ -57,11 +57,10 @@ abstract class AbstractElasticsearchRepo @Inject() (
     if(wordSequence != null && !wordSequence.isBlank()) {
       request = request.addQueryStringParameters(queryParams.q -> s"*${wordSequence}*")
     }
-    logger.debug(s"wordSequence ${wordSequence} ${request.queryString.get(queryParams.q)} ${wordSequence != null && !wordSequence.isBlank()}")
     // TODO HANDLE RESPONSE
     logger.debug(s"call find for uri ${uri} with request ${request}")
     request.get().map(response => {
-      (response.json \ responseKeys.hits.KEY \ responseKeys.hits.hits).get
+      handleResponse(response)
     })
   }
   
@@ -83,5 +82,13 @@ abstract class AbstractElasticsearchRepo @Inject() (
   
   private def getUri() = {
     s"${repoUrl}${indexRoute}/"
+  }
+  
+  private def handleResponse(response: WSResponse) = {
+    val jsonResponse = response.json
+    val hits = (jsonResponse \ responseKeys.hits.KEY).get
+    val total = (hits \ responseKeys.hits.total.KEY \ responseKeys.hits.total.value).get.as[Int]
+    val results = (hits \ responseKeys.hits.hits).get
+    (total, results)
   }
 }
