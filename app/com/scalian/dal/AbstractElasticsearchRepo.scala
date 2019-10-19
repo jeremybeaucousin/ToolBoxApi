@@ -164,8 +164,17 @@ abstract class AbstractElasticsearchRepo @Inject() (
     })
   }
   
-  def remove(id: String) = { 
-
+  def remove(id: String): Future[(Boolean, JsValue)] = { 
+    val uri = s"${getUri()}${id}"
+    var request: WSRequest = ws.url(uri)
+    logger.debug(s"call delete for uri ${uri} with request ${request}")
+    request.delete().map(response => {
+     var updated = true
+     if(response.status == Status.NOT_FOUND) {
+       updated = false
+     }
+     (updated, response.json)
+    })
   }
   
   private def getUri() = {

@@ -12,4 +12,4 @@ GET		/toolboxes					com.scalian.controllers.ToolBoxController.find(wordSequence:
 GET		/toolboxes/:id				com.scalian.controllers.ToolBoxController.getToolBoxSheet(id: String)
 POST 	/toolboxes					com.scalian.controllers.ToolBoxController.addToolBoxSheet()
 PUT 	/toolboxes/:id				com.scalian.controllers.ToolBoxController.editToolBoxSheet(id: String)
-# DELETE	/toolboxes/:id				com.scalian.controllers.ToolBoxController.deleteToolBoxSheet(id: String)
+DELETE	/toolboxes/:id				com.scalian.controllers.ToolBoxController.deleteToolBoxSheet(id: String)

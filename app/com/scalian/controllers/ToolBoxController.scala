@@ -113,15 +113,16 @@ class ToolBoxController @Inject() (
     }
   }
   
-  //  def deleteToolBoxSheet(id: String) = Action.async { implicit request: Request[AnyContent] =>
-//    toolBoxDao.remove(id).map({
-//      case (writeOk) => {
-//        if (writeOk) {
-//          Ok
-//        } else {
-//          UnprocessableEntity
-//        }
-//      }
-//    })
-//  }
+    def deleteToolBoxSheet(id: String) = Action.async { implicit request: Request[AnyContent] =>
+    toolBoxDao.remove(id).map({
+      case (updated, jsonResponse) => {
+        if(updated) {
+          Ok(Json.toJson(jsonResponse))
+        } else {
+          NotFound(Json.toJson(jsonResponse))
+        }
+          
+      }
+    })
+  }
 }
