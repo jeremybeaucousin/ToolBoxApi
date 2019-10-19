@@ -92,30 +92,27 @@ class ToolBoxController @Inject() (
         }
       })
     } else {
-      Future.successful(BadRequest(Json.parse("{\"message\": \"no body\"}")))
+      Future.successful(BadRequest(Json.parse(ControllerConstants.noJsonMessage)))
     }
   }
 
-//  def editToolBoxSheet(id: String) = Action.async { implicit request: Request[AnyContent] =>
-//    val jsonBody: Option[JsValue] = request.body.asJson
-//    val json = jsonBody.getOrElse(null)
-//    // If there is a body we continue
-//    // else in case of empty body or write error send code error
-//    if (json != null) {
-//      val data = json.as[JsObject]
-//      toolBoxDao.update(id, data).map({
-//        case (writeOk) => {
-//          if (writeOk) {
-//            Ok
-//          } else {
-//            UnprocessableEntity
-//          }
-//        }
-//      })
-//    } else {
-//      Future.successful(UnprocessableEntity)
-//    }
-//  }
+  def editToolBoxSheet(id: String) = Action.async { implicit request: Request[AnyContent] =>
+    val jsonBody: Option[JsValue] = request.body.asJson
+    val json = jsonBody.getOrElse(null)
+    // If there is a body we continue
+    // else in case of empty body or write error send code error
+    if (json != null) {
+      val data = json.as[JsObject]
+      toolBoxDao.update(id, data).map({
+        case (jsonResponse) => {
+          Ok(Json.toJson(jsonResponse))
+        }
+      })
+    } else {
+      Future.successful(BadRequest(Json.parse(ControllerConstants.noJsonMessage)))
+    }
+  }
+  
   //  def deleteToolBoxSheet(id: String) = Action.async { implicit request: Request[AnyContent] =>
 //    toolBoxDao.remove(id).map({
 //      case (writeOk) => {

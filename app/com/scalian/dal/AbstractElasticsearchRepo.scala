@@ -147,7 +147,7 @@ abstract class AbstractElasticsearchRepo @Inject() (
   def insert(jsonData: JsObject): Future[(String, JsValue)] = { 
     val uri = s"${getUri()}"
     var request: WSRequest = ws.url(uri)
-    logger.debug(s"call save for uri ${uri} with request ${request}")
+    logger.debug(s"call save for uri ${uri} with data ${jsonData}; request ${request}")
     request.post(jsonData).map(response => {
       val json = response.json
       val id = (json \ responseDocKeys._id).as[String]
@@ -156,7 +156,12 @@ abstract class AbstractElasticsearchRepo @Inject() (
   }
   
   def update(id: String, jsonData: JsObject) = { 
-
+    val uri = s"${getUri()}${id}"
+    var request: WSRequest = ws.url(uri)
+    logger.debug(s"call edit for uri ${uri} with data ${jsonData}; with request ${request}")
+    request.post(jsonData).map(response => {
+     response.json
+    })
   }
   
   def remove(id: String) = { 

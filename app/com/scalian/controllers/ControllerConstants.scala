@@ -12,4 +12,6 @@ final object ControllerConstants {
     final val xTotalCount: String = "X-Total-Count"
     final val link: String = "link"
   }
+  
+  final val noJsonMessage = "{\"message\": \"no body\"}"
 }
