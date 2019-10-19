@@ -7,9 +7,15 @@
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 
 # toolboxes
++anyhost
 OPTIONS /toolboxes					com.scalian.controllers.ToolBoxController.documentation()
++anyhost
 GET		/toolboxes					com.scalian.controllers.ToolBoxController.find(wordSequence: Option[String], offset: Option[Int], limit: Option[Int], sort: Option[String])
++anyhost
 GET		/toolboxes/:id				com.scalian.controllers.ToolBoxController.getToolBoxSheet(id: String)
++anyhost
 POST 	/toolboxes					com.scalian.controllers.ToolBoxController.addToolBoxSheet()
++anyhost
 PUT 	/toolboxes/:id				com.scalian.controllers.ToolBoxController.editToolBoxSheet(id: String)
++anyhost
 DELETE	/toolboxes/:id				com.scalian.controllers.ToolBoxController.deleteToolBoxSheet(id: String)
