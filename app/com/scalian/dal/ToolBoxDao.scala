@@ -5,10 +5,17 @@ import play.api.libs.json.{JsObject, Json}
 
 import play.api.Configuration
 
+import play.api.libs.ws._
+
+import scala.concurrent.{ ExecutionContext, Future, Promise }
+
 @Singleton
-class ToolBoxDao @Inject() (config: Configuration) extends AbstractElasticsearchRepo(config) {
+class ToolBoxDao @Inject() (
+    config: Configuration, 
+    ws: WSClient) (implicit ec: ExecutionContext) 
+  extends AbstractElasticsearchRepo(config, ws) {
   
-  this.indexRoute =  "toolBoxSheets"
+  this.indexRoute =  "toolboxsheets"
   
   override def find(jsonQuery: JsObject) = {
     super.find(jsonQuery)

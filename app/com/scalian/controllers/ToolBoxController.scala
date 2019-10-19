@@ -44,13 +44,11 @@ class ToolBoxController @Inject() (
   }
 
   def index() = Action.async { implicit request: Request[AnyContent] =>
-//    toolBoxDao.find(Json.obj()).map({
-//      case (toolBoxSheets) => {
-//        Ok(Json.toJson(toolBoxSheets))
-//      }
-//    })
-    val toolBoxSheets = toolBoxDao.find(Json.obj())
-    Future.successful(Ok(Json.toJson(toolBoxSheets)))
+    toolBoxDao.find(Json.obj()).map({
+      case (toolBoxSheets) => {
+        Ok(Json.toJson(toolBoxSheets))
+      }
+    })
   }
 
 //  def getToolBoxSheet(id: String) = Action.async { implicit request: Request[AnyContent] =>

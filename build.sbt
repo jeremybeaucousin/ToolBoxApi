@@ -11,6 +11,8 @@ libraryDependencies += guice
 libraryDependencies += "org.reactivemongo" %% "play2-reactivemongo" % "0.18.7-play27"
 libraryDependencies += "org.reactivemongo" %% "reactivemongo-play-json" % "0.18.7-play27"
 libraryDependencies += "com.hhandoko" %% "play27-scala-pdf" % "4.2.0"
+libraryDependencies += ws
+libraryDependencies += ehcache
 
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "4.0.3" % Test
 
