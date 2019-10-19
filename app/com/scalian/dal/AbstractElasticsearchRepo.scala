@@ -22,6 +22,8 @@ abstract class AbstractElasticsearchRepo @Inject() (
   
   private final object queryParams {
     final val q = "q"
+    final val from = "from"
+    final val size = "size"
   }
   
   private final object responseKeys {
@@ -50,14 +52,22 @@ abstract class AbstractElasticsearchRepo @Inject() (
   val repoUrl = config.get[String]("elasticsearch.url")
   var indexRoute: String = ""
  
-  def find(wordSequence: String) = { 
+  def find(wordSequence: String, offset: Int, limit: Int) = { 
     val uri = s"${getUri()}${routes.search}"
     
     var request: WSRequest = ws.url(uri)
+    // Add query param   
     if(wordSequence != null && !wordSequence.isBlank()) {
       request = request.addQueryStringParameters(queryParams.q -> s"*${wordSequence}*")
     }
-    // TODO HANDLE RESPONSE
+    
+    if(offset > -1) {
+      request = request.addQueryStringParameters(queryParams.from -> offset.toString())
+    }
+        
+    if(limit > -1) {
+      request = request.addQueryStringParameters(queryParams.size -> limit.toString())
+    }
     logger.debug(s"call find for uri ${uri} with request ${request}")
     request.get().map(response => {
       handleResponse(response)
