@@ -62,7 +62,7 @@ class ToolBoxController @Inject() (
             if (found) {
               Ok(Json.toJson(toolBoxSheet))
             } else {
-              NotFound(Json.toJson(Json.obj()))
+              NotFound(Json.toJson(toolBoxSheet))
             }
           }
         })
