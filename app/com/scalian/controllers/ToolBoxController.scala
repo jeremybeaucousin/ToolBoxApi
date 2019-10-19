@@ -43,8 +43,9 @@ class ToolBoxController @Inject() (
     Ok(views.html.index())
   }
 
-  def index() = Action.async { implicit request: Request[AnyContent] =>
-    toolBoxDao.find(Json.obj()).map({
+  def find(optionalWordSequence: Option[String]) = Action.async { implicit request: Request[AnyContent] =>
+    val wordSequence = optionalWordSequence.getOrElse(null)
+    toolBoxDao.find(wordSequence).map({
       case (toolBoxSheets) => {
         Ok(Json.toJson(toolBoxSheets))
       }

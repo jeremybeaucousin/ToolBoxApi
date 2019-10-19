@@ -47,13 +47,19 @@ abstract class AbstractElasticsearchRepo @Inject() (
     }
   }
   
-  var repoUrl = config.get[String]("elasticsearch.url")
+  val repoUrl = config.get[String]("elasticsearch.url")
   var indexRoute: String = ""
  
-  def find(jsonQuery: JsObject) = { 
+  def find(wordSequence: String) = { 
     val uri = s"${getUri()}${routes.search}"
-    logger.debug(s"call find for uri ${uri} with query ${jsonQuery}")
-    val request: WSRequest = ws.url(uri)
+    
+    var request: WSRequest = ws.url(uri)
+    if(wordSequence != null && !wordSequence.isBlank()) {
+      request = request.addQueryStringParameters(queryParams.q -> s"*${wordSequence}*")
+    }
+    logger.debug(s"wordSequence ${wordSequence} ${request.queryString.get(queryParams.q)} ${wordSequence != null && !wordSequence.isBlank()}")
+    // TODO HANDLE RESPONSE
+    logger.debug(s"call find for uri ${uri} with request ${request}")
     request.get().map(response => {
       (response.json \ responseKeys.hits.KEY \ responseKeys.hits.hits).get
     })
