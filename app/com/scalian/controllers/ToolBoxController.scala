@@ -4,7 +4,6 @@ import javax.inject._
 import play.api._
 import play.api.mvc._
 
-import play.api.mvc.Controller
 import play.api.libs.json.{ JsObject, JsValue, Json }
 
 import play.modules.reactivemongo._
@@ -32,6 +31,7 @@ import com.scalian.dal.ToolBoxDao
 @Singleton
 class ToolBoxController @Inject() (
   cc: ControllerComponents,
+  action: DefaultActionBuilder,
   val toolBoxDao: ToolBoxDao,
   val pdfGen: PdfGenerator)
   (implicit ec: ExecutionContext)
@@ -39,7 +39,7 @@ class ToolBoxController @Inject() (
 
   val logger: Logger = Logger(this.getClass())
 
-  def documentation() = Action { implicit request: Request[AnyContent] =>
+  def documentation() = action(parse.text) { request =>
     Ok(views.html.index())
   }
 
@@ -77,7 +77,25 @@ class ToolBoxController @Inject() (
       }
     }
   }
-//
+
+  def addToolBoxSheet() = Action.async { implicit request: Request[AnyContent] =>
+    val jsonBody: Option[JsValue] = request.body.asJson
+    val json = jsonBody.getOrElse(null)
+    // If there is a body we continue
+    // else in case of empty body or write error send code error
+    if (json != null) {
+      val data = json.as[JsObject]
+      toolBoxDao.insert(data).map({
+        case (id, jsonResponse) => {
+          var returnedLocation = ControllerConstants.HeaderFields.location -> (routes.ToolBoxController.getToolBoxSheet(id).absoluteURL())
+          Created(Json.toJson(jsonResponse)).withHeaders(returnedLocation)
+        }
+      })
+    } else {
+      Future.successful(BadRequest(Json.parse("{\"message\": \"no body\"}")))
+    }
+  }
+
 //  def editToolBoxSheet(id: String) = Action.async { implicit request: Request[AnyContent] =>
 //    val jsonBody: Option[JsValue] = request.body.asJson
 //    val json = jsonBody.getOrElse(null)
@@ -98,30 +116,7 @@ class ToolBoxController @Inject() (
 //      Future.successful(UnprocessableEntity)
 //    }
 //  }
-//
-//  def addToolBoxSheet() = Action.async { implicit request: Request[AnyContent] =>
-//    val jsonBody: Option[JsValue] = request.body.asJson
-//    val json = jsonBody.getOrElse(null)
-//    // If there is a body we continue
-//    // else in case of empty body or write error send code error
-//    if (json != null) {
-//      val data = json.as[JsObject]
-//      toolBoxDao.insert(data).map({
-//        case (writeOk) => {
-//          if (writeOk) {
-//            var returnedLocation = ControllerConstants.HeaderFields.location -> (routes.ToolBoxController.getToolBoxSheet("").absoluteURL())
-//            Created.withHeaders(returnedLocation)
-//          } else {
-//            UnprocessableEntity
-//          }
-//        }
-//      })
-//    } else {
-//      Future.successful(UnprocessableEntity)
-//    }
-//  }
-//
-//  def deleteToolBoxSheet(id: String) = Action.async { implicit request: Request[AnyContent] =>
+  //  def deleteToolBoxSheet(id: String) = Action.async { implicit request: Request[AnyContent] =>
 //    toolBoxDao.remove(id).map({
 //      case (writeOk) => {
 //        if (writeOk) {

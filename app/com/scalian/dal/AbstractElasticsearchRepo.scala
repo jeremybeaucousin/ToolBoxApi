@@ -83,8 +83,8 @@ abstract class AbstractElasticsearchRepo @Inject() (
       }
     }
   }
-  
-  private final object responseIdKeys {
+   
+  private final object responseDocKeys {
     final val _index = "_index"
     final val _type = "_type"
     final val _id = "_id"
@@ -99,7 +99,7 @@ abstract class AbstractElasticsearchRepo @Inject() (
   val repoUrl = config.get[String]("elasticsearch.url")
   var indexRoute: String = ""
  
-  def find(wordSequence: String, offset: Int, limit: Int, sort: String) = { 
+  def find(wordSequence: String, offset: Int, limit: Int, sort: String): Future[(Int, JsValue, Boolean)] = { 
     val uri = s"${getUri()}${routes.search}"
     var request: WSRequest = ws.url(uri)
     
@@ -144,8 +144,15 @@ abstract class AbstractElasticsearchRepo @Inject() (
     })
   }
   
-  def insert(jsonData: JsObject) = { 
-
+  def insert(jsonData: JsObject): Future[(String, JsValue)] = { 
+    val uri = s"${getUri()}"
+    var request: WSRequest = ws.url(uri)
+    logger.debug(s"call save for uri ${uri} with request ${request}")
+    request.post(jsonData).map(response => {
+      val json = response.json
+      val id = (json \ responseDocKeys._id).as[String]
+      (id, json)
+    })
   }
   
   def update(id: String, jsonData: JsObject) = { 
@@ -178,7 +185,7 @@ abstract class AbstractElasticsearchRepo @Inject() (
   
   private def handleIdResponse(response: WSResponse): (Boolean, JsValue) = {
     val jsonResponse = response.json
-    val found = (jsonResponse \ responseIdKeys.found).as[Boolean]
+    val found = (jsonResponse \ responseDocKeys.found).as[Boolean]
     val result = jsonResponse
     (found, result)
   }
