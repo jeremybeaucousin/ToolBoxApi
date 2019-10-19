@@ -54,25 +54,24 @@ class ToolBoxController @Inject() (
     })
   }
 
-//  def getToolBoxSheet(id: String) = Action.async { implicit request: Request[AnyContent] =>
-//    render.async {
-//      case Accepts.Json() => {
-//        toolBoxDao.findById(id).map({
-//          case (toolBoxSheet) => {
-//            logger.debug(s"Result for id : $id; $toolBoxSheet")
-//            if (toolBoxSheet != None) {
-//              Ok(Json.toJson(toolBoxSheet))
-//            } else {
-//              NotFound(Json.toJson(Json.obj()))
-//            }
-//          }
-//        })
-//      }
-//      case ControllerConstants.AcceptsPdf() => {
-//        Future.successful(pdfGen.ok(views.html.index(), request.host))
-//      }
-//    }
-//  }
+  def getToolBoxSheet(id: String) = Action.async { implicit request: Request[AnyContent] =>
+    render.async {
+      case Accepts.Json() => {
+        toolBoxDao.findById(id).map({
+          case (found, toolBoxSheet) => {
+            if (found) {
+              Ok(Json.toJson(toolBoxSheet))
+            } else {
+              NotFound(Json.toJson(Json.obj()))
+            }
+          }
+        })
+      }
+      case ControllerConstants.AcceptsPdf() => {
+        Future.successful(pdfGen.ok(views.html.index(), request.host))
+      }
+    }
+  }
 //
 //  def editToolBoxSheet(id: String) = Action.async { implicit request: Request[AnyContent] =>
 //    val jsonBody: Option[JsValue] = request.body.asJson

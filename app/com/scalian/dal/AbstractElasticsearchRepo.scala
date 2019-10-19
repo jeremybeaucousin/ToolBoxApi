@@ -5,7 +5,7 @@ import javax.inject._
 import play.api.Logger
 import play.api.libs.ws._
 import play.api.Configuration
-import play.api.libs.json.{JsObject, Json, JsString}
+import play.api.libs.json.{JsObject, Json, JsString, JsValue}
 
 import scala.concurrent.{ ExecutionContext, Future, Promise }
 
@@ -26,7 +26,7 @@ abstract class AbstractElasticsearchRepo @Inject() (
     final val size = "size"
   }
   
-  private final object responseKeys {
+  private final object searchResponseKeys {
     final val took = "took"
     final val timed_out = "timed_out"
     final object _shards {
@@ -49,13 +49,25 @@ abstract class AbstractElasticsearchRepo @Inject() (
     }
   }
   
+  private final object responseIdKeys {
+    final val _index = "_index"
+    final val _type = "_type"
+    final val _id = "_id"
+    final val found = "found"
+    // if found    
+    final val _version = "_version"
+    final val _seq_no = "_seq_no"
+    final val _primary_term = "_primary_term"
+    final val _source = "_source"
+  }
+  
   val repoUrl = config.get[String]("elasticsearch.url")
   var indexRoute: String = ""
  
   def find(wordSequence: String, offset: Int, limit: Int) = { 
     val uri = s"${getUri()}${routes.search}"
-    
     var request: WSRequest = ws.url(uri)
+    
     // Add query param   
     if(wordSequence != null && !wordSequence.isBlank()) {
       request = request.addQueryStringParameters(queryParams.q -> s"*${wordSequence}*")
@@ -70,12 +82,17 @@ abstract class AbstractElasticsearchRepo @Inject() (
     }
     logger.debug(s"call find for uri ${uri} with request ${request}")
     request.get().map(response => {
-      handleResponse(response)
+      handleSearchResponse(response)
     })
   }
   
   def findById(id: String) = { 
-
+    val uri = s"${getUri()}${id}"
+    var request: WSRequest = ws.url(uri)
+    logger.debug(s"call find for uri ${uri} with request ${request}")
+    request.get().map(response => {
+      handleIdResponse(response)
+    })
   }
   
   def insert(jsonData: JsObject) = { 
@@ -94,11 +111,18 @@ abstract class AbstractElasticsearchRepo @Inject() (
     s"${repoUrl}${indexRoute}/"
   }
   
-  private def handleResponse(response: WSResponse) = {
+  private def handleSearchResponse(response: WSResponse): (Int, JsValue) = {
     val jsonResponse = response.json
-    val hits = (jsonResponse \ responseKeys.hits.KEY).get
-    val total = (hits \ responseKeys.hits.total.KEY \ responseKeys.hits.total.value).get.as[Int]
-    val results = (hits \ responseKeys.hits.hits).get
+    val hits = (jsonResponse \ searchResponseKeys.hits.KEY).get
+    val total = (hits \ searchResponseKeys.hits.total.KEY \ searchResponseKeys.hits.total.value).as[Int]
+    val results = (hits \ searchResponseKeys.hits.hits).get
     (total, results)
+  }
+  
+  private def handleIdResponse(response: WSResponse): (Boolean, JsValue) = {
+    val jsonResponse = response.json
+    val found = (jsonResponse \ responseIdKeys.found).as[Boolean]
+    val result = jsonResponse
+    (found, result)
   }
 }

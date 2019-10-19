@@ -9,7 +9,7 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 # toolboxes
 OPTIONS /toolboxes					com.scalian.controllers.ToolBoxController.documentation()
 GET		/toolboxes					com.scalian.controllers.ToolBoxController.find(wordSequence: Option[String], offset: Option[Int], limit: Option[Int])
-# GET		/toolboxes/:id				com.scalian.controllers.ToolBoxController.getToolBoxSheet(id: String)
+GET		/toolboxes/:id				com.scalian.controllers.ToolBoxController.getToolBoxSheet(id: String)
 # POST 	/toolboxes					com.scalian.controllers.ToolBoxController.addToolBoxSheet()
 # PUT 	/toolboxes/:id				com.scalian.controllers.ToolBoxController.editToolBoxSheet(id: String)
 # DELETE	/toolboxes/:id				com.scalian.controllers.ToolBoxController.deleteToolBoxSheet(id: String)
