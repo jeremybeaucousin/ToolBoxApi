@@ -15,7 +15,7 @@ class ToolBoxDao @Inject() (
     ws: WSClient) (implicit ec: ExecutionContext) 
   extends AbstractElasticsearchRepo(config, ws) {
   
-  this.indexRoute =  "toolboxsheets"
+  this.indexRoute = config.get[String]("elasticsearch.route.catalog") + config.get[String]("elasticsearch.route.toolboxsheets")
   
   override def find(jsonQuery: JsObject) = {
     super.find(jsonQuery)

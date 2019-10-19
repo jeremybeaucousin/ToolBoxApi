@@ -20,6 +20,10 @@ abstract class AbstractElasticsearchRepo @Inject() (
     final val search = "_search"
   }
   
+  private final object queryParams {
+    final val q = "q"
+  }
+  
   private final object responseKeys {
     final val took = "took"
     final val timed_out = "timed_out"
@@ -44,7 +48,6 @@ abstract class AbstractElasticsearchRepo @Inject() (
   }
   
   var repoUrl = config.get[String]("elasticsearch.url")
-  var catalogRoute = config.get[String]("elasticsearch.route.catalog")
   var indexRoute: String = ""
  
   def find(jsonQuery: JsObject) = { 
@@ -73,6 +76,6 @@ abstract class AbstractElasticsearchRepo @Inject() (
   }
   
   private def getUri() = {
-    s"${repoUrl}${catalogRoute}${indexRoute}/"
+    s"${repoUrl}${indexRoute}/"
   }
 }
