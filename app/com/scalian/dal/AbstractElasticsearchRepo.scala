@@ -150,17 +150,26 @@ abstract class AbstractElasticsearchRepo @Inject() (
     logger.debug(s"call save for uri ${uri} with data ${jsonData}; request ${request}")
     request.post(jsonData).map(response => {
       val json = response.json
-      val id = (json \ responseDocKeys._id).as[String]
-      (id, json)
+      if(response.status == Status.CREATED) {
+        val id = (json \ responseDocKeys._id).as[String]
+        (id, json)  
+      } else {
+        (null, json) 
+      }
     })
   }
   
-  def update(id: String, jsonData: JsObject) = { 
+  def update(id: String, jsonData: JsObject): Future[(Boolean, JsValue)]  = { 
     val uri = s"${getUri()}${id}"
     var request: WSRequest = ws.url(uri)
     logger.debug(s"call edit for uri ${uri} with data ${jsonData}; with request ${request}")
     request.post(jsonData).map(response => {
-     response.json
+      val json = response.json
+      if(response.status == Status.OK) {
+        (true, json)  
+      } else {
+        (false, json) 
+      }
     })
   }
   
@@ -170,7 +179,7 @@ abstract class AbstractElasticsearchRepo @Inject() (
     logger.debug(s"call delete for uri ${uri} with request ${request}")
     request.delete().map(response => {
      var updated = true
-     if(response.status == Status.NOT_FOUND) {
+     if(response.status != Status.OK ) {
        updated = false
      }
      (updated, response.json)

@@ -104,8 +104,12 @@ class ToolBoxController @Inject() (
     if (json != null) {
       val data = json.as[JsObject]
       toolBoxDao.update(id, data).map({
-        case (jsonResponse) => {
-          Ok(Json.toJson(jsonResponse))
+        case (updated, jsonResponse) => {
+          if(updated) {
+            Ok(Json.toJson(jsonResponse))
+          } else {
+            InternalServerError(Json.toJson(jsonResponse))
+          }
         }
       })
     } else {
