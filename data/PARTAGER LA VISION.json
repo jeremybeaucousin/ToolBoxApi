@@ -1,0 +1,130 @@
+// PARTAGER LA VISION
+[
+    {
+        "title": "LA BOITE À PRODUIT",
+        "description": "Faîtes réaliser à un groupe une image visuelle et concrète du produit ou service qu'il est censé développer.  Utilisez une boîte en carton matérialisant le produit, l'équipe aura alors pour objectif de remplir chaque face de cette boîte par des images, du texte ou tout autre visuel. L'atelier se déroule sur 3 phases : l'introduction, la création de boîtes et la mise en commun du travail avec simulation de vente.",
+        "steps": [
+            "Etape 1 (30 minutes) - Décrire le contenu de la boîte Inviter les participants à réﬂéchir ce qu'elle pourrait contenir. Vous pouvez alors commencer par un brainstorming (exemple diagramme d'aﬃnité). Cette étape d'introduction permet de fournir « juste assez » d'informations aux participants pour qu'ils se sentent à l'aise et prêts à commencer l'exercice. Etape 2 (45 minutes) - Créer la boîte Indiquer aux participants le temps dont ils disposent (30 minutes minimum) pour créer la boîte de leur choix. Invitez-les à imaginer qu'ils découvrent cette boîte par hasard dans un rayon, emballée et prête à être vendue. Sa conception peut être facilitée par quelques questions du type : Quel est son nom ? son but ? son slogan ? ses avantages ? Quels éléments visuels pourraient la mettre en valeur ? Vous pouvez donner une signiﬁcation à chaque face de votre boîte : un slogan, les fonctionnalités, les freins, les leviers etc... L'animateur explique aux participants qu'ils sont absolument libres dans la création de leur boîte. Etape n° 3 (30 minutes) - Vendre la boîte Chaque équipe ou chaque participant doit avoir la possibilité de « vendre » sa boîte au groupe. Les joueurs inscrivent un certain nombre de caractéristiques sur leur boîte, mais lorsqu'il s'agit de la vendre, ils transforment ces spéciﬁcités en avantages, à l'aide de connecteurs tels que « aﬁn que » ou « car ». Etape n° 4 (15 minutes) - Voter pour une boîte A la ﬁn de l'atelier chacun s'accorde sur une boîte unique acceptée par tous en utilisant le vote ( par exemple la technique de la gommetocratie)."
+        ],
+        "goal": "Obtenir la vision d'un produit et la partager avec l'équipe chargée de le concevoir.",
+        "addedValue": "Constitue un moyen de focalisation.  La boîte rassemble ainsi une multitude d'informations abstraites en un objet tangible.  Cet objet pourra être arboré dans l'open space par exemple. Peut être utile lors de discussions autour de la vision de l'entreprise, du service d'un produit.",
+        "materials": [
+            "Boite en carton vierge et blanches ",
+            "Schotch ",
+            "Post-it ",
+            "Ciseaux ",
+            "Feutres"
+        ],
+        "source": "Source :Luke Hohmann (Innovation Games)",
+        "timePersons": "1205-30"
+    },
+    {
+        "title": "RETOUR VERS LE FUTUR",
+        "description": "L'idée principale est de réaliser une feuille de route en partant de la date de ﬁn et en mettant les participants dans un contexte qui peut être par exemple : \"Nous sommes en janvier 2020. Le projet est un succès total. Rappelez-vous tout ce que nous avons fait pour en arriver là...\".",
+        "steps": [
+            "Constituer l'équipe : Il est préférable d'avoir au maximum 5 participants mais il est possible de faire cet atelier avec beaucoup plus de participants en faisant plusieurs groupes. Dans ce cas, il est conseillé d'avoir un animateur par groupe. Etape 1 - Identiﬁer la phrase Identiﬁer et inscrire sur un Brown Paper la phrase qui résume le mieux l'objectif atteint dans le futur.  Etape 2 - Dessiner  Dessiner une ligne de temps en partant de maintenant jusqu'à la date de l'objectif. Les participants élaborent ensuite le chemin pour parvenir à la cible au moyen de dessins. A l'aide des post-it de diﬀérentes couleurs, les participants pourront identiﬁer les forces, faiblesses, imprévus, évènements internes et externes, jalons, étapes, organisation, technique. Etape 3 - Restituer A la ﬁn de l'atelier, l'animateur demande à une personne du groupe de présenter le chemin parcouru. Piège à éviter La formulation de la question est extrêmement importante. Vous obtiendrez des résultats diﬀérents si vous demandez «Qu'est-ce que le système doit faire\" au lieu de \"Qu'est-ce que le système a fait\"."
+        ],
+        "goal": "Partager une vision commune et identiﬁer le chemin à parcourir aﬁn d'atteindre l'objectif.",
+        "addedValue": "Changer la façon de concevoir un planning. Partir plutôt de la ﬁn aﬁn d'identiﬁer les étapes à prévoir pour atteindre l'objectif.",
+        "materials": [
+            "Borwn paper",
+            "Post-it",
+            "Feutres"
+        ],
+        "timePersons": "905-30"
+    },
+    {
+        "title": "AVEC DES SI",
+        "description": "Mettez vos participants dans un contexte ﬁctif en commençant votre phrase par \"Et si\".  A partir de ce contexte, demandez aux participants de se projeter sur des solutions ou des amorces de solutions en réponse à la problématique posée.",
+        "steps": [
+            "Généralement cette pratique est utilisée pour de grands groupes. Etape 1 (5 minutes) Former des groupes de 5 à 10 personnes. Aﬃcher sur un brown paper la phrase commençant par \"Et si...\"  Etape 2 (30 minutes)  Demander d'énumérer les conséquences et décrire la nouvelle organisation de l'entreprise ou du service qui en découle. Etape 3 (30 minutes)  Restitution en grand groupe : les participants enrichissent le travail de l'autre groupe."
+        ],
+        "goal": "Se projeter sur des solutions à partir d'une situation imaginaire.",
+        "addedValue": "Libérer la créativité. Permettre à l'équipe d'entrer en résonance lors d'une séance de frénésie créative.",
+        "timePersons": "60-12015-50"
+    },
+    {
+        "title": "LE BLASON",
+        "description": "Laissez s'exprimer vos participants collectivement sur ce qui constitue leur équipe : ses valeurs, ses croyances, ses objectifs et un slogan qui la déﬁnirait au mieux.  Ces 4 dimensions seront ensuite représentées sous la forme d'un blason à l'aide d'image, dessin ou tout autre moyen visuel.",
+        "steps": [
+            "Etape 1 (5 minutes) Présenter l'atelier et la notion de blason puis former des sous-groupes (entre 5 et 8 personnes). Etape 2 (30 minutes) Les participants remplissent les blasons avec des mots sur la base des 4 principes suivantes : Nos valeurs, Nos croyances, Nos objectifs, Notre slogan. Etape 3 (20 minutes) Mettre en commun les blasons et faire valider collectivement 4 cadrans. Etape 4 (30 minutes),Faîtes réaliser des dessins et textes du blason collectif ﬁnal."
+        ],
+        "goal": "Partager collectivement sur la vision d'une entité.",
+        "addedValue": "Rendre concret l'identité d'une équipe en utilisant le jeu.",
+        "materials": [
+            "Un blason au format A3 ",
+            "Feutres ",
+            "Magazines ",
+            "Ciseaux et Colle"
+        ],
+        "source": "Source :Passer en mode workshop",
+        "timePersons": "9010-50"
+    },
+    {
+        "title": "EMPATHY MAP",
+        "description": "Etudier en groupe les caractéristiques d'un proﬁl d'utilisateur en dessinant la tête d'une personne puis demander aux participant de se mettre dans la peau du personnage et de décrire ce qu'il « Pense », « Voit », « Dit », « Fait », « Ressent » et « Entend ».",
+        "steps": [
+            "Etape 1 (5 minutes) Tracer sur un paperboard un cercle assez grand pour pouvoir écrire à l'intérieur puis dessiner des yeux et des oreilles pour qu'il ressemble à une large « tête ». Inscrire ensuite les verbes autour de la tête dessinée : «Pense», «Voit», «Dit», «Fait», «Ressent » et «Entend». Donner un nom au personnage. Etape 2 (10 minutes) Demander aux participants de se mettre dans la peau du personnage et de décrire son expérience pour chaque catégorie (« Voit », « Ressent », etc.). Astuce : Le but de cette méthode est de produire un certain degré d'empathie à l'égard du personnage créé. Demander aux membres du groupe d'être synthétiques : quels sont les désirs de ce personnage ? Ses motivations ? Que peut-on faire pour satisfaire ses besoins ?"
+        ],
+        "goal": "Cerner le proﬁl d'un client ou d'un utilisateur type.",
+        "addedValue": "Permet d'attirer l'attention du groupe sur un élément essentiel : les individus.",
+        "materials": [
+            "Paperboard ",
+            "Post-it ",
+            "Feutres"
+        ],
+        "source": "Source :Scott Matthews",
+        "timePersons": "155-15"
+    },
+    {
+        "title": "LE PECHA KUCHA",
+        "description": "Faites votre présentation en utilisant uniquement des images et en limitant le temps passé sur chaque image.  Vous capterez l'attention de votre auditoire et votre discours en sera d'autant plus percutant. La projection de 20 diapositives se succédant toutes les 20 secondes (la présentation dure 6 minutes et 40 secondes au total).",
+        "steps": [
+            "Aider vous de la recherche d'images sur Google Images. Timeboxer la présentation sur PowerPoint. Entrainer-vous à présenter les diapositives. Support : http://www.pechakucha.org"
+        ],
+        "goal": "Réaliser une présentation dynamique en utilisant uniquement des images.",
+        "addedValue": "Favoriser l'esprit de synthèse. Eviter de monopoliser du temps. Développer la capacité à présenter et à communiquer une idée et donc à vendre.",
+        "source": "Source :Astrid Klein et Mark Dytham",
+        "timePersons": "6,4>5"
+    },
+    {
+        "title": "LE VERNISSAGE",
+        "description": "Découpez le sujet à présenter en thématiques et mettez en place des stands pour chacune d'entre-elles. Un animateur se chargera alors d'accueillir à chaque stand une partie du groupe de participants aﬁn de lui présenter son thème.  Ce format permet de dynamiser l'exercice de la re-descente d'informations.",
+        "goal": "Présenter à la façon d'un vernissage les diﬀérentes facettes d'un sujet.",
+        "addedValue": "Favoriser l'assimilation d'une problématique complexe par l'apport du visuel, échanger avec les participants permet d'enrichir les solutions possibles.",
+        "materials": [
+            "Brown paper ",
+            "Post-it ",
+            "Feutres"
+        ],
+        "timePersons": "5-50"
+    },
+    {
+        "title": "SESSION \"PRE MORTEM\"",
+        "description": "En pré-requis, un atelier \"pre-mortem\" se tient de préférence lors du lancement du projet, en présence des membres clés de l'équipe, et quand les objectifs et le plan à suivre ont été exposés et assimilés par tous. L'exercice commence par une question très simple : « Où risquons-nous d'échouer ? » Cependant, la question peut être formulée de façon plus dramatique : « Pourquoi courons- nous à la catastrophe ? ».",
+        "goal": "Eﬀectuer une analyse dès le lancement d'un projet aﬁn d'en aﬀronter les risques.",
+        "addedValue": "Contrairement à une étude habituelle des risques, la conduite d'une session prémortem contraint les participants à puiser au plus profond de leur expérience et de leur intuition au stade le plus critique du projet.",
+        "materials": [
+            "Paper board, ",
+            "Post-it ",
+            "Feutres"
+        ],
+        "source": "Source :Gary Klein",
+        "timePersons": "605-30"
+    },
+    {
+        "title": "PERSONA",
+        "description": "Créer un utilisateur type de votre application. Celui-ci a des sentiments, des préférences, des compétences mais il peut aussi avoir des droits particuliers sur le système en fonction de son proﬁl. L’équipe se réunit et détermine le type de proﬁl susceptible d’utiliser l’application et utilisera cet utilisateur comme référence lors du développement de l’application.",
+        "steps": [
+            "L’équipe va créer son utilisateur-type en déterminant plusieurs éléments : - Une photo, un prénom et un rôle dans l’application - Un contexte narratif - Des informations personnelles - Des compétences - Ses objectifs au travers de l’application - Ce qui lui ferait gagner du temps "
+        ],
+        "goal": "Modéliser les utilisateurs ﬁnaux de l’application que l’équipe développe.",
+        "addedValue": "Cet atelier permet à l’équipe de prendre conscience de ses utilisateurs et de leurs attentes autour du produit.",
+        "materials": [
+            "Feuilles A4 ",
+            "Post-it ",
+            "Feutres"
+        ],
+        "timePersons": "603-10"
+    }
+]
