@@ -1,0 +1,461 @@
+GÉNÉRER DES IDÉES
+[]
+{ "title" : "LE BRAINSTORMING",
+"description" : "Appelé également tempête d'idées ou remue-méninges, cette méthode permet de recueillir un maximum d'idées. Il est pr
+incipalement utilisé dans les phases de créativité, notamment pour la recherche d’idées, d'amélioration en favorisant le travail d'équipe en exploitant le meilleur des idées de chacun.",
+"steps" : ["Etape 1 - Poser le problème Les participants décrivent, sur des post-it, leurs idées par rapport au thème abordé. Chaque post-it doit décrire une seule idée.  Cette phase doit être eﬀectuée en silence et dure généralement 5 minutes. Ensuite, chaque participant colle un à un ses post-it sur un tableau et argumente. L'animateur tient ici une place clef aﬁn de s'assurer de la participation de chacun, mais aussi faire rebondir les participants sur une idée.  Etape 2 - Classiﬁer, purger L'animateur s'assure que les idées ont été toutes énoncées et commence devant le groupe à classiﬁer les idées par thème qui se dégage. Etape 3 - Voter Les participants sont invités à voter sur les post-it qui mettent en valeur les idées les plus innovantes (pas plus de 3 en général). L'animateur pourra utiliser la technique de la « gommettocratie »."],
+"goal" : "Récolter un maximum d'idées originales.",
+"addedValue" : "Facilite l'émergence des nouvelles idées. Implique les participants dans une logique d'amélioration de la cohésion de l'équipe.",
+"materials" : ["Paper board, ","Post-it ","Feutres"],
+LE BRAINSTORMING
+Source :Alex Osborn
+"timePersons" : "905-30"
+},
+{ "title" : "LES ANALOGIES",
+"description" : "Utilisez des analogies entre divers domaines pour générer des idées neuves. Il s'agit de replacer le problème dans un autre domaine de la réalité.  Les idées ainsi générées seront ensuite transposées dans le contexte d'origine.",
+"steps" : ["Etape 1 (5 minutes) Demander aux participants de rechercher individuellement des situations issues de la vie courante dans lequel se pose le problème. Etape 2 (10 minutes) Demander de présenter les analogies et sélectionner les plus pertinentes (3 ou 4) via un vote collectif. Etape 3 (30 minutes) Demander d'explorer les analogies retenues pour en comprendre le fonctionnement et d'analyser les solutions/idées mises en place pour résoudre le problème. Etape 4 (30 minutes) Demander de reporter chaque solution alors obtenue dans le contexte de la problématique posé initialement."],
+"goal" : "Générer des idées en stimulant l'esprit créatif grâce aux analogies.",
+"addedValue" : "Utile dans le cadre d'ateliers de génération d'idées ou dans des démarches d'amélioration continue.",
+"materials" : ["Paper board ","Post-it ","Feutres"],
+LES ANALOGIES
+"timePersons" : "455-15"
+},
+{ "title" : "BRAINWRITING",
+"description" : "Demandez à chaque participant d'écrire chacune de ses idées sur une feuille A4 et de les passer à son voisin aﬁn qu'il les enrichisse.  Cette pratique permet à chaque participant de s'exprimer et de rebondir par écrit sur les idées émises par les autres participants.",
+"steps" : ["Etape 1 (5 minutes) Expliquer la problématique et s'assurer qu'elle est comprise par tout le monde. Etape 2 (25 minutes pour un groupe de 5 personnes) Demander à chaque participant d'inscrire 3 idées sur des post-it et de les coller sur une feuille A4. Donner 5 minutes aux participants pour y inscrire 3 idées. Au bout de 5 minutes, faire tourner la feuille à son voisin qui peut s'inspirer / réagir aux suggestions déjà remplies. Au bout de 25 minutes, le groupe aura généré en théorie 5x3x5 = 75 idées ! Astuce : Faire ensuite un diagramme d'aﬃnité aﬁn d'organiser les idées."],
+"goal" : "Générer un maximum idées.",
+"addedValue" : "Variante du brainstorming à utiliser dans de multiples contextes où l'on cherche à générer des idées (atelier de résolution de problèmes, recherche de solutions, ...).",
+"materials" : ["Feuille A4 ","Post-it ","Feutres"],
+BRAINWRITING
+"timePersons" : "305-30"
+},
+{ "title" : "LE DIAGRAMME D'AFFINITÉ",
+"description" : "Le diagramme d'aﬃnité est un outil généralement employé pour organiser des idées évoquées lors d'un brainstorming (ou autre méthode de recherche d'idées) en les structurant par thèmes ou catégories. Ces thèmes seront établis en fonction des liens existants entre les diﬀérentes idées = aﬃnité des idées les unes avec les autres.",
+"steps" : ["Etape 1 : Idéation Utiliser la technique du brainstorming ou du brainwriting pour générer un maximum d'idées. Etape 2 : Catégoriser L'animateur prend un à un chaque post-it puis commence à grouper des points communs entre les idées et les regrouper en catégories. Les catégories seront notées sur un post-it de couleur diﬀérentes. Les noms des catégories devront être validés par le groupe."],
+"goal" : "Organiser les idées.",
+"addedValue" : "Facilite l'émergence des nouvelles idées. Outil simple pour clariﬁer un problème.",
+"materials" : ["Paperboard ","Post-it ","Feutres"],
+LE DIAGRAMME D'AFFINITÉ
+Appelé également Diagrame KJ identiﬁée par les initiales de son auteur : Jiro Kawakita
+"timePersons" : "605-15"
+},
+{ "title" : "VALUE PROPOSITION CANVAS",
+"description" : "Le canevas de proposition de valeur (Value Proposition Canvas) permet de : 1- Comprendre le proﬁl du client sur la base de son environnement, ses préoccupations, ses aspirations 2- Proposer une proposition de valeur sur la base des attentes du client.",
+"steps" : ["Source: https://strategyzer.com/"],
+"timePersons" : "60-1205-20"
+},
+{ "title" : "LE MINDMAPPING",
+"description" : "Le MindMapping est aussi appelé carte heuristique, carte mentale, diagramme en arbre , arbre de décision. Cet outil peut êt
+re utilisé dans la résolution de problèmes. Il fournit une représentation en arborescence qui permet de structurer et décomposer en multi-niveaux des idées en fonction d'une situation à analyser.",
+"steps" : ["Quelques conseils pour créer un Mind Map : La carte est au format format paysage. Le sujet ou thème de la Mind Map est symbolisé par une image centrale. Les idées ou rubriques principales sont disposées autour de l'image centrale sous forme de branches. Chaque branche s'accompagne d'une image clé et/ou d'une expression clé dessinée ou imprimée sur la ligne qui lui est associée. Les idées périphériques sont représentées en tant que "rameaux" de la branche connexe. L'ensemble des branches forment un arbre dont les nœuds sont liés les uns aux autres. Les branches, rameaux sont colorés si besoin."],
+"goal" : "Représenter les idées de façon hiérarchique, facilitant ainsi le choix des actions à mettre en oeuvre.",
+"addedValue" : "Lisibilité et facilité de construction. Répond à la question « Comment réaliser ce que nous avons décidé de faire ? ». Peut traiter tout type de cas, pas de restriction.",
+"materials" : ["Paperboard ","Logiciel de mindMapping"],
+LE MINDMAPPING
+"timePersons" : "5-50"
+},
+{ "title" : "LA BAGUETTE MAGIQUE",
+"description" : "L’objectif est de mettre de coté les contraintes a la réﬂexion d’une équipe sans ignorer ses contraintes mais en les traitent plus tard.",
+"steps" : ["1 - Assurez vous d’avoir bien compris objection en la reformulant. 2 - Dites : « en supposant que nous avons une baguette magique, et que d’un coup de baguette magique nous pouvons supprimer [l’objection]. » 3 - Assurez vous que l’objection est notée quelque part, sur un document électronique ou, un post-it pour qu’elle ne soit pas perdu. 4 - Reprendre l’activité créative."],
+"goal" : "Refaire marché l’activité de créativité d’une équipe.",
+"addedValue" : "Permet a l’équipe de se reconcentrer sur l’objectif de la séances en mettant de coté les problèmes ralentissant la phase de réﬂexion.",
+"materials" : ["Post-its ","Feutres"],
+"timePersons" : "5-25"
+},
+LA BAGUETTE MAGIQUE
+
+RÉSOUDRE DES PROBLÈMES
+{ "title" : 'LES "5 POURQUOI"',
+"description" : "Les « 5 Pourquoi » est un outil de résolution de problème permettant de remonter à la cause racine d'un problème en se posant plusieurs fois la question « Pourquoi ».",
+"steps" : ["Etape 1 (5 minutes) Décrire et identiﬁer clairement un phénomène en se posant la question « Que se passe-t-il ? ». Etape 2 (25 minutes) Énoncer le problème en répondant à la première question commençant par Pourquoi (exemple pourquoi ce problème est-il apparu ?). La réponse à ce premier « Pourquoi » est une cause symptomatique. Elle devient le nouveau problème à résoudre. Reformuler une nouvelle question commençant par « Pourquoi », aﬁn de trouver le pourquoi du pourquoi. A travers chacune des réponses obtenues, remonter graduellement les causes symptomatiques pour mettre en évidence les causes fondamentales du phénomène observé. En général, avant le 5ème « Pourquoi », les causes racines du problème sont élucidées."],
+"goal" : "Remonter à la cause racine d'un problème.",
+"addedValue" : "Evite de se contenter des premiers problèmes soulevés. La plupart du temps ce ne sont que des symptômes. En remontant aux causes racines, la solution sera, à la fois, plus facile à corriger et plus eﬃcace dans le temps.",
+"materials" : ["Brown paper ","Post-it ","Feutres"],
+LES "5 POURQUOI"
+Source :5 Why (Lean)
+"timePersons" : "30-605-15"
+},
+{ "title" : "QQOQCCP",
+"description" : "L'animateur présente la grille QQOQCCP puis les participants doivent la remplir soit individuellement soit par groupe.  Ensuite, le groupe élabore une synthèse de la problématique.",
+"steps" : ["Le QQOQCCP signiﬁe : « Quoi, Qui, Où, Quand, Comment, Combien, Pourquoi ? ». Quoi ? : Quel est l'état de la situation ?. Qui ? : Qui est concerné, qui a le problème ? Qui est intéressé par le résultat ? Quand ? : Depuis quand avons nous ce problème ? Quand cela apparait il ? Quand le problème a été découvert ? Comment ? : Comment se produit le problème ? Pourquoi ? : Quels sont les causes du problème ? Etape 1 L'animateur présente le sujet et la grille QQOQCCP. Etape 2 Les participants remplissent la grille par groupe en répondant à toutes les questions. Si besoin, la question "Pourquoi" pourra être déterminée avec l'outil des "5 Pourquoi" ou du "Diagramme d'Ishikawa". Etape 3 Les participants mettent en commun les grilles.  La recherche de solution pourra alors être eﬀectuée lors d'un autre QQOQCCP."],
+"goal" : "Rassembler des informations concernant une problématique.",
+"addedValue" : "Permet de collecter rigoureusement les informations nécessaires pour répondre à une problématique en suivant une logique de questionnement.",
+"materials" : ["Paperboard ","Post-it ","Feutres"],
+QQOQCCP
+Source :Lean
+"timePersons" : "605-15"
+},
+{ "title" : "LE DUR, LE MOU, LE FLOU",
+"description" : "Les participants devront déﬁnir ce qui, dans le projet ou l’organisation, représente : le DUR, le MOU, le FLOU. Les participants construisent ensuite une synthèse collectivement.",
+"steps" : ["Etape 1 (15 minutes) Poser la problématique sur un paperboard Dessiner un tableau à trois colonnes représentant: le DUR : signiﬁe ce qui est imposé dans la forme et le fond et qui est non négociable. le MOU : signiﬁe ce qui est imposé dans le fond avec des libertés sur la forme et les modalités de réalisation. le FLOU : signiﬁe ce qui est libre et sans contrôle. Etape 2 (30 minutes) L'animateur invite les participants à écrire leurs idées sur des post-it et de les coller sur l'une des trois colonnes  Etape 3 (15 minutes) L'animateur fait la synthèse en mettant en commun des résultats ."],
+"goal" : "Déﬁnir le périmètre de travail d'une équipe.",
+"addedValue" : "Permet à chacun de connaitre sa marge de manoeuvre dans un projet et de mieux connaitre son rôle et mieux déﬁnir ses actions. Les diﬀérentes perceptions se croisent pour mieux faire converger le collectif, le fonctionnement de l'équipe s'en trouve amélioré.",
+"materials" : ["Paperboard ","Post-it ","Feutres"],
+LE DUR, LE MOU, LE FLOU
+Source :Travailler en mode workshop
+"timePersons" : "605-15"
+},
+{ "title" : "LE DIAGRAMME ISHIKAWA",
+"description" : "Le diagramme est utilisé comme outil d'identiﬁcation des causes à un problème. Il se présente sous la forme d'arêtes de po
+issons en classant les causes par catégories.  Les catégories peuvent être libres ou reposer sur des axes prédéﬁnis comme les 5M : Matière, Matériel, Méthodes, Main d'oeuvre, Milieu.",
+"steps" : ["Dessiner une arête de poisson avec 5 axes : Matière, Matériel, Méthodes, Main d'œuvre, Milieu. Un sixième nommé « Mesure » peut être utilisé dans certains cas pour mettre en avant les problèmes de ﬁabilité du système de mesure. L'atelier se déroule en 4 étapes Etape 1 Déﬁnir clairement la problématique, Etape 2 Pour chaque catégorie, faire un brainstorming pour recenser les causes potentielles, Etape 3 Réaliser un vote pour faire ressortir les causes critiques. La quantité de points à attribuer par personne étant déﬁnie par le nombre d'idées à juger sera divisé par 3, Etape 4 Travailler sur les 3 causes qui ont recueillies le plus de votes."],
+"goal" : "Identiﬁer les causes à un problème.",
+"addedValue" : "Favorise l'analyse de résolution de problème en faisant participer une équipe. Facilite l'identiﬁcation des causes potentielles en ciblant la recherche sur la base des 5 « M ». Le diagramme obtenu oﬀre une vue globale et synthétique des problèmes.",
+"materials" : ["Paperboard ","Post-it ","Feutres"],
+LE DIAGRAMME ISHIKAWA
+Source :Lean
+"timePersons" : "605-15"
+},
+{ "title" : "LA MATRICE DES ATTENDUS",
+"description" : "Chaque participant renseigne individuellement les attendus envers les autres acteurs : 1 attendu = 1 post-it. À tour de rôle, chacun vient coller ses attendus sur le tableau et les partage avec l'ensemble du groupe.",
+"steps" : ["Prérequis : Disposer d'une liste comprenant tous les acteurs du système. Elle peut être préparée à l'avance ou dressée en début d'exercice.  À l'aide de cette liste, l'animateur dessine une matrice indiquant les noms des acteurs sur les axes vertical et horizontal.  Chaque case de la matrice indique une information unique. Pour une meilleure homogénéité, considérez que l'axe vertical signiﬁe « de » et l'axe horizontal « à ». Etape 1 (10 minutes) Chaque participant renseigne individuellement les attendus envers les autres acteurs (1 attendu = 1 postit) et également un post-it décrivant brièvement le but ou la raison pour laquelle il prend part au système. Etape 2 (50 minutes) L'animateur prend chaque point d'intersection et compare les perceptions de valeur entre les acteurs.  Commencer par un acteur donné et évoluer de case en case, en posant la question suivante : « Que puis-je vous oﬀrir ? ».  Certains points d'intersection seront faciles à décrire. D'autres, en revanche, confronteront des acteurs n'ayant jamais été liés ou étant en désaccord total.  Le but de la matrice est de révéler une vision d'ensemble quant aux bénéﬁces que chaque acteur peut apporter aux autres."],
+"goal" : "Formaliser et échanger sur les attendus de chaque partie prenante du projet.",
+"addedValue" : "Révèle les motivations et interactions entre les acteurs d'un système.  Les acteurs peuvent tout aussi bien désigner des individus que des organisations entières. Ce jeu constitue un outil eﬃcace, aidant les participants à explorer la valeur au sein d'un groupe.",
+"materials" : ["Paperboard ","Post-it ","Feutres"],
+LA MATRICE DES ATTENDUS
+Source :Gamestorming
+"timePersons" : "30-1205-30"
+},
+{ "title" : "LE GEMBA WALK",
+"description" : "Le Gemba signiﬁe « l'endroit où cela se passe ». Cela peut correspondre au bureau du service, au lieu d'expérience client. Le Gemba consiste à privilégier l'analyse sur le terrain plutôt que dans un bureau où une salle de réunion.  L'état d'esprit du Gemba Walk s'applique à tous les niveaux hiérarchiques en allant des directeurs jusqu'aux opérationnels.",
+"steps" : ["Le principe du GembaWalk se déroule en 6 étapes : 1. A l'apparition d'un problème, aller tout de suite sur place où se trouve le problème à résoudre, 2. Observer la situation en remontant le ﬂux du processus concerné, sans chercher à apporter de solutions immédiates, 3. Poser des questions pour comprendre les causes du problème, 4. Ecouter les réponses apportées sans juger ou en déduire des conclusions immédiates, 5. Entamer une analyse plus approfondie des causes racines avec des outils comme le diagramme d'Ishikawa les 5 pourquoi, le QQOQCCP, 6. Mettre en place les actions correctives."],
+Comprendre, corriger des problèmes rencontrés sur le terrain.
+Avoir une perception concrète et factuelle du problème pour s'en faire une opinion personnelle. Instaurer un esprit d'équipe où tout le monde travail ensemble pour être plus eﬃcace dans l'analyse de la situation. Agir sur la motivation générale en passant à une organisation horizontale où les problèmes sont l'aﬀaire de tous.
+LE GEMBA WALK
+Source :Lean
+"timePersons" : "3-10"
+},
+{ "title" : "A3 THINKING",
+"description" : "L'A3 Thinking solving est utilisé pour analyser une problématique et pour trouver les solutions adaptées dans un court laps de temps. Construit par une équipe pluridisciplinaire, il décompose la problématique en plusieurs phases pour permettre de la traiter de manière eﬃcace.",
+"steps" : ["La méthode du A3 thinking se décompose en 6 étapes : Etape 1 Problème : Clariﬁer et déﬁnir clairement la problématique Etape 2 Objectif : Déﬁnir l'objectif à atteindre. Etape 3 Analyse des causes : Rechercher et analyser les causes avec Ishikawa et les 5 pourquoi Etape 4 Mesures : Identiﬁer le top 5 des solutions à fort impact. Etape 5 Plan d'actions : Déﬁnition mise en œuvre du plan d'actions. Etape 6 Contrôles : Suivi des résultats et des ajustements."],
+"goal" : "Permet d'identiﬁer, résoudre et suivre un problème.",
+"addedValue" : "Outil de communication synthétique. Permet de structurer l'analyse de manière à identiﬁer la cause racine et à éviter la réapparition du problème. Favorise l'esprit d'équipe et développe une démarche de résolution de problèmes à tous niveaux hiérarchiques. Standardise la résolution de problèmes et en facilite le suivi.",
+"materials" : ["Paperboard ","Post-it ","Feutres"],
+A3 THINKING
+"timePersons" : "1805-15"
+},
+{ "title" : "LES CHAPEAUX DE BONO",
+"description" : "Cette pratique est utilisée pour structurer la phase de recherche d'idées en évitant la censure. Chaque chapeau est di
+ﬀérencié par une couleur qui correspond à un type de réaction.  Les chapeaux sont attribués aux diﬀérents participants leur désignant un rôle. Ces rôles peuvent changer durant la séance de créativité.",
+"steps" : ["Les 6 chapeaux de la réﬂexion sont les suivants : Bleu : Introduit, Conclut, Juge, Blanc : Neutralité, Objectivité, Vert : Créativité, Nouvelles idées, Jaune : Jugement optimiste, Espoir, Avantages, Gris : Jugement critique, Risques, Faiblesses, Rouge : Point de vue émotionnel, Intuitions, Sentiments. Etape 1 : Réunir une équipe pluridisciplinaire. Etape 2 : Annoncer l'objectif de la séance de créativité et expliquer le principe de la méthode. Etape 3 : Lancer la séance en commençant par un chapeau. Etape 4 : Recueillir les idées et changer de chapeau. Etape 5 : Réitérer de façon à balayer les 6 couleurs de chapeau."],
+"goal" : "Diviser la recherche des freins et des leviers en 4 phases distinctes, chacune représentée par un chapeau de couleur qui symbolise ,une façon de penser."
+"addedValue" : "Structure et cadre une réﬂexion de manière ludique en évitant les oppositions stériles. Contraint les participants à sortir de leur posture habituelle. Permet une démultiplication des idées sous l'eﬀet de groupe. Renforce l'esprit de cohésion du groupe.",
+"materials" : ["Paperboard ","Feutres ","Chapeaux"],
+LES CHAPEAUX DE BONO
+Source : Edward de Bono
+"timePersons" : "606-15"
+},
+{ "title" : "MATRICE SWOT",
+"description" : "Classer et prioriser les données externes en Menaces ou Opportunités et les données internes en Forces ou en Faiblesses. Ensuite tirer des actions à mener sur ces diﬀérents stratégiques.",
+"steps" : ["Au préalable, dessiner une matrice SWOT à deux dimensions sur un paper board avec : - En interne : Strengths : Forces, Weaknesse : Faiblesses, - En externe Opportunités : Opportunités  Threats : Menaces. Etape 1 (5 minutes) Présenter le problème ou le sujet à traiter sur le paperboard. Etape 2 (5 minutes) Demander à chaque participant de renseigner individuellement chaque catégorie (au moins un post it par catégorie). Etape 3 (40 minutes) Demander à chaque participant de positionner les post it sur la matrice et partager à l'ensemble du groupe leurs réﬂexions. Un échange a lieu avec le groupe. L'étape suivante est de regrouper des post-it par thématique (ex. diagramme d'aﬃnité) et faire voter chaque thématique (ex. gommettocratie) aﬁn d'élaborer un premier plan d’actions. Astuce : Eviter les ressentis, faire orienter la réﬂexion sur des faits, des mesures. Prioriser les faits (en utilisant la technique de la gommettocratie par ). Commencer par l'analyse des faits externes et les classer en opportunités ou menaces."],
+"goal" : "Evaluer la situation d'un service, d'une équipe aﬁn de déﬁnir une stratégie.",
+"addedValue" : "Outil très connu et simple à mettre en oeuvre.",
+"materials" : ["Paperboard ","Feutres ","Post-it"],
+MATRICE SWOT
+"timePersons" : "603-10"
+},
+{ "title" : "L'ANTI-PROBLÈME",
+"description" : "Présenter un problème opposé à celui auquel le groupe fait face. Plus l'opposition adoptée sera extrême, plus l'exercice sera bénéﬁque. Demander alors aux participants qu'ils développent diﬀérentes manières de résoudre l'anti-problème.",
+"steps" : ["Etape 1 (5 minutes) L'animateur présente l'exercice : l'anti-problème, soit un problème opposé à celui auquel ils font face.  Par exemple, dans le cas d'un problème portant sur les ventes, les participants peuvent eﬀectuer un brainstorming pour déterminer la meilleure manière de repousser les clients aﬁn qu'ils n'achètent pas le produit en question. Etape 2 (15-20 minutes) Les participants développent diﬀérentes manières de résoudre l'anti-problème. Etape 3 (10 minutes) Lorsque le temps est écoulé, l'animateur demande à chaque équipe de partager ses résultats. Les participants doivent alors se lever pour présenter leurs réalisations et supports visuels ou encore inviter les autres participants à se réunir autour de leur bureau. Un échange a lieu autour des réﬂexions et découvertes entre les participants."],
+"goal" : "Débloquer une situation lorsque vous vous trouvez à court d'idées.",
+"addedValue" : "Utile quand une équipe s'attachant à résoudre un problème ne parvient plus à développer de nouvelles solutions.  En demandant aux participants de se pencher sur un problème opposé au leur, il est plus facile de s'apercevoir que la solution choisie ne mène nulle part ou qu'une solution évidente n'est pas appliquée.",
+"materials" : ["Paperboard ","Feutres ","Post-it"],
+L'ANTI-PROBLÈME
+Source :Donna Spencer (« Reverse It »)
+"timePersons" : "30-453-10"
+},
+{ 
+"title" : "LE LOTUS",
+"description" : "Cette pratique permet de collecter puis explorer des problèmes en utilisant une représentation de type ﬂeur de lotus.",
+"steps" : ["Dessiner sur un paper board un tableau de 9 cases. Etape 1 (5 minutes) Poser le problème sur un post it et coller le au centre du tableau. Etape 2 (15 minutes) Générer avec le groupe 8 pétales (post-it) liées au problème initial. Faire voter les pétales les plus importantes aux yeux des participants. Etape 3 (15 minutes) Travailler sur la pétale prioritaire sur les causes du problème en générant 8 pétales. Faire voter les pétales les plus importantes aux yeux des participants Etape 4 (15’ minutes) Travailler sur la pétale prioritaire sur les solutions en générant 8 pétales. Faire voter les pétales les plus importantes aux yeux des participants."],
+"goal" : "Etre dans une démarche d'amélioration continue.",
+"addedValue" : "Variante de la rétrospective en étoile.",
+"materials" : ["brown paper ","Feutres ","Post-it de couleur"],
+LE LOTUS
+Source :Yasuo Matsumura
+"timePersons" : "60-1205-15"
+},
+{ "title" : "SIPOC",
+"description" : "SIPOC signiﬁe Supplier, Input, Process, Output, Customer. Cette pratique est utilisée pour représenter les bornes des pr
+ocessus à améliorer et identiﬁer les pratiques associées en se recentrant sur les attentes du client. Le SIPOC se construit par questionnement:    Où commence le macro processus?     |     Comment fonctionne-t-il ?     |     Où se termine le macro processus ?",
+"steps" : ["1. Identiﬁer le périmètre du processus à étudier, 2. Lister les sorties du processus avec les clients associés, 3. Lister les entrées nécessaires au process et les fournisseurs associés, 4. Identiﬁer les éléments critiques en entrées et sorties, 5. Identiﬁer les indicateurs de ﬁabilité des Input et Output critiques."],
+"goal" : "Comprendre et améliorer les activités d'un processus ou d'une organisation.",
+"addedValue" : "Sert a comprendre pourquoi un processus existe, et quelle est son objectif . Favorise la focalisation des eﬀorts d’analyse.",
+"materials" : ["brown paper ","Feutres ","Post-it"],
+SIPOC
+Source :Lean
+"timePersons" : "605-15"
+},
+{ "title" : "BALLE SUPERSONIC",
+"description" : "Faire passer une balle le plus vite possible entre les participants et toujours dans le même ordre. La balle doit arriver le plus vite possible au client.",
+"steps" : ["Mettre les participants en rond. Règles : L’animateur est le « Client », il ne bouge pas. La balle est le produit  ﬁni. La balle doit passer dans toutes les mains et toujours dans le même ordre. Chaque tour de jeu est chronométré."],
+"goal" : "Changer de point de vue aﬁn d’améliorer le processus.",
+"addedValue" : "Sert à comprendre les limites du processus actuel et découvrir de nouvelle façon de procéder.",
+"materials" : ["Balle"],
+BALLE SUPERSONIC
+Source :Agile Game Night
+"timePersons" : "5-155-15"
+},
+
+PRIORISER ET DECIDER
+{ "title" : "LE PLANNING POKER",
+"description" : "Cette pratique bien connue du monde de l'agilité permet non seulement d'estimer des tâches mais également de prioriser des id
+ées ou les fonctionnalités d'un produit.  L'estimation d'un élément se réalise en points, à l'aide de cartes spéciﬁques en recherchant le consensus au sein du groupe.",
+"steps" : ["Le Poker " Fibonacci" nécessite un jeu de 13 cartes de valeurs : 0  0,5  1  2  3  5  8  13  20  40  100 et l'inﬁni. L'animateur passe un à un l'ensemble des thèmes à aborder. Chaque participant vote en secret et abat sa carte de planning poker. Les participants ayant alloués la note la plus faible et la note plus forte justiﬁent leur choix.  Chaque participant abat à nouveau une carte et ce jusqu'à ce que tous les participants aient convergé dans leur choix (on tolèrera un écart d'un incrément). On note la valeur retenue sur le post-it correspondant à la thématique. Il faut compter 5 minutes par vote."],
+"goal" : "Estimer et prioriser des actions.",
+"addedValue" : "Permet à tous de s'exprimer librement, en minimisant l'inﬂuence des autres membres de l'équipe.  L'estimation sera meilleure parce que plusieurs personnes l'auront validée. Favorise les échanges entre le responsable de produits et l'équipe de développement.",
+"materials" : ["Planning poker"],
+LE PLANNING POKER
+Source :Agile Estimating and Planning (Mike Cohn)
+"timePersons" : "103-10"
+},
+{ 
+"title" : "LA GOMMETTOCRATIE",
+"description" : "Les participants sont invités à placer une ou plusieurs gommettes sur les idées qui séduisent le plus.",
+"steps" : ["En pré-requis, l'animateur expose les éléments qui doivent faire l'objet du vote. Tous les éléments doivent être compris par tout le monde. Chaque participant dispose de 3 gommettes (chaque vote sera représenté par une gommette). L'animateur demande aux membres du groupe de coller une ou plusieurs gommettes à côté des éléments qui les séduisent le plus. Les éléments ayant eu le plus de votes seront alors traités en priorité.  Conseil : Demandez aux participants de ne pas voter pour leur propres idées!"],
+"goal" : "Prioriser les tâches, idées sous la forme d'un vote.",
+"addedValue" : "Permet à un groupe de focaliser la conversation sur les éléments du plus important au moins important.",
+"materials" : ["Gommettes"],
+LA GOMMETTOCRATIE
+Source :Dot Voting
+"timePersons" : "53-50"
+},
+{ "title" : "STORY MAPPING",
+"description" : "Le "story mapping" consiste en une organisation en deux dimensions des fonctionnalités du produit.  L'axe horizontal matérialise la succession (chronologique) des usages de l'utilisateur, l'axe vertical matérialise la priorité des fonctionnalités. En haut ce
+lles qui sont indispensables à l'usage, en bas celles qui sont annexes ou ne concernent qu'une fraction des ﬂux d'informations que traite le produit.",
+"goal" : "Structurer la planiﬁcation de versions d'un projet.",
+"addedValue" : "Modérer le risque de mettre en oeuvre un produit/service qui comporterait des fonctionnalités avec une forte "valeur métier", mais que l'utilisateur ne pourrait pas exploiter parce qu'elles s'avèrent dépendantes de fonctionnalités à plus faible "valeur métier", donc de plus basse priorité et qui n'ont pas encore été réalisées.",
+"materials" : ["Brown paper ","Post-it ","Feutres"],
+STORY MAPPING
+Source :Jeff Patton
+"timePersons" : "55-15"
+},
+{ 
+"title" : "MOSCOW",
+"description" : "Pour chaque besoin, les participants s'accordent sur l'importance des tâches à réaliser par rapport aux délais prévus.",
+"goal" : "Prioriser les tâches et besoins MOA.",
+"addedValue" : "Permet d'obtenir une compréhension commune et partagée des priorités.",
+"materials" : ["Paperboard ","Post-it ","Feutres"],
+MOSCOW
+L'animateur énonce le besoin. Lorsque le besoin est bien compris, l'animateur demande ensuite aux participants de le classer suivant la classiﬁcation suivante : M - MUST have this, c'est-à-dire "DOIT être fait" (Vital), S - SHOULD have this if at all possible, c'est-à-dire "DEVRAIT être fait dans la mesure du possible" (Essentiel), C - COULD have this if it does not aﬀect anything else, "POURRAIT être fait dans la mesure où cela n'a pas d'impact sur les autres tâches" (Confort), W - WON'T have this time but WOULD like in the future, "NE SERA PAS fait cette fois mais sera fait plus tard" (Luxe, c'est votre zone d'optimisation budgétaire).
+Source :Lean Management
+"timePersons" : "53-10"
+},
+{ "title" : "LE PRODUIT ROI",
+"description" : "Cette pratique consiste à mettre d'accord l'équipe métier et l'équipe de développement sur les fonctionnalités à réaliser en utilisant le planning poker.",
+"goal" : "Prioriser les besoins MOA en calculant le ROI des fonctionnalités.",
+"addedValue" : "Permet d'alerter la MOA sur des fonctionnalités coûteuses.",
+"materials" : ["Feuille A4 ","Feutres ","Planning poker"],
+LE PRODUIT ROI
+Former deux groupes : 1 groupe "MOE" et un groupe métier. L'animateur passe un à un l'ensemble des fonctionnalités à pondérer. Le groupe métier évalue chaque fonctionnalité en terme de valeur métier. Le groupe "MOE" évalue chaque fonctionnalité en terme d'eﬀort (complexité, temps passé). Si des contraintes techniques apparaissent, elles seront écrites sur la ﬁche. Pour évaluer la valeur métier ainsi que l'eﬀort, chaque groupe utilise un planning poker pour évaluer les fonctionnalités : Chaque participant abat une carte de notation. Les participants ayant alloués la note la plus faible et la note plus forte justiﬁent leur choix.  Chaque participant abat à nouveau une carte, c'est alors la moyenne de ces notes qui est prise en compte. On note alors la valeur métier et l'eﬀort à fournir de la fonctionnalité concernée et son ROI  ROI = valeur métier / eﬀort Une fois le ROI calculé pour toutes les fonctionnalités , celles-ci sont alors priorisées naturellement.
+"timePersons" : "605-15"
+},
+{ "title" : "DÉCISION PAR CONSENTEMENT",
+"description" : "L'idée consiste à orienter l'équipe vers une prise de décision par consentement et non par consensus.  On va donc chercher à ce que personne ne s'oppose à la décision et non pas à ce que tout le monde soit d'accord.",
+"goal" : "Prendre une décision non consensuelle.",
+"addedValue" : "La prise de décision par consentement se diﬀérencie de la prise de décision par consensus : en consensus tout le monde dit « oui », en consentement, personne ne dit « non ».",
+"materials" : ["Paperboard ","Feutres"],
+DÉCISION PAR CONSENTEMENT
+Etape 1 : (5 minutes) Enoncer les propositions sur un paperboard en formant un tableau avec trois colonnes Pour : je suis d'accord avec la proposition. Neutre : je ne suis pas tout à fait d'accord mais je ne m'oppose pas. Contre : je ne suis pas du tout d'accord avec cette proposition. Etape 2 : (10 minutes) Demander aux participants de se positionner en inscrivant leur nom dans la colonne correspondante. Etape 3 : (30 minutes) Demander aux participants qui ont inscrits leur nom dans la colonne "contre" d'expliciter leur choix et ce qu'ils feraient pour aller au moins vers le neutre. Ecrire les freins identiﬁés avec un ensemble d'actions. La proposition est alors acceptée lorsqu'aucun nom n'est inscrit sur la colonne "contre"
+"timePersons" : "303-10"
+},
+{ "title" : "LE CLASSEMENT FORCÉ",
+"description" : "Les participants disposent d'une liste d'éléments non hiérarchisés et des critères de classement clairs et compris par tout le monde. Les participants opèrent alors des choix sur chacun des éléments en fonction des autres.",
+"goal" : "Etablir un ordre de priorité sur des sujets précis.",
+"addedValue" : "Oblige l'équipe à eﬀectuer des choix.",
+"materials" : ["Paperboard ","Feutres"],
+LE CLASSEMENT FORCÉ
+Etape 1  Expliquer les éléments à classer et le ou les critères de classement. Dessiner une matrice avec diﬀérents éléments à classer ainsi que les critères retenus. Etape 2 Demander à chaque participant de classer les éléments en leur attribuant un numéro par ordre d'importance.  Le classement étant « forcé », les membres du groupe ne peuvent aﬀecter le même numéro à deux éléments. Etape 3  Lorsque tous les éléments ont été classés, faire le total des voix et examiner l'ordre de priorité établi ainsi que les prochaines étapes à déﬁnir.
+"timePersons" : "30-603-10"
+},
+{ "title" : "LE DELEGATION POKER",
+"description" : "Engagez une réﬂexion collective sur les diﬀérents niveaux de délégation sur des actions du quotidien en jouant aux cartes avec votre équipe. ",
+"goal" : "Comprendre les diﬀérents niveaux de délégation.",
+"addedValue" : "De façon ludique, permet d'ouvrir la discussion autour de la délégation au sein de son équipe.",
+"materials" : ["2 jeux de carte de délégation poker par personnes"],
+LE DELEGATION POKER
+Chaque participant se voit distribuer 1 jeu de cartes "Delegation Poker" On partage alors une situation de la vie de l'équipe. Chaque participant abat une carte pour indiquer le niveau de délégation souhaité. On échange autour de la situation pour comprendre les écarts. On partage une nouvelle situation. Les 7 niveaux de délégation sont les suivants : Dire : vous prenez la décision en tant que manager et vous informez l'équipe de cette décision, Vendre : vous prenez la décision mais vous essayez de convaincre les personnes du bien fondé, Consulter : vous prenez la décision mais après avoir écouté et pesé les commentaires de l'équipe, S'entendre : vous prenez la décision avec l'équipe d'égal à égal, Conseiller : Vous tentez d'inﬂuencer la décision mais cette dernière est prise par l'équipe, Enquêter : Vous laissez l'équipe décider et ensuite vous vous renseignez sur la décision et leur motivation, Déléguer : aucune inﬂuence, vous laissez l'équipe s'en sortir toute seule.
+Source :Jurgen Appelo (Management 3,0)
+"timePersons" : "605-7"
+},
+
+FAIRE LE BILAN
+{ "title" : "L'ÉTOILE DE MER",
+"description" : "Chacun des participants s'exprime sur un diagramme en forme d'étoile . Ce diagramme possède 6 axes : "on continue...", "on arrête...", "on fait moins de ...", "on fait plus de ...", "on tente...". A l'issue d'un vote (ex gommettocratie), l'animateur peut commencer à établir un plan d'action avec le groupe.",
+"goal" : "Décider des améliorations à mettre en oeuvre pour faciliter le travail d'équipe.",
+"addedValue" : "Rétrospective évitant l'eﬀet manichéen "ça marche" versus "ça marche pas". Permet de challenger l'équipe et apporter de nouvelles idées tout en restant positif.",
+"materials" : ["Paperboard ","Post-it ","Feutres"],
+L'ÉTOILE DE MER
+Dessiner un diagramme en forme d'étoile de mer. Explique se que signiﬁe chaque secteur : « On continue  » : Tout ce que l'on a aimé dans l'itération, tout ce qui a favorisé la collaboration et le résultat, « On arrête  » : Tout ce qui n'apporte aucune valeur ou qui entrave le fonctionnement de l'équipe, « On fait moins de  » : Les pratiques, les techno etc. qui mériteraient d'être aﬃnées dans le contexte actuel, « On fait plus de  » : Les pratiques / techno etc. que dont on ne tire pas assez les bénéﬁces, qu'il faudrait améliorer, « On tente  » : Toutes les idées de nouvelles pratiques à mettre en place. Chaque participant note alors sur des post-it des idées pour compléter le diagramme. Les participants présentent à tour de rôle leurs idées. Les idées similaires à d'autres post-it peuvent être regroupées. L'animateur demande ensuite aux participants de voter sur les idées qui leur semblent les plus importantes (par exemple en utilisant la technique de la gommettocratie). L'animateur peut alors commencer à élaborer un plan d'actions (pas plus de 5 actions en général).
+Source :Star Fish retrospective(thekua.com@rest )
+"timePersons" : "60-1205-30"
+},
+{ "title" : "TOURNE LA TABLE",
+"description" : "Demandez à chaque participant d'écrire sur 3 cartes vertes ce qui est positif dans le bilan de l'activité puis sur 3 cartes rouges les points d'amélioration.  Chacun passe ensuite ses cartes à son voisin et tente de trouver des idées d'amélioration.",
+"goal" : "Etre dans une démarche d'amélioration continue.",
+"addedValue" : "Augmenter le nombre et la qualité des axes d'amélioration.",
+"materials" : ["Fiche Bistrol verte et rouge"],
+TOURNE LA TABLE
+L'objectif est d'avoir le maximum d'idées.  Par exemple pour un groupe de 5 personnes, 90 idées peuvent ainsi ressortir. Réaliser l'atelier par groupe de 5 personnes maximum. 5 minutes par itération Demandez à chaque participant d'écrire sur 3 cartes vertes ce qui est positif dans le bilan de l'activité puis sur 3 cartes rouges les points d'amélioration.  Chacun passe ensuite ses cartes à son voisin et tente de trouver des idées d'amélioration. A l'issue, réaliser un ﬁltrage et catégoriser les idées puis établir un vote des idées.
+"timePersons" : "30-605-15"
+},
+{ "title" : "LE SPEED BOAT",
+"description" : "Sur un speed boat voguant vers son objectif (une île), l'équipe va exprimer ce qui la freine (le vent) et ce qui la pousse (le moteur).  L'utilisation de la métaphore du bateau favorise l'expression et l'échange.",
+"goal" : "Partager sur les freins et les leviers en utilisant l'analogie du bateau.",
+"addedValue" : "Obtenir une vue d'ensemble des forces et des contraintes. Vériﬁer que les participants sont en phase avec l'objectif initial.",
+"materials" : ["Brown paper ","Feutres ","Post-it bleu, orange et jaune"],
+LE SPEED BOAT
+Etape 1 (5 minutes) Présenter la métaphore du bateau.  L'utilisation de la métaphore du bateau favorise l'expression et l'échange. Etape 2 (5 minutes) Chaque participant réﬂéchit individuellement au sujet pendant 5 minutes et renseigne 3 post-it :  1 post-it bleu pour les voiles, 1 post-it rose pour les ancres, 1 post-it jaune pour l'horizon. Etape 3 (30 à 60 minutes en fonction du nombre de participants) Echange en groupe : un participant vient coller un premier post it et exprime son idée. Tous les participants qui ont formulé une idée similaire collent à leur tour leur post it au même endroit. On fait de même avec une nouvelle idée.
+Source :Innovation game
+"timePersons" : "60-1205-50"
+},
+{ "title" : "LA RÉTROSPECTIVE 4L",
+"description" : "L'animateur demande aux participants de lister les forces et les connaissances de l'équipe d'une part et ses axes d'amélioration.",
+"goal" : "Etre dans une démarche d'amélioration continue.",
+"addedValue" : "Une autre façon de faire une rétrospective.",
+"materials" : ["Brown paper ","Feutres ","Post-it"],
+LA RÉTROSPECTIVE 4L
+Aﬃcher 4 feuilles correspondant aux thèmes : - Liked : ce que j'ai aimé dans cette itération, - Learned : ce que j'ai appris durant cette itération, - Lacked : ce qui m'a manqué pour mieux travailler durant cette itération, - Longed For : ce que je désire pour l'itération à venir. Etape 1 (10 minutes) Demander à chacun des membres de l'équipe d'écrire silencieusement un ou plusieurs post-its par thème. Diviser les participants en 4 groupes (un groupe par thématique). Etape 2 (15-30 minutes) Laisser le groupe regrouper les idées en sous catégorie. Demander une restitution par thème. Etape 3 (10-20 minutes) Faire une synthèse et monter un plan d'actions avec les équipes.
+"timePersons" : "30-605-15"
+},
+{ "title" : "LE ROTI AGILE",
+"description" : "R.O.T.I : Return On Time Invested. Evaluez le retour sur le temps investi, à la ﬁn d'une réunion ou d'un atelier, sur une échelle de 1 à 5 en faisant voter chaque participant à main levée.",
+"steps" : ["Avoir un feedback à chaud d'une réunion, d'un atelier."],
+Moyen simple et rapide de faire un feedback des participants sur un atelier ou une réunion.
+LE ROTI AGILE
+Demander aux participant un rapide « Vote à 5 doigts » aﬁn d'évaluer la réunion ou l'atelier : 5 doigts : Excellente. Ça valait bien plus que le temps qu'on y a passé, 4 doigts : Bonne. J'ai gagné plus que le temps que j'y ai passé, 3 doigts : Juste Moyenne. Je n'ai pas perdu mon temps, sans plus, 2 doigts : Utile mais ça ne valait pas à 100% le temps que j'y ai passé, 1 doigt : Inutile. Je n'ai rien gagné, rien appris.
+"timePersons" : "55-50"
+},
+{ "title" : "L'ARBRE À POST-IT",
+"description" : "Représentez visuellement dans un des lieux de vie de l'équipe un arbre sur lequel chaque membre pourra venir déposer les problèmes qu'il rencontre (post-it rose) ou les idées/solutions (post-it vert).",
+"goal" : "Partager visuellement les problèmes et encourager les solutions.",
+"addedValue" : "Donne la parole à l'équipe. Interpelle le manager et l'équipe. Permet d'identiﬁer des sujets d'amélioration ou d'innovation.",
+"materials" : ["Paperboard ","Post-it vert et rose ","Feutres"],
+L'ARBRE À POST-IT
+Dessiner un arbre sur un paper board et demander aux participants de déposer  1- les problèmes qu'ils rencontrent sont écrits sur un post-it rose  2- les idées/solutions sont écrits sur un un post-it vert.  Cet outil de management visuel facilite la collaboration et l'échange. Il permet à l'équipe « d'évacuer » les diﬃcultés qu'elle rencontre et de se focaliser sur ses missions.  Cet arbre peut également accueillir uniquement des idées. Cet arbre peut être utilisé lors d'un séminaire qui pourra être alimenté tout au long de la journée.
+"timePersons" : "5-50"
+},
+{ "title" : "LA RÉTRO-VERNISSAGE",
+"description" : "Aﬃchez au mur, à la manière d'un vernissage, des points d'amélioration précédemment identiﬁés et les actions mises en oe
+uvre pour les traiter.  Recueillez ensuite l'avis des participants et, dans un même temps, des axes d'amélioration supplémentaires.  A la suite de cela faites une séance de décodage collaborative sur ce qui aura été écrit.",
+"goal" : "Etre dans une démarche d'amélioration continue.",
+"addedValue" : "Obtenir des points d'amélioration sur un sujet.",
+"materials" : ["Paperboard ","Post-it ","Feutres"],
+LA RÉTRO-VERNISSAGE
+"timePersons" : "5-50"
+},
+{ "title" : "LE BOX DES ACCUSÉS",
+"description" : "Les participants sont séparés en deux groupes travaillant respectivement sur les activités qui fonctionnent bien et les points d'amélioration de l'équipe. Deux représentants des groupes (le procureur et l'avocat) présentent alors les points de synthèse qui re
+ssortent sous forme de plaidoirie. L'animateur joue le rôle de juge et eﬀectue la synthèse en prononçant le jugement sous forme de plan d'actions.",
+"goal" : "Réaliser le diagnostic d'une équipe, d'un projet ou d'un processus.",
+"addedValue" : "Cet atelier utilise la pensée latérale en faisant travailler un groupe sur ses points forts et faibles pour aboutir à un plan d'actions. Renforce la communication libre grâce à l'aspect ludique de la mise en scène.",
+"materials" : ["Paperboard ","Feutres"],
+
+LE BOX DES ACCUSÉS
+Etape 1 (15 minutes) Présentation de l'atelier et du thème. Etape 2 (45 minutes) Les participants sont séparés en deux groupes d'accusés. Au sein de chaque groupe un rapporteur est nommé. Procureur pour le groupe 1, et avocat pour le groupe 2. Le groupe 1 travaille à lister les 10 points qui devraient être améliorés dans le fonctionnement de l'équipe, le projet ou le processus. Le groupe 2 travaille à lister les 10 points qui fonctionnent bien. Le procureur représente alors ses conclusions à l'ensemble du groupe réuni : "Les accusés sont coupables des faits qui leur sont reprochés pour les raisons suivantes...". Etape 3 (30 minutes) L'avocat prend ensuite la main pour plaider la relaxe des accusés en présentant à son tour la synthèse des travaux en sous groupes : "Les accusés sont non coupables des faits qui leur sont reprochés pour les raisons suivantes..". Etape 4 (60 minutes) Le juge (l'animateur) va alors mener les délibérations en faisant travailler le groupe sur le plan d'actions qui permet de capitaliser sur les points forts de l'avocat et corriger les points faibles soulevés par le procureur. Les points sont débattus et votés. Etape 5 (30 minutes) Le juge présente alors son jugement en eﬀectuant la synthèse des actions à mener et en prononçant la durée de la peine c'est à dire la durée du plan d'actions.
+Source :Travailler en mode workshop
+"timePersons" : "1805-15"
+},
+{ "title" : "ON REFAIT LE MATCH",
+"description" : "Lors de la mi-temps d’un match de foot. L’équipe se réuni dans le vestiaire aﬁn de connaitre les points forts de l’équipe et les éléments qui la ralenti dans l’objectif de gagner le match.",
+"goal" : "Eﬀectuer le bilan sur une activité.",
+"addedValue" : "Permet de visualiser les éléments qui se sont bien déroulés et les éléments qui ont réduit l’eﬃcacité de l’équipe.",
+"materials" : ["Paperboard ","Feutres ","Post-it"],
+ON REFAIT LE MATCH
+Les éléments : L’équipe blanche : L’équipe et ce qui permet d’avancer. L’équipe noir : Les éléments qui ralentissent l’équipe dans l’attente de l’objectif. Le but : La ﬁn du sprint. Les vestiaires : Axe d’amélioration de l’équipe Etape 1 : Présentation du match au participant (les deux équipes qui s’aﬀrontent). Etape 2 (5 minutes) : Chaque participant note sur des post-it les éléments qui permettent à l’équipe d’avancer et des éléments qui ralentissent l’équipe. Etape 3 : Chaque membre de l’équipe énonces son post-it et le dépose sur le terrain de foot. Etape 4 : Les vestiaires L’équipe déﬁni les axes d’amélioration pour la seconde mi-temps (prochain sprint).
+"timePersons" : "60-1205-15"
+},
+{ "title" : "A LA RECHERCHE DE LA CITÉ D’OR",
+"description" : "L’équipe part à la recherche d’une mystérieuse cité d’or. A l’aide de son équipement elle va traverser de dangereux obstacle.",
+"goal" : "Eﬀectuer le bilan sur une activité et le suivie des activités sur la période.",
+"addedValue" : "Permet de visualiser les éléments qui se sont bien déroulés et les éléments qui ont réduit l’eﬃcacité de l’équipe.",
+"materials" : ["Paperboard ","Feutres ","Post-it"],
+
+A LA RECHERCHE DE LA CITÉ D’OR
+Les éléments : La foret : Les obstacle ralentissant l’atteinte de l’objectif. La cité d’or : Objectif de l’équipe (le début du prochain sprint) L’équipe : Eléments qui se sont bien passés. Les outils : Les éléments qui vont aider l’équipe à avancer dans l’attente de la cité d’or. Etape 1 : Présentation de la situation. Où est l’équipe, ce qu’elle va aﬀronter et l’objectif à attendre. Etape 2 (5 minutes) : Chaque participant note sur des post-it les éléments qui permettent à l’équipe d’avancer et des éléments qui font obstacle à l’équipe. Etape 3 : Chaque membre de l’équipe énonces son post-it et le dépose sur le plan. Etape 4 : Les vestiaires L’équipe déﬁni les outils qui vont l’aider à avancer vers la cité d’or (prochain sprint).
+"timePersons" : "60-1205-15"
+},
+{ 
+"title" : "FEUILLE DE DIALOGUE",
+"description" : "L’équipe se réuni autour de la feuille de dialogue aﬁn de répondre au question inscrit autour de celle-ci.",
+"steps" : ["La feuille au format ISO A1 ou Poster US est pré-imprimée avec les instructions, citations et graphiques conçus pour piloter l’équipe et stimuler la conversation. Certaines des feuilles de rétrospectives présentent une ligne de temps que l’équipe doit remplir; Sinon le centre de la feuille est disponible pour l’équipe. Les membres de l’équipe sont libres d’écrire des commentaires n’importe où sur la feuille et quelques équipes ont demandé d’avoir encore plus d’espace pour la prise de notes. Entre 8 et 15 questions et orientations sont réparties autour de la feuille. Les deux ou trois premières instructions décrivent comment l’équipe peut travailler avec la feuille. Les questions suivantes sont conçues pour aider l’équipe à réﬂéchir. Enﬁn, en marge de la feuille, plusieurs citations sélectionnées stimulent la réﬂexion et rappellent aux membres de l’équipe les idées Agiles ou de développement logiciel en général. Les membres de l’équipe se positionnent eux même autour de la feuille, lisent les questions à tour de rôle, facilitent la discussion et collectent les réponses. Chaque membre de l’équipe est responsable à tour de rôle d’une question au moins. Cela assure une voix à chacun et rend plus diﬃcile la possibilité à une personne de dominer la discussion. En règle générale, le nombre maximum de participants est huit, avec un minimum de deux. Au-delà, l’équipe est invitée à se diviser en groupes plus petits, chaque groupe remplissant sa feuille, après quoi les équipes comparent et confrontent leurs conclusions. Le temps pour remplir une feuille dépend du nombre de personnes dans le groupe. Typiquement, une heure est suﬃsante, mais une équipe de huit, ou une équipe ayant beaucoup de choses à dire prendra plus de temps."],
+"goal" : "Eﬀectuer le bilan sur une activité au travers de diﬀérentes questions écrites sur la feuille de dialogue.",
+"addedValue" : "Permet à l’équipe de ne pas dépendre d’un ScrumMaster pour cette rétrospective et s’autoorganiser autour de la feuille de dialogue.",
+"materials" : ["Plateau imprimé au format A1"],
+FEUILLE DE DIALOGUE
+"timePersons" : "605-15"
+},
+http://lolcx.blogspot.fr/2012/01/feuilles-de-dialogue-un-nouvel-outil.html
+{ "title" : "RÉTROSPECTIVE DIXIT",
+"description" : "Partager son ressenti avec les autres participants au travers de carte DIXIT. Les autres participants doivent émettre des hypothèses sur ce que l’on exprime.",
+"steps" : ["60 cartes face visible. Chaque participant choisit trois cartes (une carte à la fois pour que le dernier ne soit pas trop désavantagé…) Chaque participant montre ensuite silencieusement une des cartes qu’il a choisi. Le reste de l’équipe émet alors des hypothèses sur les raisons qui l’ont poussé à choisir cette carte. Il explique ensuite pourquoi il a fait ce choix. Le facilitateur note au tableau les retours qui sortent."],
+"goal" : "Faire émerger les problèmes et comprendre le ressenti des autres.",
+"addedValue" : "Les problèmes émergent directement et sont naturellement priorisés",
+"materials" : ["Jeu de carte DIXIT"],
+RÉTROSPECTIVE DIXIT
+"timePersons" : "605-15"
+},
+http://www.agilex.fr/2013/04/retrospective-dixit/
+{ 
+"title" : "RORY STORY CUBES",
+"description" : "Créer une histoire autour des images proposé à l’issu d’un lancé de dés.",
+"steps" : ["Introduction : Une personne lance les cubes, chaque participant choisit un cube et donne une association de mots pour compléter une simple phrase d'introduction telle que “Le dernier sprint était génial parce que..." ou “Aujourd'hui, je me sens comme...”. Collecter les données : Utilisez les cubes pour inspirer l'histoire de la rétrospective. Collecter les idées : Pour mélanger les choses et vraiment booster les idées, essayez de combiner les Story Cubes avec du remue-méninges à l'écrit pour encourager chacun à générer des idées sur pourquoi les choses sont comme elles sont. Décider quoi faire : C'est là que les cubes actions ou voyages s'avèrent particulièrement utiles pour dégager des idées créatives sur “Qu'est ce que l'on devrait faire diﬀéremment au prochain sprint pour réussir encore mieux ?”. Clôturer la rétrospective : Similaire à l'introduction, laissez les participants sélectionner une image d'un cube pour les aider à compléter une phrase de clôture telle que “Notre prochain sprint sera meilleur car…"."],
+"goal" : "Utilisé une méthode créative aﬁn d’exprimer son ressenti sur le passé.",
+"addedValue" : "Utilisé la partie créative des participants aﬁn de générer de nouvelles idées et d’aborder les choses sous un nouveau point de vue.",
+"materials" : ["Jeu de dés « Story cubes »"],
+RORY STORY CUBES
+"timePersons" : "6005-15"
+},
+https://www.infoq.com/fr/news/2015/06/story-cubes
+{ "title" : "RÉTRO-ISHIKAWA",
+"description" : "Utilisé le diagramme de cause à eﬀet aﬁn de découvrir de nouveaux axe d’amélioration pour l’équipe en prenant en comptes des éléments extérieur à l’équipe.",
+"steps" : ["Cinq espaces à remplir : PERSONNE : relation, communication personnelle, bienêtre, etc. PROCESSUS : nos pratiques et façon de travailler, etc. EQUIPEMENT : équipement, matériel, etc. MANAGEMENT : relation, communication boite, vision, valeurs, objectifs, cohérence, etc. ENVIRONNEMENT : locaux, lieux, etc. Ensuite pareil : vous déﬁnissez sur quoi creuser à l’aide d’un dot voting."],
+"goal" : "Utilisé le diagramme de cause à eﬀet aﬁn de découvrir de nouveaux axes d’amélioration pour l’équipe",
+"addedValue" : "Découvrir de nouveaux axes d’amélioration en changeant la façon de regarder ce qui s’est passé.",
+"materials" : ["Paperboard ","Feutre ","Post-it"],
+RÉTRO-ISHIKAWA
+"timePersons" : "60-1205-15"
+},
+{ "title" : "LE SHERPA",
+"description" : "Chacun participe à gravir une montagne. Les atouts et les diﬃcultés rencontrées/à venir symbolise le chemin emprunté par l’équipe.",
+"steps" : ["Etape 1 : Préparation Tout d'abord : Faites dessiner une montagne face à nous avec un camp de base en bas de paperboard, avec un sommet qui est l'objectif à gravir. Selon le contexte le camp de base est le départ du sprint passé ou le kickoﬀ d'un projet Le sommet est l'attendu d'une release, la vision d'un programme. Etape 2 : Réﬂexion Laisser le temps nécessaire (15 minutes par exemple) aux participants pour réﬂéchir à ce vont être (ou ont été) les diﬃcultés rencontrées et les atouts. Etape 3 : Partage Puis faites partager par chaque participant à l'ensemble les écueils en les symbolisant sous forme de pierres, de sacs trop lourds, de pentes plus raides etc … De même pour les atouts : bonnes chaussures, cordée eﬃcace, matériel adéquate, temps clément. Le partage peut se faire 1 personne- 1 idée puis en faisant tourner mais aussi chaque personne dessine tous ses post-it etc .. L'objectif de ce type de rétro est aussi que la réunion soit fun, constructive et laissant l'imaginaire travailler pour favoriser l’émergence de toutes les idées. Etape 4 : Capitaliser Faites des regroupements, faites trouver les actions d'amélioration continuent et de bonnes pratiques à faire perdurer."],
+"goal" : "Visualiser les diﬃcultés rencontrés ou futur au travers d’un atelier collaboratif et ludique.",
+"addedValue" : "Impliquer chaque participant de façon constructive, amusante et en laissant travailler leur imagination.",
+"materials" : ["Paperboard ","Feutre ","Post-it"],
+LE SHERPA
+"timePersons" : "5-15"
+},
+{ "title" : "RÉTRO-STARWARS",
+"description" : "Participer à la guerre des étoiles dans l’univers de Starwars. Les participants vont déterminer les aspects provenant des deux cotés de la force.",
+"steps" : ["Etape 1. Set the stage : écoutez la Force qui est en vous (~5 minutes) [éventuellement sur fond de bande originale douce extraite du ﬁlm] Fermez les yeux, et écoutez la Force qui est en vous pendant une minute. Puis chacun dira l’attitude qu’il souhaite adopter pour cette rétrospective (exemple : constructif, observateur, dans l’attente d’aborder tel problème… Variante : son état d’esprit pour cette rétrospective ; son intention pour cette rétrospective ; …). Etape 2. Gather data : côté clair et côté obscur de la Force (~15 minutes) Considérez l’itération qui vient de s’écouler. Que considérez-vous comme étant du côté clair de la Force ? Et du côté obscur ? Ecrivez une idée par post-it pendant 3 minutes. Puis venez les coller sur le poster en expliquant aux autres vos diﬀérents points. Etape 3. Generate insights : partez en mission d’exploration (~20 minutes) Parmi les sujets remontés par chacun, votez pour un ou deux qui vous paraissent les plus importants à discuter aujourd’hui (en mettant un point au feutre sur les notes correspondantes). Formez deux groupes et partez en mission de reconnaissance sur le sujet choisi par chaque groupe. Vous avez 15 minutes pour en discuter et trouver des idées d’améliorations sur ce sujet. Etape 4. Decide what to do : déﬁnissez vos actions par personnage (~15 minutes) Sur la base de vos explorations, déﬁnissez les actions que vous souhaitez lancer au cours de la prochaine itération dans l’une des catégories suivantes :  • Action R2D2 : de type « courage »  • Action Padmé : de type « diplomatie »  • Action Luke Skywalker : de type « apprentissage »  • Action Yoda : de type « conseil / aide » Ecrivez une action par note, puis venez les expliquer à l’autre groupe en les posant dans la case correspondante sur le poster. Etape 5. Close the retrospective : cérémonie Jedi (~15 minutes) Pour chacun des membres de l’équipe à tour de rôle, demandez aux autres : “En quoi X est-il un Jedi pour l’équipe ? ». Et une ou plusieurs personnes peuvent répondre."],
+"goal" : "Faire bilan des actions réalisées au travers d’un atelier ludique sur le thème de Starwars",
+"addedValue" : "Ludique et créative. Les participants sont plongés dans l’univers de Starwars et deviennent des Jedi.",
+"materials" : ["Paperboard ","Feutre ","Post-it"],
+RÉTRO-STARWARS
+"timePersons" : "60-1205-15"
+},
+http://blog.octo.com/retrospective-agile-sur-le-theme-star-wars/
+{ "title" : "CELEBRATION GRID",
+"description" : "Faire un bilan sur les activités réalisées sur une période pour visualiser si celles-ci ont apporter de la valeur et de l’apprentissage.",
+"goal" : "Faire le bilan d’une activité et déterminé si celle-ci mérite d’être célébré.",
+"addedValue" : "Couvrir au travers des activités réalisé si celle-ci on apporter de l’apprentissage et de la valeur.",
+"materials" : ["Paperboard ","Feutre ","Post-it"],
+CELEBRATION GRID
+Votre organisation apprécie-t-elle les choses que vous avez apprises? Applaudissez-vous des collègues qui font bien leur travail? Trop souvent, les organisations vivent au jour le jour, d'une crise à l'autre, et oublient de prendre note des bonnes choses qui se sont produites. 
+Et il ne s'agit pas seulement d'applaudir les bonnes choses. Au travail et dans la vie, nous réussissons parfois et parfois nous échouons. Ce qui est important est que, que nous ayons un succès ou un échec, nous apprenons de l'expérience. C'est là que la gestion de la performance rate le plus le bateau. C'est pourquoi nous avons créé la grille de célébration pour célébrer l’apprentissage ! 
+En dessinant une grille de célébration et en posant deux questions importantes, nous pouvons chercher à implanter de bonnes pratiques dans l'avenir de notre entreprise. 
+Celebration Grids est un moyen visuel de présenter le résultat d'une expérience, que cette expérience ait réussi ou échoué. Il nous montre où nous pouvons célébrer les bonnes pratiques, qui résultent d'un résultat positif et où nous avons appris quelque chose de nos échecs.
+"timePersons" : "605-15"
+},
+Source : https://management30.com/practice/celebration-grids/
+{ 
+"title" : "MATRICE DES COMPÉTENCES",
+"description" : "Réunir l’équipe projet aﬁn de déterminer les compétences disponible et nécessaire pour parvenir à la réussite du projet.",
+"steps" : ["Déﬁnir les 3 niveaux de compétences : - Novice : Qu’es-ce que c’est ? - Pratiquant : Je peux le faire - Expert : Je peux l’enseigné Etape 1 : Lister les compétences nécessaire a la réalisation du projet et eﬀectuer une matrice avec chaque membre de l’équipe. Etape 2 :  Sélectionné, pour chaque compétence, le nombre de personne nécessaire en tant que Pratiquant et Expert. Etape 3 : Saisir les compétences de chacun autour des compétences sélectionnées"],
+"goal" : "Faire le bilan des compétences présent dans une équipe aﬁn de visualiser les compétences de chacun en fonction des besoins sur un ,projet.",
+"addedValue" : "Visualisation rapide des compétences nécessaire a la mise en place et a la réalisation d’un projet.",
+"materials" : ["Paperboard ","Feutre ","Post-it / Gommette"],
+"timePersons" : "605-15"
+},
+MATRICE DES COMPÉTENCES
+}
