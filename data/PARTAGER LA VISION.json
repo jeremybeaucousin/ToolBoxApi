@@ -16,7 +16,9 @@
             "Feutres"
         ],
         "source": "Source :Luke Hohmann (Innovation Games)",
-        "timePersons": "1205-30"
+        "eventDuration" : "01:20",
+        "numPersonMin" : 5,
+        "numPersonMax" : 30
     },
     {
         "title": "RETOUR VERS LE FUTUR",
@@ -31,7 +33,9 @@
             "Post-it",
             "Feutres"
         ],
-        "timePersons": "905-30"
+        "eventDuration" : "90",
+        "numPersonMin" : 5,
+        "numPersonMax" : 30
     },
     {
         "title": "AVEC DES SI",
@@ -41,7 +45,9 @@
         ],
         "goal": "Se projeter sur des solutions à partir d'une situation imaginaire.",
         "addedValue": "Libérer la créativité. Permettre à l'équipe d'entrer en résonance lors d'une séance de frénésie créative.",
-        "timePersons": "60-12015-50"
+        "eventDuration" : "01:20",
+        "numPersonMin" : 15,
+        "numPersonMax" : 50
     },
     {
         "title": "LE BLASON",
@@ -58,7 +64,9 @@
             "Ciseaux et Colle"
         ],
         "source": "Source :Passer en mode workshop",
-        "timePersons": "9010-50"
+        "eventDuration" : "00:90",
+        "numPersonMin" : 10,
+        "numPersonMax" : 50
     },
     {
         "title": "EMPATHY MAP",
@@ -74,7 +82,9 @@
             "Feutres"
         ],
         "source": "Source :Scott Matthews",
-        "timePersons": "155-15"
+        "eventDuration" : "00:15",
+        "numPersonMin" : 5,
+        "numPersonMax" : 15
     },
     {
         "title": "LE PECHA KUCHA",
@@ -85,7 +95,9 @@
         "goal": "Réaliser une présentation dynamique en utilisant uniquement des images.",
         "addedValue": "Favoriser l'esprit de synthèse. Eviter de monopoliser du temps. Développer la capacité à présenter et à communiquer une idée et donc à vendre.",
         "source": "Source :Astrid Klein et Mark Dytham",
-        "timePersons": "6,4>5"
+        "eventDuration" : "00:06",
+        "numPersonMin" : 5,
+        "numPersonMax" : 0
     },
     {
         "title": "LE VERNISSAGE",
@@ -97,7 +109,8 @@
             "Post-it ",
             "Feutres"
         ],
-        "timePersons": "5-50"
+        "numPersonMin" : 5,
+        "numPersonMax" : 50
     },
     {
         "title": "SESSION \"PRE MORTEM\"",
@@ -110,7 +123,9 @@
             "Feutres"
         ],
         "source": "Source :Gary Klein",
-        "timePersons": "605-30"
+        "eventDuration" : "00:60",
+        "numPersonMin" : 5,
+        "numPersonMax" : 30
     },
     {
         "title": "PERSONA",
@@ -125,6 +140,8 @@
             "Post-it ",
             "Feutres"
         ],
-        "timePersons": "603-10"
+        "eventDuration" : "00:60",
+        "numPersonMin" : 3,
+        "numPersonMax" : 10
     }
 ]

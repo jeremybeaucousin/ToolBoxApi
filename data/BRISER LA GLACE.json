@@ -15,7 +15,9 @@ Source : https://management30.com/practice/moving-motivators/*/
             "Pataﬁx"
         ],
         "source": "Les cartes DIXIT sont éditées par Libellud",
-        "timePersons": "3010-30"
+        "eventDuration" : "00:30",
+        "numPersonMin" : 10,
+        "numPersonMax" : 30
     },
     {
         "title": "LA CONSTELLATION",
@@ -30,7 +32,9 @@ Source : https://management30.com/practice/moving-motivators/*/
             "Un objet de référence à identiﬁer"
         ],
         "source": "Lyssa Adkins",
-        "timePersons": "105-30"
+        "eventDuration" : "00:10",
+        "numPersonMin" : 5,
+        "numPersonMax" : 30
     },
     {
         "title": "LE RÉSEAU SOCIAL EN PAPIER",
@@ -46,7 +50,9 @@ Source : https://management30.com/practice/moving-motivators/*/
             "scotch ",
             "ﬁches bristol (pour chaque participant)"
         ],
-        "timePersons": "305-30"
+        "eventDuration" : "00:30",
+        "numPersonMin" : 5,
+        "numPersonMax" : 30
     },
     {
         "title": "L'ALPHABET DES IDÉES",
@@ -60,7 +66,9 @@ Source : https://management30.com/practice/moving-motivators/*/
             "Paperboard ",
             "Feutres"
         ],
-        "timePersons": "305-20"
+        "eventDuration" : "00:30",
+        "numPersonMin" : 5,
+        "numPersonMax" : 20
     },
     {
         "title": "L’ARBRE À PERSONNAGES",
@@ -75,14 +83,18 @@ Source : https://management30.com/practice/moving-motivators/*/
             "Gommettes"
         ],
         "source": "Source :Travaillez en mode Workshop",
-        "timePersons": "155-50"
+        "eventDuration" : "00:15",
+        "numPersonMin" : 5,
+        "numPersonMax" : 50
     },
     {
         "title": "NON MAIS, OUI ET",
         "description": "L'animateur demande à tour de rôle de faire une phrase commençant par \"non mais\" puis par \"oui et\". Débriefer et constater la diﬀérence du ressenti entre \"non mais\" et \"oui et\".",
         "goal": "Adopter une attitude positive et constructive vis-à-vis du groupe.",
         "addedValue": "L'animateur fera en sorte que la consigne soit respectée tout au long de l'atelier.",
-        "timePersons": "53-10"
+        "eventDuration" : "00:05",
+        "numPersonMin" : 3,
+        "numPersonMax" : 10
     },
     {
         "title": "CRACHE TA VALDA",
@@ -96,7 +108,9 @@ Source : https://management30.com/practice/moving-motivators/*/
             "2/3 post-it vert par participant"
         ],
         "source": "Source :Travaillez en mode Workshop",
-        "timePersons": "905-15"
+        "eventDuration" : "00:90",
+        "numPersonMin" : 5,
+        "numPersonMax" : 15
     },
     {
         "title": "PRISONNIER, ACHETEUR, VACANCIER, EXPLORATEUR",
@@ -112,7 +126,9 @@ Source : https://management30.com/practice/moving-motivators/*/
             "Post-it."
         ],
         "source": "Source : Paulo Caroli et Taina Caetano",
-        "timePersons": "510-50"
+        "eventDuration" : "00:05",
+        "numPersonMin" : 1,
+        "numPersonMax" : 50
     },
     {
         "title": "BOUT DE PAPIER",
@@ -125,7 +141,9 @@ Source : https://management30.com/practice/moving-motivators/*/
         "materials": [
             "Post-it"
         ],
-        "timePersons": "53-10"
+        "eventDuration" : "00:05",
+        "numPersonMin" : 3,
+        "numPersonMax" : 10
     },
     {
         "title": "MOVING MOTIVATOR",
@@ -138,6 +156,8 @@ Source : https://management30.com/practice/moving-motivators/*/
         "materials": [
             "Jeu de carte Moving Motivator "
         ],
-        "timePersons": "303-10"
+        "eventDuration" : "00:30",
+        "numPersonMin" : 3,
+        "numPersonMax" : 10
     }
 ]
