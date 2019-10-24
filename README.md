@@ -69,11 +69,12 @@ Default password : "changeit"
 > sbt new playframework/play-scala-seed.g8
 Set project name and domain
 
-### Start server
+### Start dev server
 > sbt "run 9001"
 Default url : http://localhost:9000/
 in https
-> sbt "run -Dhttp.port=disabled -Dhttps.port=9001"
+> sbt "run -Dhttp.port=disabled -Dhttps.port=9001 -Dhttps.keyStore=C:\Users\JBEAUCOU\catalogapi.jks -Dhttps.keyStorePassword=jbeauc
+ou"
 Default url : https://localhost:9001/
 Production :
 > ./bin/your-app -Dhttp.port=disabled -Dhttps.port=9443 -Dplay.server.https.keyStore.path=/path/to/keystore -Dplay.server.https.keyStore.password=changeme
