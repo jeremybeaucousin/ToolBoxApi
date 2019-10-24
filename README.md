@@ -76,8 +76,7 @@ Set project name and domain
 > sbt "run 9001"
 Default url : http://localhost:9000/
 in https
-> sbt "run -Dhttp.port=disabled -Dhttps.port=9001 -Dhttps.keyStore=C:\Users\JBEAUCOU\catalogapi.jks -Dhttps.keyStorePassword=jbeauc
-ou"
+> sbt "run -Dhttp.port=disabled -Dhttps.port=9001 -Dhttps.keyStore=C:\Users\a\APP\toolboxapi-1.0-SNAPSHOT\certs\catalogapi.jks -Dhttps.keyStorePassword=jbeaucou"
 Default url : https://localhost:9001/
 Production :
 > ./bin/your-app -Dhttp.port=disabled -Dhttps.port=9443 -Dplay.server.https.keyStore.path=/path/to/keystore -Dplay.server.https.keyStore.password=changeme

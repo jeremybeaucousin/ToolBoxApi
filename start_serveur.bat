@@ -1,0 +1,1 @@
+.\bin\toolboxapi.bat -Dhttp.port=disabled -Dhttps.port=9000 -Dconfig.file=.\configuration\application.conf

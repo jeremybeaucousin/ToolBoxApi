@@ -1,0 +1,1 @@
+sbt "run -Dhttp.port=disabled -Dhttps.port=9001 -Dhttps.keyStore=C:\Users\a\APP\toolboxapi-1.0-SNAPSHOT\certs\catalogapi.jks -Dhttps.keyStorePassword=jbeaucou"
