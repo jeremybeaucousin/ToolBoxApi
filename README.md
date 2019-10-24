@@ -16,6 +16,7 @@
 ### Docker
 #### Create network
 > docker network create ToolBoxNetwork
+
 ## MongoDB
 ### Docker
 #### Créate container :
@@ -38,10 +39,6 @@ Search in values the phrase
 > db.toolBoxSheets.find( { $text: { $search: "jbeaucousin" } }, { score: { $meta: "textScore" } } ).sort( { score: { $meta: "textScore" } } )
 > Search by revelance
 
-## Elastic search
-### Docker 
-> docker run -d --name elasticsearchToolBox --net ToolBoxNetwork -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elasticsearch:7.4.0
-
 ### Mongo connector
 #### Create container
 > docker run -d -it --name mongoConnectorToolBox --net ToolBoxNetwork python:3.6-stretch
@@ -54,6 +51,12 @@ Search in values the phrase
 
 #### Enter container
 > docker exec -it mongo-toolboxapi "/bin/bash"
+
+## Elastic search
+### Docker 
+Create container :
+> docker run -d --name elasticsearchToolBox --net ToolBoxNetwork -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elasticsearch:7.4.0
+> docker run -d --name elasticsearchToolBoxApi -p 9200:9200 -p 9300:9300 -v "C:\Users\a\DockerVolume\ToolBoxApi\elasticsearch\data:/usr/share/elasticsearch/data" -e "discovery.type=single-node" elasticsearch:7.4.0
 
 ## Java
 ### SSL
@@ -79,6 +82,44 @@ Default url : https://localhost:9001/
 Production :
 > ./bin/your-app -Dhttp.port=disabled -Dhttps.port=9443 -Dplay.server.https.keyStore.path=/path/to/keystore -Dplay.server.https.keyStore.password=changeme
 
+### Secret key
+generate key :
+> sbt :
+in console
+> playGenerateSecret
+
+### Deployments
+#### universal
+packaging 
+> sbt
+in console
+> dist
+
+deploy
+> unzip toolboxapi-1.0-SNAPSHOT.zip
+
+launch :
+ * linux
+toolboxapi-1.0-SNAPSHOT/bin/toolboxapi -Dplay.http.secret.key=ad31779d4ee49d5ad5162bf1429c32e2e9933f3b
+ * windows
+no -Dhttp.address= for remote connexion
+toolboxapi-1.0-SNAPSHOT\bin\toolboxapi.bat -Dplay.http.secret.key="ZEy5cO:YgQ@Bb^P5/P[Y?HD^arVgZYJ25dEybZR;n9bfDAL3VXky5NMN><=YehlJ" -Dhttp.port=9000 -Dhttp.address=127.0.0.1
+
+issue :
+```
+The input line is too long.
+The syntax of the command is incorrect.
+Line 83 : 
+set "APP_CLASSPATH=%APP_LIB_DIR%\..\conf\;%APP_LIB_DIR%\*"
+```
+
+#### sbt assembly plugin
+> sbt
+in console
+> assembly
+launch 
+> java -Dplay.http.secret.key="ZEy5cO:YgQ@Bb^P5/P[Y?HD^arVgZYJ25dEybZR;n9bfDAL3VXky5NMN><=YehlJ" -Dhttp.port=9000 -Dhttp.address=127.0.0.1 -jar scala-2.13\toolboxapi_2.13-1.0-SNAPSHOT-web-assets.jar
+
 ### Unit Test
 Launch unit test :
 > sbt test
@@ -87,3 +128,4 @@ Launch unit test :
 #### Eclipse 
 > sbt compile
 > sbt eclipse
+> 
