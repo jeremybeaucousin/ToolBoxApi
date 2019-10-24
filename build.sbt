@@ -3,6 +3,8 @@ organization := "fr.scalian"
 
 version := "1.0-SNAPSHOT"
 
+maintainer := "Jeremy BEAUCOUSIN<jeremy.beaucousin@scalian.com>"
+
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
 scalaVersion := "2.13.0"
