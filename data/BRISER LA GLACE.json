@@ -17,7 +17,8 @@ Source : https://management30.com/practice/moving-motivators/*/
         "source": "Les cartes DIXIT sont éditées par Libellud",
         "eventDuration" : "00:30",
         "numPersonMin" : 10,
-        "numPersonMax" : 30
+        "numPersonMax" : 30,
+        "timePersons" : "3010-30"
     },
     {
         "title": "LA CONSTELLATION",
@@ -34,7 +35,8 @@ Source : https://management30.com/practice/moving-motivators/*/
         "source": "Lyssa Adkins",
         "eventDuration" : "00:10",
         "numPersonMin" : 5,
-        "numPersonMax" : 30
+        "numPersonMax" : 30,
+        "timePersons" : "105-30"
     },
     {
         "title": "LE RÉSEAU SOCIAL EN PAPIER",
@@ -52,7 +54,8 @@ Source : https://management30.com/practice/moving-motivators/*/
         ],
         "eventDuration" : "00:30",
         "numPersonMin" : 5,
-        "numPersonMax" : 30
+        "numPersonMax" : 30,
+        "timePersons" : "305-30"
     },
     {
         "title": "L'ALPHABET DES IDÉES",
@@ -68,7 +71,8 @@ Source : https://management30.com/practice/moving-motivators/*/
         ],
         "eventDuration" : "00:30",
         "numPersonMin" : 5,
-        "numPersonMax" : 20
+        "numPersonMax" : 20,
+        "timePersons" : "305-20"
     },
     {
         "title": "L’ARBRE À PERSONNAGES",
@@ -85,7 +89,8 @@ Source : https://management30.com/practice/moving-motivators/*/
         "source": "Source :Travaillez en mode Workshop",
         "eventDuration" : "00:15",
         "numPersonMin" : 5,
-        "numPersonMax" : 50
+        "numPersonMax" : 50,
+        "timePersons" : "155-50"
     },
     {
         "title": "NON MAIS, OUI ET",
@@ -94,7 +99,8 @@ Source : https://management30.com/practice/moving-motivators/*/
         "addedValue": "L'animateur fera en sorte que la consigne soit respectée tout au long de l'atelier.",
         "eventDuration" : "00:05",
         "numPersonMin" : 3,
-        "numPersonMax" : 10
+        "numPersonMax" : 10,
+        "timePersons" : "53-10"
     },
     {
         "title": "CRACHE TA VALDA",
@@ -110,7 +116,8 @@ Source : https://management30.com/practice/moving-motivators/*/
         "source": "Source :Travaillez en mode Workshop",
         "eventDuration" : "00:90",
         "numPersonMin" : 5,
-        "numPersonMax" : 15
+        "numPersonMax" : 15,
+        "timePersons" : "905-15"
     },
     {
         "title": "PRISONNIER, ACHETEUR, VACANCIER, EXPLORATEUR",
@@ -128,7 +135,8 @@ Source : https://management30.com/practice/moving-motivators/*/
         "source": "Source : Paulo Caroli et Taina Caetano",
         "eventDuration" : "00:05",
         "numPersonMin" : 1,
-        "numPersonMax" : 50
+        "numPersonMax" : 50,
+        "timePersons" : "510-50"
     },
     {
         "title": "BOUT DE PAPIER",
@@ -143,7 +151,8 @@ Source : https://management30.com/practice/moving-motivators/*/
         ],
         "eventDuration" : "00:05",
         "numPersonMin" : 3,
-        "numPersonMax" : 10
+        "numPersonMax" : 10,
+        "timePersons" : "53-10"
     },
     {
         "title": "MOVING MOTIVATOR",
@@ -158,6 +167,7 @@ Source : https://management30.com/practice/moving-motivators/*/
         ],
         "eventDuration" : "00:30",
         "numPersonMin" : 3,
-        "numPersonMax" : 10
+        "numPersonMax" : 10,
+        "timePersons" : "303-10"
     }
 ]

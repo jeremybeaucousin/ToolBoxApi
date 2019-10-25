@@ -18,7 +18,8 @@
         "source": "Source :Luke Hohmann (Innovation Games)",
         "eventDuration" : "01:20",
         "numPersonMin" : 5,
-        "numPersonMax" : 30
+        "numPersonMax" : 30,
+        "timePersons" : "1205-30"
     },
     {
         "title": "RETOUR VERS LE FUTUR",
@@ -35,7 +36,8 @@
         ],
         "eventDuration" : "90",
         "numPersonMin" : 5,
-        "numPersonMax" : 30
+        "numPersonMax" : 30,
+        "timePersons" : "905-30"
     },
     {
         "title": "AVEC DES SI",
@@ -47,7 +49,8 @@
         "addedValue": "Libérer la créativité. Permettre à l'équipe d'entrer en résonance lors d'une séance de frénésie créative.",
         "eventDuration" : "01:20",
         "numPersonMin" : 15,
-        "numPersonMax" : 50
+        "numPersonMax" : 50,
+        "timePersons" : "60-12015-50"
     },
     {
         "title": "LE BLASON",
@@ -66,7 +69,8 @@
         "source": "Source :Passer en mode workshop",
         "eventDuration" : "00:90",
         "numPersonMin" : 10,
-        "numPersonMax" : 50
+        "numPersonMax" : 50,
+        "timePersons" : "9010-50"
     },
     {
         "title": "EMPATHY MAP",
@@ -84,7 +88,8 @@
         "source": "Source :Scott Matthews",
         "eventDuration" : "00:15",
         "numPersonMin" : 5,
-        "numPersonMax" : 15
+        "numPersonMax" : 15,
+        "timePersons" : "155-15"
     },
     {
         "title": "LE PECHA KUCHA",
@@ -97,7 +102,8 @@
         "source": "Source :Astrid Klein et Mark Dytham",
         "eventDuration" : "00:06",
         "numPersonMin" : 5,
-        "numPersonMax" : 0
+        "numPersonMax" : 0,
+        "timePersons" : "6,4>5"
     },
     {
         "title": "LE VERNISSAGE",
@@ -110,7 +116,8 @@
             "Feutres"
         ],
         "numPersonMin" : 5,
-        "numPersonMax" : 50
+        "numPersonMax" : 50,
+        "timePersons" : "5-50"
     },
     {
         "title": "SESSION \"PRE MORTEM\"",
@@ -125,7 +132,8 @@
         "source": "Source :Gary Klein",
         "eventDuration" : "00:60",
         "numPersonMin" : 5,
-        "numPersonMax" : 30
+        "numPersonMax" : 30,
+        "timePersons" : "605-30"
     },
     {
         "title": "PERSONA",
@@ -142,6 +150,7 @@
         ],
         "eventDuration" : "00:60",
         "numPersonMin" : 3,
-        "numPersonMax" : 10
+        "numPersonMax" : 10,
+        "timePersons" : "603-10"
     }
 ]

@@ -1,0 +1,101 @@
+// GÉNÉRER DES IDÉES
+[
+    {
+        "title": "LE BRAINSTORMING",
+        "description": "Appelé également tempête d'idées ou remue-méninges, cette méthode permet de recueillir un maximum d'idées. Il est principalement utilisé dans les phases de créativité, notamment pour la recherche d’idées, d'amélioration en favorisant le travail d'équipe en exploitant le meilleur des idées de chacun.",
+        "steps": [
+            "Etape 1 - Poser le problème Les participants décrivent, sur des post-it, leurs idées par rapport au thème abordé. Chaque post-it doit décrire une seule idée.  Cette phase doit être eﬀectuée en silence et dure généralement 5 minutes. Ensuite, chaque participant colle un à un ses post-it sur un tableau et argumente. L'animateur tient ici une place clef aﬁn de s'assurer de la participation de chacun, mais aussi faire rebondir les participants sur une idée.  Etape 2 - Classiﬁer, purger L'animateur s'assure que les idées ont été toutes énoncées et commence devant le groupe à classiﬁer les idées par thème qui se dégage. Etape 3 - Voter Les participants sont invités à voter sur les post-it qui mettent en valeur les idées les plus innovantes (pas plus de 3 en général). L'animateur pourra utiliser la technique de la « gommettocratie »."
+        ],
+        "goal": "Récolter un maximum d'idées originales.",
+        "addedValue": "Facilite l'émergence des nouvelles idées. Implique les participants dans une logique d'amélioration de la cohésion de l'équipe.",
+        "materials": [
+            "Paper board, ",
+            "Post-it ",
+            "Feutres"
+        ],
+        "source": "Source :Alex Osborn",
+        "timePersons": "905-30"
+    },
+    {
+        "title": "LES ANALOGIES",
+        "description": "Utilisez des analogies entre divers domaines pour générer des idées neuves. Il s'agit de replacer le problème dans un autre domaine de la réalité.  Les idées ainsi générées seront ensuite transposées dans le contexte d'origine.",
+        "steps": [
+            "Etape 1 (5 minutes) Demander aux participants de rechercher individuellement des situations issues de la vie courante dans lequel se pose le problème. Etape 2 (10 minutes) Demander de présenter les analogies et sélectionner les plus pertinentes (3 ou 4) via un vote collectif. Etape 3 (30 minutes) Demander d'explorer les analogies retenues pour en comprendre le fonctionnement et d'analyser les solutions/idées mises en place pour résoudre le problème. Etape 4 (30 minutes) Demander de reporter chaque solution alors obtenue dans le contexte de la problématique posé initialement."
+        ],
+        "goal": "Générer des idées en stimulant l'esprit créatif grâce aux analogies.",
+        "addedValue": "Utile dans le cadre d'ateliers de génération d'idées ou dans des démarches d'amélioration continue.",
+        "materials": [
+            "Paper board ",
+            "Post-it ",
+            "Feutres"
+        ],
+        "timePersons": "455-15"
+    },
+    {
+        "title": "BRAINWRITING",
+        "description": "Demandez à chaque participant d'écrire chacune de ses idées sur une feuille A4 et de les passer à son voisin aﬁn qu'il les enrichisse.  Cette pratique permet à chaque participant de s'exprimer et de rebondir par écrit sur les idées émises par les autres participants.",
+        "steps": [
+            "Etape 1 (5 minutes) Expliquer la problématique et s'assurer qu'elle est comprise par tout le monde. Etape 2 (25 minutes pour un groupe de 5 personnes) Demander à chaque participant d'inscrire 3 idées sur des post-it et de les coller sur une feuille A4. Donner 5 minutes aux participants pour y inscrire 3 idées. Au bout de 5 minutes, faire tourner la feuille à son voisin qui peut s'inspirer / réagir aux suggestions déjà remplies. Au bout de 25 minutes, le groupe aura généré en théorie 5x3x5 = 75 idées ! Astuce : Faire ensuite un diagramme d'aﬃnité aﬁn d'organiser les idées."
+        ],
+        "goal": "Générer un maximum idées.",
+        "addedValue": "Variante du brainstorming à utiliser dans de multiples contextes où l'on cherche à générer des idées (atelier de résolution de problèmes, recherche de solutions, ...).",
+        "materials": [
+            "Feuille A4 ",
+            "Post-it ",
+            "Feutres"
+        ],
+        "timePersons": "305-30"
+    },
+    {
+        "title": "LE DIAGRAMME D'AFFINITÉ",
+        "description": "Le diagramme d'aﬃnité est un outil généralement employé pour organiser des idées évoquées lors d'un brainstorming (ou autre méthode de recherche d'idées) en les structurant par thèmes ou catégories. Ces thèmes seront établis en fonction des liens existants entre les diﬀérentes idées = aﬃnité des idées les unes avec les autres.",
+        "steps": [
+            "Etape 1 : Idéation Utiliser la technique du brainstorming ou du brainwriting pour générer un maximum d'idées. Etape 2 : Catégoriser L'animateur prend un à un chaque post-it puis commence à grouper des points communs entre les idées et les regrouper en catégories. Les catégories seront notées sur un post-it de couleur diﬀérentes. Les noms des catégories devront être validés par le groupe."
+        ],
+        "goal": "Organiser les idées.",
+        "addedValue": "Facilite l'émergence des nouvelles idées. Outil simple pour clariﬁer un problème.",
+        "materials": [
+            "Paperboard ",
+            "Post-it ",
+            "Feutres"
+        ],
+        "source": "Appelé également Diagrame KJ identiﬁée par les initiales de son auteur : Jiro Kawakita",
+        "timePersons": "605-15"
+    },
+    {
+        "title": "VALUE PROPOSITION CANVAS",
+        "description": "Le canevas de proposition de valeur (Value Proposition Canvas) permet de : 1- Comprendre le proﬁl du client sur la base de son environnement, ses préoccupations, ses aspirations 2- Proposer une proposition de valeur sur la base des attentes du client.",
+        "steps": [
+            "Source: https://strategyzer.com/"
+        ],
+        "timePersons": "60-1205-20"
+    },
+    {
+        "title": "LE MINDMAPPING",
+        "description": "Le MindMapping est aussi appelé carte heuristique, carte mentale, diagramme en arbre , arbre de décision. Cet outil peut être utilisé dans la résolution de problèmes. Il fournit une représentation en arborescence qui permet de structurer et décomposer en multi-niveaux des idées en fonction d'une situation à analyser.",
+        "steps": [
+            "Quelques conseils pour créer un Mind Map : La carte est au format format paysage. Le sujet ou thème de la Mind Map est symbolisé par une image centrale. Les idées ou rubriques principales sont disposées autour de l'image centrale sous forme de branches. Chaque branche s'accompagne d'une image clé et/ou d'une expression clé dessinée ou imprimée sur la ligne qui lui est associée. Les idées périphériques sont représentées en tant que \"rameaux\" de la branche connexe. L'ensemble des branches forment un arbre dont les nœuds sont liés les uns aux autres. Les branches, rameaux sont colorés si besoin."
+        ],
+        "goal": "Représenter les idées de façon hiérarchique, facilitant ainsi le choix des actions à mettre en oeuvre.",
+        "addedValue": "Lisibilité et facilité de construction. Répond à la question « Comment réaliser ce que nous avons décidé de faire ? ». Peut traiter tout type de cas, pas de restriction.",
+        "materials": [
+            "Paperboard ",
+            "Logiciel de mindMapping"
+        ],
+        "timePersons": "5-50"
+    },
+    {
+        "title": "LA BAGUETTE MAGIQUE",
+        "description": "L’objectif est de mettre de coté les contraintes a la réﬂexion d’une équipe sans ignorer ses contraintes mais en les traitent plus tard.",
+        "steps": [
+            "1 - Assurez vous d’avoir bien compris objection en la reformulant. 2 - Dites : « en supposant que nous avons une baguette magique, et que d’un coup de baguette magique nous pouvons supprimer [l’objection]. » 3 - Assurez vous que l’objection est notée quelque part, sur un document électronique ou, un post-it pour qu’elle ne soit pas perdu. 4 - Reprendre l’activité créative."
+        ],
+        "goal": "Refaire marché l’activité de créativité d’une équipe.",
+        "addedValue": "Permet a l’équipe de se reconcentrer sur l’objectif de la séances en mettant de coté les problèmes ralentissant la phase de réﬂexion.",
+        "materials": [
+            "Post-its ",
+            "Feutres"
+        ],
+        "timePersons": "5-25"
+    }
+]

@@ -1,0 +1,73 @@
+// PRIORISER ET DECIDER
+[
+    { "title" : "LE PLANNING POKER",
+        "description" : "Cette pratique bien connue du monde de l'agilité permet non seulement d'estimer des tâches mais également de prioriser des idées ou les fonctionnalités d'un produit.  L'estimation d'un élément se réalise en points, à l'aide de cartes spéciﬁques en recherchant le consensus au sein du groupe.",
+        "steps" : ["Le Poker \" Fibonacci\" nécessite un jeu de 13 cartes de valeurs : 0  0,5  1  2  3  5  8  13  20  40  100 et l'inﬁni. L'animateur passe un à un l'ensemble des thèmes à aborder. Chaque participant vote en secret et abat sa carte de planning poker. Les participants ayant alloués la note la plus faible et la note plus forte justiﬁent leur choix.  Chaque participant abat à nouveau une carte et ce jusqu'à ce que tous les participants aient convergé dans leur choix (on tolèrera un écart d'un incrément). On note la valeur retenue sur le post-it correspondant à la thématique. Il faut compter 5 minutes par vote."],
+        "goal" : "Estimer et prioriser des actions.",
+        "addedValue" : "Permet à tous de s'exprimer librement, en minimisant l'inﬂuence des autres membres de l'équipe.  L'estimation sera meilleure parce que plusieurs personnes l'auront validée. Favorise les échanges entre le responsable de produits et l'équipe de développement.",
+        "materials" : ["Planning poker"],
+        "source" : "Source :Agile Estimating and Planning (Mike Cohn)",
+        "timePersons" : "103-10"
+    },
+    { 
+        "title" : "LA GOMMETTOCRATIE",
+        "description" : "Les participants sont invités à placer une ou plusieurs gommettes sur les idées qui séduisent le plus.",
+        "steps" : ["En pré-requis, l'animateur expose les éléments qui doivent faire l'objet du vote. Tous les éléments doivent être compris par tout le monde. Chaque participant dispose de 3 gommettes (chaque vote sera représenté par une gommette). L'animateur demande aux membres du groupe de coller une ou plusieurs gommettes à côté des éléments qui les séduisent le plus. Les éléments ayant eu le plus de votes seront alors traités en priorité.  Conseil : Demandez aux participants de ne pas voter pour leur propres idées!"],
+        "goal" : "Prioriser les tâches, idées sous la forme d'un vote.",
+        "addedValue" : "Permet à un groupe de focaliser la conversation sur les éléments du plus important au moins important.",
+        "materials" : ["Gommettes"],
+        "source" : "Source :Dot Voting",
+        "timePersons" : "53-50"
+    },
+    { "title" : "STORY MAPPING",
+        "description" : "Le \"story mapping\" consiste en une organisation en deux dimensions des fonctionnalités du produit.  L'axe horizontal matérialise la succession (chronologique) des usages de l'utilisateur, l'axe vertical matérialise la priorité des fonctionnalités. En haut celles qui sont indispensables à l'usage, en bas celles qui sont annexes ou ne concernent qu'une fraction des ﬂux d'informations que traite le produit.",
+        "goal" : "Structurer la planiﬁcation de versions d'un projet.",
+        "addedValue" : "Modérer le risque de mettre en oeuvre un produit/service qui comporterait des fonctionnalités avec une forte \"valeur métier\", mais que l'utilisateur ne pourrait pas exploiter parce qu'elles s'avèrent dépendantes de fonctionnalités à plus faible \"valeur métier\", donc de plus basse priorité et qui n'ont pas encore été réalisées.",
+        "materials" : ["Brown paper ","Post-it ","Feutres"],
+        "source" : "Source :Jeff Patton",
+        "timePersons" : "55-15"
+    },
+    { 
+        "title" : "MOSCOW",
+        "description" : "Pour chaque besoin, les participants s'accordent sur l'importance des tâches à réaliser par rapport aux délais prévus.",
+        "goal" : "Prioriser les tâches et besoins MOA.",
+        "addedValue" : "Permet d'obtenir une compréhension commune et partagée des priorités.",
+        "materials" : ["Paperboard ","Post-it ","Feutres"],
+        "steps" : "L'animateur énonce le besoin. Lorsque le besoin est bien compris, l'animateur demande ensuite aux participants de le classer suivant la classiﬁcation suivante : M - MUST have this, c'est-à-dire \"DOIT être fait\" (Vital), S - SHOULD have this if at all possible, c'est-à-dire \"DEVRAIT être fait dans la mesure du possible\" (Essentiel), C - COULD have this if it does not aﬀect anything else, \"POURRAIT être fait dans la mesure où cela n'a pas d'impact sur les autres tâches\" (Confort), W - WON'T have this time but WOULD like in the future, \"NE SERA PAS fait cette fois mais sera fait plus tard\" (Luxe, c'est votre zone d'optimisation budgétaire).",
+        "source" : "Source :Lean Management",
+        "timePersons" : "53-10"
+    },
+    { "title" : "LE PRODUIT ROI",
+        "description" : "Cette pratique consiste à mettre d'accord l'équipe métier et l'équipe de développement sur les fonctionnalités à réaliser en utilisant le planning poker.",
+        "goal" : "Prioriser les besoins MOA en calculant le ROI des fonctionnalités.",
+        "addedValue" : "Permet d'alerter la MOA sur des fonctionnalités coûteuses.",
+        "materials" : ["Feuille A4 ","Feutres ","Planning poker"],
+        "steps" : "Former deux groupes : 1 groupe \"MOE\" et un groupe métier. L'animateur passe un à un l'ensemble des fonctionnalités à pondérer. Le groupe métier évalue chaque fonctionnalité en terme de valeur métier. Le groupe \"MOE\" évalue chaque fonctionnalité en terme d'eﬀort (complexité, temps passé). Si des contraintes techniques apparaissent, elles seront écrites sur la ﬁche. Pour évaluer la valeur métier ainsi que l'eﬀort, chaque groupe utilise un planning poker pour évaluer les fonctionnalités : Chaque participant abat une carte de notation. Les participants ayant alloués la note la plus faible et la note plus forte justiﬁent leur choix.  Chaque participant abat à nouveau une carte, c'est alors la moyenne de ces notes qui est prise en compte. On note alors la valeur métier et l'eﬀort à fournir de la fonctionnalité concernée et son ROI  ROI = valeur métier / eﬀort Une fois le ROI calculé pour toutes les fonctionnalités , celles-ci sont alors priorisées naturellement.",
+        "timePersons" : "605-15"
+    },
+    { "title" : "DÉCISION PAR CONSENTEMENT",
+        "description" : "L'idée consiste à orienter l'équipe vers une prise de décision par consentement et non par consensus.  On va donc chercher à ce que personne ne s'oppose à la décision et non pas à ce que tout le monde soit d'accord.",
+        "goal" : "Prendre une décision non consensuelle.",
+        "addedValue" : "La prise de décision par consentement se diﬀérencie de la prise de décision par consensus : en consensus tout le monde dit « oui », en consentement, personne ne dit « non ».",
+        "materials" : ["Paperboard ","Feutres"],
+        "steps" : "Etape 1 : (5 minutes) Enoncer les propositions sur un paperboard en formant un tableau avec trois colonnes Pour : je suis d'accord avec la proposition. Neutre : je ne suis pas tout à fait d'accord mais je ne m'oppose pas. Contre : je ne suis pas du tout d'accord avec cette proposition. Etape 2 : (10 minutes) Demander aux participants de se positionner en inscrivant leur nom dans la colonne correspondante. Etape 3 : (30 minutes) Demander aux participants qui ont inscrits leur nom dans la colonne \"contre\" d'expliciter leur choix et ce qu'ils feraient pour aller au moins vers le neutre. Ecrire les freins identiﬁés avec un ensemble d'actions. La proposition est alors acceptée lorsqu'aucun nom n'est inscrit sur la colonne \"contre\"",
+        "timePersons" : "303-10"
+    },
+    { "title" : "LE CLASSEMENT FORCÉ",
+        "description" : "Les participants disposent d'une liste d'éléments non hiérarchisés et des critères de classement clairs et compris par tout le monde. Les participants opèrent alors des choix sur chacun des éléments en fonction des autres.",
+        "goal" : "Etablir un ordre de priorité sur des sujets précis.",
+        "addedValue" : "Oblige l'équipe à eﬀectuer des choix.",
+        "materials" : ["Paperboard ","Feutres"],
+        "steps" : "Etape 1  Expliquer les éléments à classer et le ou les critères de classement. Dessiner une matrice avec diﬀérents éléments à classer ainsi que les critères retenus. Etape 2 Demander à chaque participant de classer les éléments en leur attribuant un numéro par ordre d'importance.  Le classement étant « forcé », les membres du groupe ne peuvent aﬀecter le même numéro à deux éléments. Etape 3  Lorsque tous les éléments ont été classés, faire le total des voix et examiner l'ordre de priorité établi ainsi que les prochaines étapes à déﬁnir.",
+        "timePersons" : "30-603-10"
+    },
+    { "title" : "LE DELEGATION POKER",
+        "description" : "Engagez une réﬂexion collective sur les diﬀérents niveaux de délégation sur des actions du quotidien en jouant aux cartes avec votre équipe. ",
+        "goal" : "Comprendre les diﬀérents niveaux de délégation.",
+        "addedValue" : "De façon ludique, permet d'ouvrir la discussion autour de la délégation au sein de son équipe.",
+        "materials" : ["2 jeux de carte de délégation poker par personnes"],
+        "steps" : "Chaque participant se voit distribuer 1 jeu de cartes \"Delegation Poker\" On partage alors une situation de la vie de l'équipe. Chaque participant abat une carte pour indiquer le niveau de délégation souhaité. On échange autour de la situation pour comprendre les écarts. On partage une nouvelle situation. Les 7 niveaux de délégation sont les suivants : Dire : vous prenez la décision en tant que manager et vous informez l'équipe de cette décision, Vendre : vous prenez la décision mais vous essayez de convaincre les personnes du bien fondé, Consulter : vous prenez la décision mais après avoir écouté et pesé les commentaires de l'équipe, S'entendre : vous prenez la décision avec l'équipe d'égal à égal, Conseiller : Vous tentez d'inﬂuencer la décision mais cette dernière est prise par l'équipe, Enquêter : Vous laissez l'équipe décider et ensuite vous vous renseignez sur la décision et leur motivation, Déléguer : aucune inﬂuence, vous laissez l'équipe s'en sortir toute seule.",
+        "source" : "Source :Jurgen Appelo (Management 3,0)",
+        "timePersons" : "605-7"
+    }
+]
