@@ -8,6 +8,7 @@ import play.api.Configuration
 import play.api.libs.ws._
 
 import scala.concurrent.{ ExecutionContext, Future, Promise }
+import com.scalian.utils.enums.ConfigurationsEnum
 
 @Singleton
 class ToolBoxDao @Inject() (
@@ -15,7 +16,10 @@ class ToolBoxDao @Inject() (
     ws: WSClient) (implicit ec: ExecutionContext) 
   extends AbstractElasticsearchRepo(config, ws) {
   
-  this.indexRoute = config.get[String]("elasticsearch.route.catalog") + config.get[String]("elasticsearch.route.toolboxsheets")
+  private final val elasticSearchKey = ConfigurationsEnum.elasticsearch.KEY
+  private final val routeKey = s"${elasticSearchKey}.${ConfigurationsEnum.elasticsearch.routes.KEY}"
+  
+  this.indexRoute = config.get[String](s"${routeKey}.${ConfigurationsEnum.elasticsearch.routes.catalog}") + config.get[String](s"${routeKey}.${ConfigurationsEnum.elasticsearch.routes.toolboxsheets}")
   
   override def find(wordSequence: String, offset: Int, limit: Int, sort: String) = {
     super.find(wordSequence, offset, limit, sort)

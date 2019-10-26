@@ -11,6 +11,10 @@ import play.api.libs.json.{JsObject, Json, JsString, JsValue}
 
 import scala.concurrent.{ ExecutionContext, Future, Promise }
 import play.api.http.Status
+import com.scalian.utils.enums.ConfigurationsEnum
+import play.libs.ws.ahc.AhcCurlRequestLogger
+import play.api.libs.ws.ahc.AhcCurlRequestLogger
+import com.scalian.utils.ElasticSearchRequestFilter
 
 abstract class AbstractElasticsearchRepo @Inject() (
     config: Configuration, 
@@ -96,12 +100,15 @@ abstract class AbstractElasticsearchRepo @Inject() (
     final val _source = "_source"
   }
   
-  val repoUrl = config.get[String]("elasticsearch.url")
+  private final val elasticSearchKey = ConfigurationsEnum.elasticsearch.KEY
+  
+  val repoUrl = config.get[String](s"${elasticSearchKey}.${ConfigurationsEnum.elasticsearch.url}")
   var indexRoute: String = ""
  
   def find(wordSequence: String, offset: Int, limit: Int, sort: String): Future[(Int, JsValue, Boolean)] = { 
     val uri = s"${getUri()}${routes.search}"
     var request: WSRequest = ws.url(uri)
+    request = request.withRequestFilter(ElasticSearchRequestFilter(config))
     
     // Add query param   
     if(wordSequence != null && !wordSequence.isBlank()) {
@@ -129,15 +136,24 @@ abstract class AbstractElasticsearchRepo @Inject() (
       }
       request = request.addQueryStringParameters(queryParams.sort -> sortValue)
     }
+
     logger.debug(s"call find for uri ${uri} with request ${request}")
     request.get().map(response => {
-      handleSearchResponse(response)
+      val json = response.json
+      if(response.status == Status.OK) {
+        parseSearchResponse(json)
+      } else {
+        (0, json, true)
+
+      }
     })
   }
   
   def findById(id: String) = { 
     val uri = s"${getUri()}${id}"
     var request: WSRequest = ws.url(uri)
+    request = request.withRequestFilter(ElasticSearchRequestFilter(config))
+    
     logger.debug(s"call find for uri ${uri} with request ${request}")
     request.get().map(response => {
       handleIdResponse(response)
@@ -146,7 +162,10 @@ abstract class AbstractElasticsearchRepo @Inject() (
   
   def insert(jsonData: JsObject): Future[(String, JsValue)] = { 
     val uri = s"${getUri()}"
+    
     var request: WSRequest = ws.url(uri)
+    request = request.withRequestFilter(ElasticSearchRequestFilter(config))
+    
     logger.debug(s"call save for uri ${uri} with data ${jsonData}; request ${request}")
     request.post(jsonData).map(response => {
       val json = response.json
@@ -161,7 +180,10 @@ abstract class AbstractElasticsearchRepo @Inject() (
   
   def update(id: String, jsonData: JsObject): Future[(Boolean, JsValue)]  = { 
     val uri = s"${getUri()}${id}"
+    
     var request: WSRequest = ws.url(uri)
+    request = request.withRequestFilter(ElasticSearchRequestFilter(config))
+    
     logger.debug(s"call edit for uri ${uri} with data ${jsonData}; with request ${request}")
     request.post(jsonData).map(response => {
       val json = response.json
@@ -176,6 +198,8 @@ abstract class AbstractElasticsearchRepo @Inject() (
   def remove(id: String): Future[(Boolean, JsValue)] = { 
     val uri = s"${getUri()}${id}"
     var request: WSRequest = ws.url(uri)
+    request = request.withRequestFilter(ElasticSearchRequestFilter(config))
+    
     logger.debug(s"call delete for uri ${uri} with request ${request}")
     request.delete().map(response => {
      var updated = true
@@ -190,20 +214,11 @@ abstract class AbstractElasticsearchRepo @Inject() (
     s"${repoUrl}${indexRoute}/"
   }
   
-  private def handleSearchResponse(response: WSResponse): (Int, JsValue, Boolean) = {
-    val jsonResponse = response.json
-    var total = 0
-    var results = Json.parse("{}")
-    var error = false
-    if(response.status == Status.BAD_REQUEST) {
-      results = jsonResponse
-      error = true
-    } else {
-      val hits = (jsonResponse \ searchResponseKeys.hits.KEY).get
-      total = (hits \ searchResponseKeys.hits.total.KEY \ searchResponseKeys.hits.total.value).as[Int]
-      results = (hits \ searchResponseKeys.hits.hits).get
-    }
-    (total, results, error)
+  private def parseSearchResponse(jsonResponse: JsValue): (Int, JsValue, Boolean) = {
+    val hits = (jsonResponse \ searchResponseKeys.hits.KEY).get
+    var total = (hits \ searchResponseKeys.hits.total.KEY \ searchResponseKeys.hits.total.value).as[Int]
+    var results = (hits \ searchResponseKeys.hits.hits).get
+    (total, results, false)
   }
   
   private def handleIdResponse(response: WSResponse): (Boolean, JsValue) = {
