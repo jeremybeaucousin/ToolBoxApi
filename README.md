@@ -63,16 +63,46 @@ Example configuration
 ```
 cluster.name: "docker-cluster"
 network.host: 0.0.0.0
-xpack.security.enabled: true
-xpack.security.http.ssl.enabled: true
-xpack.security.http.ssl.key: certs/catalogsElasticsearch.key 
-xpack.security.http.ssl.certificate: certs/catalogsElasticsearch.crt
-xpack.security.http.ssl.certificate_authorities: [ "certs/jbeaucousin.crt", "certs/rootUpscalers.crt" ]
-xpack.security.transport.ssl.enabled: true
-xpack.security.transport.ssl.verification_mode: certificate 
-xpack.security.transport.ssl.key: certs/catalogsElasticsearch.key 
-xpack.security.transport.ssl.certificate: certs/catalogsElasticsearch.crt 
-xpack.security.transport.ssl.certificate_authorities: [ "certs/jbeaucousin.crt", "certs/rootUpscalers.crt" ]
+xpack.security:
+  enabled: true
+  authc:
+    token.enabled: true
+    api_key.enabled: true
+    realms:
+      native:
+        realm1:
+          order: 0
+          authentication.enabled: false
+  http:
+    ssl:
+      enabled: true
+      key: certs/catalogsElasticsearch.key 
+      certificate: certs/catalogsElasticsearch.crt
+      certificate_authorities: [ "certs/jbeaucousin.crt", "certs/rootUpscalers.crt" ]
+      client_authentication: none
+  transport:
+    ssl:
+      enabled: true
+      verification_mode: certificate 
+      key: certs/catalogsElasticsearch.key 
+      certificate: certs/catalogsElasticsearch.crt 
+      certificate_authorities: [ "certs/jbeaucousin.crt", "certs/rootUpscalers.crt" ]
+```
+
+default users :
+ * elastic
+ * apm_system
+ * kibana
+ * logstash_system
+ * beats_system
+ * remote_monitoring_user
+ 
+Create api-key :
+> POST /_security/api_key
+```
+{
+  "name": "catalogs-api-key"
+}
 ```
 
 ## Java
