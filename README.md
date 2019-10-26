@@ -56,7 +56,24 @@ Search in values the phrase
 ### Docker 
 Create container :
 > docker run -d --name elasticsearchToolBox --net ToolBoxNetwork -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elasticsearch:7.4.0
-> docker run -d --name elasticsearchToolBoxApi -p 9200:9200 -p 9300:9300 -v "C:\Users\a\DockerVolume\ToolBoxApi\elasticsearch\data:/usr/share/elasticsearch/data" -e "discovery.type=single-node" elasticsearch:7.4.0
+> docker run -d --name elasticsearchToolBoxApi -p 9200:9200 -p 9300:9300 -v "C:\Users\a\DockerVolume\ToolBoxApi\elasticsearch\data:/usr/share/elasticsearch/data" -v "C:\Users\a\DockerVolume\ToolBoxApi\elasticsearch\configuration\elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml" -v "C:\Users\a\DockerVolume\ToolBoxApi\elasticsearch\certs\:/usr/share/elasticsearch/config/certs/" -e "discovery.type=single-node" elasticsearch:7.4.0
+
+### SSL
+Example configuration
+```
+cluster.name: "docker-cluster"
+network.host: 0.0.0.0
+xpack.security.enabled: true
+xpack.security.http.ssl.enabled: true
+xpack.security.http.ssl.key: certs/catalogsElasticsearch.key 
+xpack.security.http.ssl.certificate: certs/catalogsElasticsearch.crt
+xpack.security.http.ssl.certificate_authorities: [ "certs/jbeaucousin.crt", "certs/rootUpscalers.crt" ]
+xpack.security.transport.ssl.enabled: true
+xpack.security.transport.ssl.verification_mode: certificate 
+xpack.security.transport.ssl.key: certs/catalogsElasticsearch.key 
+xpack.security.transport.ssl.certificate: certs/catalogsElasticsearch.crt 
+xpack.security.transport.ssl.certificate_authorities: [ "certs/jbeaucousin.crt", "certs/rootUpscalers.crt" ]
+```
 
 ## Java
 ### SSL
