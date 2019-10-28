@@ -58,6 +58,10 @@ Create container :
 > docker run -d --name elasticsearchToolBox --net ToolBoxNetwork -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elasticsearch:7.4.0
 > docker run -d --name elasticsearchToolBoxApi -p 9200:9200 -p 9300:9300 -v "C:\Users\a\DockerVolume\ToolBoxApi\elasticsearch\data:/usr/share/elasticsearch/data" -v "C:\Users\a\DockerVolume\ToolBoxApi\elasticsearch\configuration\elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml" -v "C:\Users\a\DockerVolume\ToolBoxApi\elasticsearch\certs\:/usr/share/elasticsearch/config/certs/" -e "discovery.type=single-node" elasticsearch:7.4.0
 
+### Build-in users
+Reset password
+> bin/elasticsearch-setup-passwords interactive
+
 ### SSL
 Example configuration
 ```
