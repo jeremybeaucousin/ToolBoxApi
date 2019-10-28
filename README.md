@@ -74,9 +74,9 @@ xpack.security:
     api_key.enabled: true
     realms:
       native:
-        realm1:
+        native1:
           order: 0
-          authentication.enabled: false
+          authentication.enabled: true
   http:
     ssl:
       enabled: true
