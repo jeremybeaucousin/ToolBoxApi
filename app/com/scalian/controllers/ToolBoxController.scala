@@ -6,19 +6,8 @@ import play.api.mvc._
 
 import play.api.libs.json.{ JsObject, JsValue, Json }
 
-import play.modules.reactivemongo._
-
 import scala.concurrent.Future
 import scala.concurrent.{ ExecutionContext, Future, Promise }
-
-import reactivemongo.play.json._, collection._
-import reactivemongo.bson.BSONDocumentReader
-import reactivemongo.bson.BSONDocumentWriter
-
-import reactivemongo.api.Cursor
-import reactivemongo.api.ReadPreference
-import reactivemongo.api.collections.bson.BSONCollection
-import reactivemongo.bson.{ BSONDocument, BSONRegex }
 
 import com.hhandoko.play.pdf.PdfGenerator
 
