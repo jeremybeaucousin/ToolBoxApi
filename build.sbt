@@ -13,6 +13,7 @@ libraryDependencies += guice
 libraryDependencies += "com.hhandoko" %% "play27-scala-pdf" % "4.2.0"
 libraryDependencies += ws
 libraryDependencies += ehcache
+libraryDependencies += cacheApi
 
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "4.0.3" % Test
 

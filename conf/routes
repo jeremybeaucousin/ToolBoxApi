@@ -19,3 +19,9 @@ POST 	/toolboxes					com.scalian.controllers.ToolBoxController.addToolBoxSheet()
 PUT 	/toolboxes/:id				com.scalian.controllers.ToolBoxController.editToolBoxSheet(id: String)
 +anyhost
 DELETE	/toolboxes/:id				com.scalian.controllers.ToolBoxController.deleteToolBoxSheet(id: String)
+
+# toolboxes
++anyhost
+GET 	/login						com.scalian.controllers.AuthenticationController.login()
++anyhost
+GET 	/logout						com.scalian.controllers.AuthenticationController.logout()
