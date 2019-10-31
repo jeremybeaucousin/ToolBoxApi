@@ -10,11 +10,12 @@ lazy val root = (project in file(".")).enablePlugins(PlayScala)
 scalaVersion := "2.13.0"
 
 libraryDependencies += guice
-libraryDependencies += "com.hhandoko" %% "play27-scala-pdf" % "4.2.0"
 libraryDependencies += ws
 libraryDependencies += ehcache
-libraryDependencies += cacheApi
 
+libraryDependencies += "com.hhandoko" %% "play27-scala-pdf" % "4.2.0"
+
+// Tests
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "4.0.3" % Test
 
 

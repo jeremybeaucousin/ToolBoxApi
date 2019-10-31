@@ -7,12 +7,14 @@ object ConfigurationsEnum extends Enumeration {
     final object http {
       final val KEY = "http"
 
+      final object secret {
+        final val KEY = "secret"
+        final val key = "key"
+      }
+      
       final object session {
         final val KEY = "session"
-
-        final object maxAge {
-          final val KEY = "maxAge"
-        }
+        final val maxAge = "maxAge"
       }
     }
 
