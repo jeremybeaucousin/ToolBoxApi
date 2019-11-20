@@ -9,6 +9,8 @@ import play.api.libs.json.{ JsObject, JsValue, Json }
 import scala.concurrent.Future
 import scala.concurrent.{ ExecutionContext, Future, Promise }
 
+import be.objectify.deadbolt.scala.ActionBuilders
+
 import com.hhandoko.play.pdf.PdfGenerator
 
 import com.scalian.dal.ToolBoxDao
@@ -21,31 +23,35 @@ import com.scalian.dal.ToolBoxDao
 class ToolBoxController @Inject() (
   cc: ControllerComponents,
   action: DefaultActionBuilder,
+  actionBuilder: ActionBuilders,
   val toolBoxDao: ToolBoxDao,
-  val pdfGen: PdfGenerator)
-  (implicit ec: ExecutionContext)
+  val pdfGen: PdfGenerator)(implicit ec: ExecutionContext)
   extends AbstractController(cc) {
 
   val logger: Logger = Logger(this.getClass())
 
-  def documentation() = action(parse.text) { request =>
-    Ok(views.html.index())
+  def documentation() = actionBuilder.SubjectPresentAction().defaultHandler() {
+    request =>
+      Future {
+        Ok(views.html.index())
+      }
   }
 
-  def find(optionalWordSequence: Option[String], optionalOffset: Option[Int], optionalLimit: Option[Int], optionalsort: Option[String]) = Action.async { implicit request: Request[AnyContent] =>
-    val wordSequence: String = optionalWordSequence.getOrElse(null)
-    val offset: Int = optionalOffset.getOrElse(-1)
-    val limit: Int = optionalLimit.getOrElse(-1)
-    val sort: String = optionalsort.getOrElse(null)
-    toolBoxDao.find(wordSequence, offset, limit, sort).map({
-      case (total, toolBoxSheets, error) => {
-        if(error) {
-          InternalServerError(Json.toJson(toolBoxSheets))
-        } else {
-          Ok(Json.toJson(toolBoxSheets)).withHeaders(ControllerConstants.HeaderFields.xTotalCount -> total.toString()) 
+  def find(optionalWordSequence: Option[String], optionalOffset: Option[Int], optionalLimit: Option[Int], optionalsort: Option[String]) = Action.async {
+    implicit request: Request[AnyContent] =>
+      val wordSequence: String = optionalWordSequence.getOrElse(null)
+      val offset: Int = optionalOffset.getOrElse(-1)
+      val limit: Int = optionalLimit.getOrElse(-1)
+      val sort: String = optionalsort.getOrElse(null)
+      toolBoxDao.find(wordSequence, offset, limit, sort).map({
+        case (total, toolBoxSheets, error) => {
+          if (error) {
+            InternalServerError(Json.toJson(toolBoxSheets))
+          } else {
+            Ok(Json.toJson(toolBoxSheets)).withHeaders(ControllerConstants.HeaderFields.xTotalCount -> total.toString())
+          }
         }
-      }
-    })
+      })
   }
 
   def getToolBoxSheet(id: String) = Action.async { implicit request: Request[AnyContent] =>
@@ -94,7 +100,7 @@ class ToolBoxController @Inject() (
       val data = json.as[JsObject]
       toolBoxDao.update(id, data).map({
         case (updated, jsonResponse) => {
-          if(updated) {
+          if (updated) {
             Ok(Json.toJson(jsonResponse))
           } else {
             InternalServerError(Json.toJson(jsonResponse))
@@ -105,16 +111,16 @@ class ToolBoxController @Inject() (
       Future.successful(BadRequest(Json.parse(ControllerConstants.noJsonMessage)))
     }
   }
-  
-    def deleteToolBoxSheet(id: String) = Action.async { implicit request: Request[AnyContent] =>
+
+  def deleteToolBoxSheet(id: String) = Action.async { implicit request: Request[AnyContent] =>
     toolBoxDao.remove(id).map({
       case (updated, jsonResponse) => {
-        if(updated) {
+        if (updated) {
           Ok(Json.toJson(jsonResponse))
         } else {
           NotFound(Json.toJson(jsonResponse))
         }
-          
+
       }
     })
   }
