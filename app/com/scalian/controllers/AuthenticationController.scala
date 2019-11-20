@@ -19,6 +19,7 @@ import com.google.common.io.BaseEncoding
 
 import com.scalian.utils.enums.ConfigurationsEnum
 import com.scalian.services.EncryptionService
+import com.scalian.services.ApiConstants
 
 /**
  * This controller creates an `Action` to handle HTTP requests to the
@@ -36,53 +37,47 @@ class AuthenticationController @Inject() (
 
   private final val sessionMaxAge = config.get[Int](s"${ConfigurationsEnum.play.KEY}.${ConfigurationsEnum.play.http.KEY}.${ConfigurationsEnum.play.http.session.KEY}.${ConfigurationsEnum.play.http.session.maxAge}")
   private final val secretKey = config.get[String](s"${ConfigurationsEnum.play.KEY}.${ConfigurationsEnum.play.http.KEY}.${ConfigurationsEnum.play.http.secret.KEY}.${ConfigurationsEnum.play.http.secret.key}")
-  
+
   this.encryptionService.secretKey = secretKey
-  
-  private final val userConnectedKey = "connectedUser"
-  private final val encryptedUserConnectedKey = this.encryptionService.encrypt(userConnectedKey)
-  
+
+  private final val encryptedUserConnectedKey = this.encryptionService.encrypt(ApiConstants.Session.userConnectedKey)
+
   def login() = Action.async { implicit request: Request[AnyContent] =>
     logger.debug(request.toString())
     val authHeader = request.headers.get("Authorization").getOrElse(null)
-    
-    logger.debug("configuration : " + secretKey)
-    logger.debug(request.session.toString())
-    val user = Json.toJson(("user", "password"))
-    val encryptedText = this.encryptionService.encrypt(Json.stringify(user))
-    logger.debug("encryptedText : " + encryptedText)
-    val decryptedKey = this.encryptionService.decrypt(encryptedText)
-    logger.debug("decryptedKey : " + decryptedKey)
+
     if (authHeader != null) {
+      // Get Basic auth value
       val baStr = authHeader.replaceFirst("Basic ", "")
+      // decode value
       val decoded = BaseEncoding.base64().decode(baStr)
+      // Store user password into variables
       val Array(user, password) = new String(decoded).split(":")
-      Future.successful(Ok(Json.toJson((user, password)))
-        .withSession(encryptedUserConnectedKey -> Json.stringify(
-          Json.toJson(
-            (user, password)))))
+      // Create Json object
+      val userConnected = Json.obj(
+        ApiConstants.Session.UserKeys.login -> user,
+        ApiConstants.Session.UserKeys.password -> password)
+      // Encrypt object
+      val encryptedUser = this.encryptionService.encrypt(
+        Json.stringify(userConnected))
+      // Store in session
+      Future.successful(Ok
+        .withSession(encryptedUserConnectedKey -> encryptedUser))
     } else {
       val response: play.api.mvc.Result = BadRequest(
-        Json.parse("{\"message\": \"No authentication provided\"}")).withSession(
-          encryptedUserConnectedKey -> encryptedText)
+        Json.parse("{\"message\": \"No authentication provided\"}"))
       Future.successful(response)
     }
   }
 
   def logout() = Action.async { implicit request: Request[AnyContent] =>
-    //  Retrieve Session id from session
     val requestSession: play.api.mvc.Session = request.session
-    logger.debug("session : " + request.session)
-    
     requestSession.get(encryptedUserConnectedKey)
       .map { user =>
-        val decryptedUser = this.encryptionService.decrypt(user)
-        logger.debug("user : " + decryptedUser)
-        //        Future.successful(Ok.withNewSession)
-        Future.successful(Ok.withSession(requestSession))
+        Future.successful(Ok.withNewSession)
       }
       .getOrElse {
-        Future.successful(Unauthorized("Oops, you are not connected"))
+        Future.successful(Unauthorized)
       }
   }
 }
