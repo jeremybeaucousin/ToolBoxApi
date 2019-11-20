@@ -9,6 +9,7 @@ import play.api.libs.ws._
 
 import scala.concurrent.{ ExecutionContext, Future, Promise }
 import com.scalian.utils.enums.ConfigurationsEnum
+import com.scalian.utils.deadbolt.User
 
 @Singleton
 class ToolBoxDao @Inject() (
@@ -21,24 +22,24 @@ class ToolBoxDao @Inject() (
   
   this.indexRoute = config.get[String](s"${routeKey}.${ConfigurationsEnum.elasticsearch.routes.catalog}") + config.get[String](s"${routeKey}.${ConfigurationsEnum.elasticsearch.routes.toolboxsheets}")
   
-  override def find(wordSequence: String, offset: Int, limit: Int, sort: String) = {
-    super.find(wordSequence, offset, limit, sort)
+  override def find(user: User, wordSequence: String, offset: Int, limit: Int, sort: String) = {
+    super.find(user, wordSequence, offset, limit, sort)
   }
   
-  override def findById(id : String) = {
-    super.findById(id)
+  override def findById(user: User, id : String) = {
+    super.findById(user, id)
   }
   
-  override def insert(jsonData: JsObject) = {
-    super.insert(jsonData)
+  override def insert(user: User, jsonData: JsObject) = {
+    super.insert(user, jsonData)
   }
   
-  override def update(id : String, jsonData: JsObject) = {
-    super.update(id, jsonData)
+  override def update(user: User, id : String, jsonData: JsObject) = {
+    super.update(user, id, jsonData)
   }
   
-  override def remove(id : String) = {
-    super.remove(id)
+  override def remove(user: User, id : String) = {
+    super.remove(user, id)
   }
   
   

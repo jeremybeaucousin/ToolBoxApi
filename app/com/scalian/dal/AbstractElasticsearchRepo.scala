@@ -11,10 +11,13 @@ import play.api.libs.json.{JsObject, Json, JsString, JsValue}
 
 import scala.concurrent.{ ExecutionContext, Future, Promise }
 import play.api.http.Status
-import com.scalian.utils.enums.ConfigurationsEnum
 import play.libs.ws.ahc.AhcCurlRequestLogger
 import play.api.libs.ws.ahc.AhcCurlRequestLogger
+
+import com.scalian.utils.enums.ConfigurationsEnum
 import com.scalian.utils.ElasticSearchRequestFilter
+
+import com.scalian.utils.deadbolt.User
 
 abstract class AbstractElasticsearchRepo @Inject() (
     config: Configuration, 
@@ -105,10 +108,10 @@ abstract class AbstractElasticsearchRepo @Inject() (
   val repoUrl = config.get[String](s"${elasticSearchKey}.${ConfigurationsEnum.elasticsearch.url}")
   var indexRoute: String = ""
  
-  def find(wordSequence: String, offset: Int, limit: Int, sort: String): Future[(Int, JsValue, Boolean)] = { 
+  def find(user: User, wordSequence: String, offset: Int, limit: Int, sort: String): Future[(Int, JsValue, Boolean)] = { 
     val uri = s"${getUri()}${routes.search}"
     var request: WSRequest = ws.url(uri)
-    request = request.withRequestFilter(ElasticSearchRequestFilter(config))
+    request = request.withRequestFilter(ElasticSearchRequestFilter(config, user))
     
     // Add query param   
     if(wordSequence != null && !wordSequence.isBlank()) {
@@ -149,10 +152,10 @@ abstract class AbstractElasticsearchRepo @Inject() (
     })
   }
   
-  def findById(id: String) = { 
+  def findById(user: User, id: String) = { 
     val uri = s"${getUri()}${id}"
     var request: WSRequest = ws.url(uri)
-    request = request.withRequestFilter(ElasticSearchRequestFilter(config))
+    request = request.withRequestFilter(ElasticSearchRequestFilter(config, user))
     
     logger.debug(s"call find for uri ${uri} with request ${request}")
     request.get().map(response => {
@@ -160,11 +163,11 @@ abstract class AbstractElasticsearchRepo @Inject() (
     })
   }
   
-  def insert(jsonData: JsObject): Future[(String, JsValue)] = { 
+  def insert(user: User, jsonData: JsObject): Future[(String, JsValue)] = { 
     val uri = s"${getUri()}"
     
     var request: WSRequest = ws.url(uri)
-    request = request.withRequestFilter(ElasticSearchRequestFilter(config))
+    request = request.withRequestFilter(ElasticSearchRequestFilter(config, user))
     
     logger.debug(s"call save for uri ${uri} with data ${jsonData}; request ${request}")
     request.post(jsonData).map(response => {
@@ -178,11 +181,11 @@ abstract class AbstractElasticsearchRepo @Inject() (
     })
   }
   
-  def update(id: String, jsonData: JsObject): Future[(Boolean, JsValue)]  = { 
+  def update(user: User, id: String, jsonData: JsObject): Future[(Boolean, JsValue)]  = { 
     val uri = s"${getUri()}${id}"
     
     var request: WSRequest = ws.url(uri)
-    request = request.withRequestFilter(ElasticSearchRequestFilter(config))
+    request = request.withRequestFilter(ElasticSearchRequestFilter(config, user))
     
     logger.debug(s"call edit for uri ${uri} with data ${jsonData}; with request ${request}")
     request.post(jsonData).map(response => {
@@ -195,10 +198,10 @@ abstract class AbstractElasticsearchRepo @Inject() (
     })
   }
   
-  def remove(id: String): Future[(Boolean, JsValue)] = { 
+  def remove(user: User, id: String): Future[(Boolean, JsValue)] = { 
     val uri = s"${getUri()}${id}"
     var request: WSRequest = ws.url(uri)
-    request = request.withRequestFilter(ElasticSearchRequestFilter(config))
+    request = request.withRequestFilter(ElasticSearchRequestFilter(config, user))
     
     logger.debug(s"call delete for uri ${uri} with request ${request}")
     request.delete().map(response => {

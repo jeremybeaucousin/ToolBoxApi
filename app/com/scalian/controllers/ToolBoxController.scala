@@ -12,10 +12,12 @@ import scala.concurrent.{ ExecutionContext, Future, Promise }
 import be.objectify.deadbolt.scala.ActionBuilders
 
 import com.hhandoko.play.pdf.PdfGenerator
-
 import com.scalian.dal.ToolBoxDao
 import com.scalian.services.ApiConstants
 import com.scalian.services.EncryptionService
+import com.scalian.utils.deadbolt.ApiDeadboltHandler
+import com.scalian.utils.deadbolt.User
+import com.scalian.utils.deadbolt.UserMethods
 
 /**
  * This controller creates an `Action` to handle HTTP requests to the
@@ -29,103 +31,111 @@ class ToolBoxController @Inject() (
   encryptionService: EncryptionService,
   val toolBoxDao: ToolBoxDao,
   val pdfGen: PdfGenerator)(implicit ec: ExecutionContext)
-  extends AbstractController(cc) {
+  extends AbstractController(cc)
+  with UserMethods {
 
   val logger: Logger = Logger(this.getClass())
 
-  //
-  def documentation() = actionBuilder.SubjectPresentAction().defaultHandler() {
-    request =>
-      Future {
-        Ok(views.html.index())
-      }
+  def documentation() = action { request =>
+    Ok(views.html.index())
   }
 
-  def find(optionalWordSequence: Option[String], optionalOffset: Option[Int], optionalLimit: Option[Int], optionalsort: Option[String]) = Action.async {
-    implicit request: Request[AnyContent] =>
-      val wordSequence: String = optionalWordSequence.getOrElse(null)
-      val offset: Int = optionalOffset.getOrElse(-1)
-      val limit: Int = optionalLimit.getOrElse(-1)
-      val sort: String = optionalsort.getOrElse(null)
-      toolBoxDao.find(wordSequence, offset, limit, sort).map({
-        case (total, toolBoxSheets, error) => {
-          if (error) {
-            InternalServerError(Json.toJson(toolBoxSheets))
+  def find(optionalWordSequence: Option[String], optionalOffset: Option[Int], optionalLimit: Option[Int], optionalsort: Option[String]) =
+    actionBuilder.SubjectPresentAction().defaultHandler() {
+      request =>
+        user(request, encryptionService).flatMap { user =>
+          val wordSequence: String = optionalWordSequence.getOrElse(null)
+          val offset: Int = optionalOffset.getOrElse(-1)
+          val limit: Int = optionalLimit.getOrElse(-1)
+          val sort: String = optionalsort.getOrElse(null)
+          toolBoxDao.find(user, wordSequence, offset, limit, sort).map({
+            case (total, toolBoxSheets, error) => {
+              if (error) {
+                InternalServerError(Json.toJson(toolBoxSheets))
+              } else {
+                Ok(Json.toJson(toolBoxSheets)).withHeaders(ControllerConstants.HeaderFields.xTotalCount -> total.toString())
+              }
+            }
+          })
+        }
+    }
+
+  def getToolBoxSheet(id: String) =
+    actionBuilder.SubjectPresentAction().defaultHandler() {
+      request =>
+        user(request, encryptionService).flatMap { user =>
+          toolBoxDao.findById(user, id).map({
+            case (found, toolBoxSheet) => {
+              if (found) {
+                Ok(Json.toJson(toolBoxSheet))
+              } else {
+                NotFound(Json.toJson(toolBoxSheet))
+              }
+            }
+          })
+        }
+    }
+
+  def addToolBoxSheet() =
+    actionBuilder.SubjectPresentAction().defaultHandler() {
+      request =>
+        user(request, encryptionService).flatMap { user =>
+          val jsonBody: Option[JsValue] = request.body.asJson
+          val json = jsonBody.getOrElse(null)
+          // If there is a body we continue
+          // else in case of empty body or write error send code error
+          if (json != null) {
+            val data = json.as[JsObject]
+            toolBoxDao.insert(user, data).map({
+              case (id, jsonResponse) => {
+//                routes.ToolBoxController.getToolBoxSheet(id).absoluteURL()
+                var returnedLocation = ControllerConstants.HeaderFields.location -> ("")
+                Created(Json.toJson(jsonResponse)).withHeaders(returnedLocation)
+              }
+            })
           } else {
-            Ok(Json.toJson(toolBoxSheets)).withHeaders(ControllerConstants.HeaderFields.xTotalCount -> total.toString())
+            Future.successful(BadRequest(Json.parse(ControllerConstants.noJsonMessage)))
           }
         }
-      })
-  }
+    }
 
-  def getToolBoxSheet(id: String) = Action.async { implicit request: Request[AnyContent] =>
-    render.async {
-      case Accepts.Json() => {
-        toolBoxDao.findById(id).map({
-          case (found, toolBoxSheet) => {
-            if (found) {
-              Ok(Json.toJson(toolBoxSheet))
+  def editToolBoxSheet(id: String) =
+    actionBuilder.SubjectPresentAction().defaultHandler() {
+      request =>
+        user(request, encryptionService).flatMap { user =>
+          val jsonBody: Option[JsValue] = request.body.asJson
+          val json = jsonBody.getOrElse(null)
+          // If there is a body we continue
+          // else in case of empty body or write error send code error
+          if (json != null) {
+            val data = json.as[JsObject]
+            toolBoxDao.update(user, id, data).map({
+              case (updated, jsonResponse) => {
+                if (updated) {
+                  Ok(Json.toJson(jsonResponse))
+                } else {
+                  InternalServerError(Json.toJson(jsonResponse))
+                }
+              }
+            })
+          } else {
+            Future.successful(BadRequest(Json.parse(ControllerConstants.noJsonMessage)))
+          }
+        }
+    }
+
+  def deleteToolBoxSheet(id: String) =
+    actionBuilder.SubjectPresentAction().defaultHandler() { request =>
+      user(request, encryptionService).flatMap { user =>
+        toolBoxDao.remove(user, id).map({
+          case (updated, jsonResponse) => {
+            if (updated) {
+              Ok(Json.toJson(jsonResponse))
             } else {
-              NotFound(Json.toJson(toolBoxSheet))
+              NotFound(Json.toJson(jsonResponse))
             }
           }
         })
       }
-      case ControllerConstants.AcceptsPdf() => {
-        Future.successful(pdfGen.ok(views.html.index(), request.host))
-      }
     }
-  }
-
-  def addToolBoxSheet() = Action.async { implicit request: Request[AnyContent] =>
-    val jsonBody: Option[JsValue] = request.body.asJson
-    val json = jsonBody.getOrElse(null)
-    // If there is a body we continue
-    // else in case of empty body or write error send code error
-    if (json != null) {
-      val data = json.as[JsObject]
-      toolBoxDao.insert(data).map({
-        case (id, jsonResponse) => {
-          var returnedLocation = ControllerConstants.HeaderFields.location -> (routes.ToolBoxController.getToolBoxSheet(id).absoluteURL())
-          Created(Json.toJson(jsonResponse)).withHeaders(returnedLocation)
-        }
-      })
-    } else {
-      Future.successful(BadRequest(Json.parse(ControllerConstants.noJsonMessage)))
-    }
-  }
-
-  def editToolBoxSheet(id: String) = Action.async { implicit request: Request[AnyContent] =>
-    val jsonBody: Option[JsValue] = request.body.asJson
-    val json = jsonBody.getOrElse(null)
-    // If there is a body we continue
-    // else in case of empty body or write error send code error
-    if (json != null) {
-      val data = json.as[JsObject]
-      toolBoxDao.update(id, data).map({
-        case (updated, jsonResponse) => {
-          if (updated) {
-            Ok(Json.toJson(jsonResponse))
-          } else {
-            InternalServerError(Json.toJson(jsonResponse))
-          }
-        }
-      })
-    } else {
-      Future.successful(BadRequest(Json.parse(ControllerConstants.noJsonMessage)))
-    }
-  }
-
-  def deleteToolBoxSheet(id: String) = Action.async { implicit request: Request[AnyContent] =>
-    toolBoxDao.remove(id).map({
-      case (updated, jsonResponse) => {
-        if (updated) {
-          Ok(Json.toJson(jsonResponse))
-        } else {
-          NotFound(Json.toJson(jsonResponse))
-        }
-
-      }
-    })
-  }
 }

@@ -12,25 +12,32 @@ import play.api.libs.ws.WSRequestExecutor
 import com.scalian.utils.enums.ConfigurationsEnum
 import play.api.libs.ws.WSRequest
 import java.util.Base64
+import com.scalian.utils.deadbolt.User
 
 class ElasticSearchRequestFilter(
-  config: Configuration) extends WSRequestFilter {
+  config: Configuration,
+  user: User) extends WSRequestFilter {
+  
   val logger: Logger = Logger(this.getClass())
-  
+
   private final val elasticSearchKey = ConfigurationsEnum.elasticsearch.KEY
-  
+
   private final object HeadersKey {
-    final val Authorization = "Authorization" 
-    final val ApiKey = "ApiKey" 
+    final val Authorization = "Authorization"
+    final val ApiKey = "ApiKey"
+    final val Basic = "Basic"
   }
-  
+
   def apply(executor: WSRequestExecutor): WSRequestExecutor = {
     WSRequestExecutor { request =>
-      
-      // Authentication 
-      val apiKey = config.get[String](s"${elasticSearchKey}.${ConfigurationsEnum.elasticsearch.apikey}")
-      val encodedApiKey = new String(Base64.getEncoder.encode(apiKey.getBytes()))
-      var newRequest = request.addHttpHeaders(HeadersKey.Authorization -> s"${HeadersKey.ApiKey} ${encodedApiKey}");
+
+      // Authentication API KEY
+      // val apiKey = config.get[String](s"${elasticSearchKey}.${ConfigurationsEnum.elasticsearch.apikey}")
+      //  val encodedApiKey = new String(Base64.getEncoder.encode(apiKey.getBytes()))
+      // var newRequest = request.addHttpHeaders(HeadersKey.Authorization -> s"${HeadersKey.ApiKey} ${encodedApiKey}");
+      // Authentication User
+      val encodedCredentials = new String(Base64.getEncoder.encode(s"${user.login}:${user.password}".getBytes()))
+      var newRequest = request.addHttpHeaders(HeadersKey.Authorization -> s"${HeadersKey.Basic} ${encodedCredentials}");
 
       // In case of certificate name error SSLHandshakeException: No name matching {host} found
       val virtualhost = config.get[String](s"${elasticSearchKey}.${ConfigurationsEnum.elasticsearch.certificat.KEY}.${ConfigurationsEnum.elasticsearch.certificat.virtualhost}")
@@ -42,8 +49,8 @@ class ElasticSearchRequestFilter(
 
 object ElasticSearchRequestFilter {
 
-  def apply(config: Configuration): ElasticSearchRequestFilter = {
-    new ElasticSearchRequestFilter(config)
+  def apply(config: Configuration, user: User): ElasticSearchRequestFilter = {
+    new ElasticSearchRequestFilter(config, user)
   }
 
 }
