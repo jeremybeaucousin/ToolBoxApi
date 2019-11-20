@@ -14,10 +14,10 @@ libraryDependencies += ws
 libraryDependencies += ehcache
 
 libraryDependencies += "com.hhandoko" %% "play27-scala-pdf" % "4.2.0"
+libraryDependencies += "be.objectify" %% "deadbolt-scala" % "2.7.1"
 
 // Tests
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "4.0.3" % Test
-
 
 // Adds additional packages into Twirl
 //TwirlKeys.templateImports += "fr.scalian.controllers._"
