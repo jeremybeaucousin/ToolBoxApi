@@ -14,6 +14,8 @@ import be.objectify.deadbolt.scala.ActionBuilders
 import com.hhandoko.play.pdf.PdfGenerator
 
 import com.scalian.dal.ToolBoxDao
+import com.scalian.services.ApiConstants
+import com.scalian.services.EncryptionService
 
 /**
  * This controller creates an `Action` to handle HTTP requests to the
@@ -24,12 +26,14 @@ class ToolBoxController @Inject() (
   cc: ControllerComponents,
   action: DefaultActionBuilder,
   actionBuilder: ActionBuilders,
+  encryptionService: EncryptionService,
   val toolBoxDao: ToolBoxDao,
   val pdfGen: PdfGenerator)(implicit ec: ExecutionContext)
   extends AbstractController(cc) {
 
   val logger: Logger = Logger(this.getClass())
 
+  //
   def documentation() = actionBuilder.SubjectPresentAction().defaultHandler() {
     request =>
       Future {
