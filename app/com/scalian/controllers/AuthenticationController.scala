@@ -45,7 +45,7 @@ class AuthenticationController @Inject() (
   def documentation() = action { request =>
     Ok(views.html.index())
   }
-  
+
   def login() = Action.async { implicit request: Request[AnyContent] =>
     logger.debug(request.toString())
     val authHeader = request.headers.get("Authorization").getOrElse(null)
@@ -65,6 +65,7 @@ class AuthenticationController @Inject() (
       val encryptedUser = this.encryptionService.encrypt(
         Json.stringify(userConnected))
       // Store in session
+      //        TODO CALL elasticsearch for authentication
       Future.successful(Ok(Json.parse("{\"message\": \"OK\"}"))
         .withSession(encryptedUserConnectedKey -> encryptedUser))
     } else {
