@@ -22,6 +22,8 @@ DELETE	/toolboxes/:id				com.scalian.controllers.ToolBoxController.deleteToolBox
 
 # toolboxes
 +anyhost
+OPTIONS /toolboxes					com.scalian.controllers.AuthenticationController.documentation()
++anyhost
 GET 	/login						com.scalian.controllers.AuthenticationController.login()
 +anyhost
 GET 	/logout						com.scalian.controllers.AuthenticationController.logout()

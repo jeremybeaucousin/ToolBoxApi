@@ -42,6 +42,10 @@ class AuthenticationController @Inject() (
 
   private final val encryptedUserConnectedKey = this.encryptionService.encrypt(ApiConstants.Session.userConnectedKey)
 
+  def documentation() = action { request =>
+    Ok(views.html.index())
+  }
+  
   def login() = Action.async { implicit request: Request[AnyContent] =>
     logger.debug(request.toString())
     val authHeader = request.headers.get("Authorization").getOrElse(null)
@@ -61,7 +65,7 @@ class AuthenticationController @Inject() (
       val encryptedUser = this.encryptionService.encrypt(
         Json.stringify(userConnected))
       // Store in session
-      Future.successful(Ok
+      Future.successful(Ok(Json.parse("{\"message\": \"OK\"}"))
         .withSession(encryptedUserConnectedKey -> encryptedUser))
     } else {
       val response: play.api.mvc.Result = BadRequest(
