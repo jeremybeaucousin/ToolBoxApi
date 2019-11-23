@@ -17,7 +17,7 @@ import com.scalian.utils.deadbolt.User
 class ElasticSearchRequestFilter(
   config: Configuration,
   user: User) extends WSRequestFilter {
-  
+
   val logger: Logger = Logger(this.getClass())
 
   private final val elasticSearchKey = ConfigurationsEnum.elasticsearch.KEY
@@ -36,7 +36,12 @@ class ElasticSearchRequestFilter(
       //  val encodedApiKey = new String(Base64.getEncoder.encode(apiKey.getBytes()))
       // var newRequest = request.addHttpHeaders(HeadersKey.Authorization -> s"${HeadersKey.ApiKey} ${encodedApiKey}");
       // Authentication User
-      val encodedCredentials = new String(Base64.getEncoder.encode(s"${user.login}:${user.password}".getBytes()))
+      val defaultLogin = config.get[String](s"${elasticSearchKey}.${ConfigurationsEnum.elasticsearch.defaultUser.KEY}.${ConfigurationsEnum.elasticsearch.defaultUser.login}")
+      val defaultPassword = config.get[String](s"${elasticSearchKey}.${ConfigurationsEnum.elasticsearch.defaultUser.KEY}.${ConfigurationsEnum.elasticsearch.defaultUser.password}")
+      
+      val authUser: User = if (user != null) user else new User(defaultLogin, defaultPassword)  
+
+      val encodedCredentials = new String(Base64.getEncoder.encode(s"${authUser.login}:${authUser.password}".getBytes()))
       var newRequest = request.addHttpHeaders(HeadersKey.Authorization -> s"${HeadersKey.Basic} ${encodedCredentials}");
 
       // In case of certificate name error SSLHandshakeException: No name matching {host} found

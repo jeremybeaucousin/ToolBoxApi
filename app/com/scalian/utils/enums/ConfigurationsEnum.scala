@@ -35,5 +35,11 @@ object ConfigurationsEnum extends Enumeration {
       final val catalog = "catalog"
       final val toolboxsheets = "toolboxsheets"
     }
+    
+    final object defaultUser {
+        final val KEY = "defaultUser"
+        final val login = "login"
+        final val password = "password"
+      }
   }
 }
