@@ -40,25 +40,22 @@ class ToolBoxController @Inject() (
     Ok(views.html.index())
   }
 
-  def find(optionalWordSequence: Option[String], optionalOffset: Option[Int], optionalLimit: Option[Int], optionalsort: Option[String]) =
-    actionBuilder.SubjectPresentAction().defaultHandler() {
-      request =>
-        user(request, encryptionService).flatMap { user =>
-          val wordSequence: String = optionalWordSequence.getOrElse(null)
-          val offset: Int = optionalOffset.getOrElse(-1)
-          val limit: Int = optionalLimit.getOrElse(-1)
-          val sort: String = optionalsort.getOrElse(null)
-          toolBoxDao.find(user, wordSequence, offset, limit, sort).map({
-            case (total, toolBoxSheets, error) => {
-              if (error) {
-                InternalServerError(Json.toJson(toolBoxSheets))
-              } else {
-                Ok(Json.toJson(toolBoxSheets)).withHeaders(ControllerConstants.HeaderFields.xTotalCount -> total.toString())
-              }
-            }
-          })
+  def find(optionalWordSequence: Option[String], optionalOffset: Option[Int], optionalLimit: Option[Int], optionalsort: Option[String]) = Action.async {
+    implicit request: Request[AnyContent] =>
+      val wordSequence: String = optionalWordSequence.getOrElse(null)
+      val offset: Int = optionalOffset.getOrElse(-1)
+      val limit: Int = optionalLimit.getOrElse(-1)
+      val sort: String = optionalsort.getOrElse(null)
+      toolBoxDao.find(null, wordSequence, offset, limit, sort).map({
+        case (total, toolBoxSheets, error) => {
+          if (error) {
+            InternalServerError(Json.toJson(toolBoxSheets))
+          } else {
+            Ok(Json.toJson(toolBoxSheets)).withHeaders(ControllerConstants.HeaderFields.xTotalCount -> total.toString())
+          }
         }
-    }
+      })
+  }
 
   def getToolBoxSheet(id: String) =
     actionBuilder.SubjectPresentAction().defaultHandler() {
@@ -88,7 +85,7 @@ class ToolBoxController @Inject() (
             val data = json.as[JsObject]
             toolBoxDao.insert(user, data).map({
               case (id, jsonResponse) => {
-//                routes.ToolBoxController.getToolBoxSheet(id).absoluteURL()
+                //                routes.ToolBoxController.getToolBoxSheet(id).absoluteURL()
                 var returnedLocation = ControllerConstants.HeaderFields.location -> ("")
                 Created(Json.toJson(jsonResponse)).withHeaders(returnedLocation)
               }
