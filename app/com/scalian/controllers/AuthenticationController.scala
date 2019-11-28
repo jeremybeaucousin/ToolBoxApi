@@ -60,8 +60,8 @@ class AuthenticationController @Inject() (
       // Store user password into variables
       val Array(user, password) = new String(decoded).split(":")
       authenticationService.login(user, password).map(
-        authenticate => {
-          if (authenticate) {
+        jsonResponse => {
+          if (jsonResponse != null) {
             // Create Json object
             val userConnected = Json.obj(
               ApiConstants.Session.UserKeys.login -> user,
@@ -71,7 +71,7 @@ class AuthenticationController @Inject() (
               Json.stringify(userConnected))
             // Store in session
             //        TODO CALL elasticsearch for authentication
-            Ok(Json.parse("{\"message\": \"OK\"}"))
+            Ok(jsonResponse)
               .withSession(encryptedUserConnectedKey -> encryptedUser)
           } else {
             val response: play.api.mvc.Result = Unauthorized(

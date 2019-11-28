@@ -16,6 +16,7 @@ import play.api.libs.ws.WSClient
 
 import com.scalian.utils.enums.ConfigurationsEnum
 import com.scalian.controllers.ControllerConstants.HeadersKey
+import play.api.libs.json.JsValue
 
 @Singleton
 class AuthenticationService @Inject() (
@@ -28,7 +29,7 @@ class AuthenticationService @Inject() (
   val securityRoute = config.get[String](s"${ConfigurationsEnum.elasticsearch.KEY}.${ConfigurationsEnum.elasticsearch.routes.KEY}.${ConfigurationsEnum.elasticsearch.routes._security}")
   val authenticationRoute = config.get[String](s"${ConfigurationsEnum.elasticsearch.KEY}.${ConfigurationsEnum.elasticsearch.routes.KEY}.${ConfigurationsEnum.elasticsearch.routes._authenticate}")
 
-  def login(user: String, password: String): Future[Boolean] = {
+  def login(user: String, password: String): Future[JsValue] = {
     val uri = s"${authApi}${securityRoute}${authenticationRoute}"
     var request = ws.url(uri)
 
@@ -45,10 +46,10 @@ class AuthenticationService @Inject() (
       val json = response.json
       if (response.status == Status.OK) {
         logger.debug("authenticated")
-        true
+        response.json
       } else {
         logger.debug("not authenticated")
-        false
+        null
       }
     })
   }
