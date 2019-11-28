@@ -1,6 +1,8 @@
 package com.scalian.utils
 
 import javax.inject.Inject
+import java.util.Base64
+
 import play.api.http._
 import play.api.mvc._
 
@@ -9,10 +11,11 @@ import play.api.routing.Router
 import play.api.Configuration
 import play.api.libs.ws.WSRequestFilter
 import play.api.libs.ws.WSRequestExecutor
-import com.scalian.utils.enums.ConfigurationsEnum
 import play.api.libs.ws.WSRequest
-import java.util.Base64
+
+import com.scalian.utils.enums.ConfigurationsEnum
 import com.scalian.utils.deadbolt.User
+import com.scalian.controllers.ControllerConstants.HeadersKey
 
 class ElasticSearchRequestFilter(
   config: Configuration,
@@ -22,11 +25,7 @@ class ElasticSearchRequestFilter(
 
   private final val elasticSearchKey = ConfigurationsEnum.elasticsearch.KEY
 
-  private final object HeadersKey {
-    final val Authorization = "Authorization"
-    final val ApiKey = "ApiKey"
-    final val Basic = "Basic"
-  }
+
 
   def apply(executor: WSRequestExecutor): WSRequestExecutor = {
     WSRequestExecutor { request =>

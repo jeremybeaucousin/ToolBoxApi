@@ -34,6 +34,8 @@ object ConfigurationsEnum extends Enumeration {
       final val KEY = "routes"
       final val catalog = "catalog"
       final val toolboxsheets = "toolboxsheets"
+      final val _security = "_security"
+      final val _authenticate = "_authenticate"
     }
     
     final object defaultUser {

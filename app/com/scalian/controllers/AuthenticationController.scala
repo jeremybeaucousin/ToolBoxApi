@@ -19,6 +19,7 @@ import com.google.common.io.BaseEncoding
 
 import com.scalian.utils.enums.ConfigurationsEnum
 import com.scalian.services.EncryptionService
+import com.scalian.services.AuthenticationService
 import com.scalian.services.ApiConstants
 
 /**
@@ -30,6 +31,7 @@ class AuthenticationController @Inject() (
   cc: ControllerComponents,
   config: Configuration,
   encryptionService: EncryptionService,
+  authenticationService: AuthenticationService,
   action: DefaultActionBuilder)(implicit ec: ExecutionContext)
   extends AbstractController(cc) {
 
@@ -46,7 +48,7 @@ class AuthenticationController @Inject() (
     Ok(views.html.index())
   }
 
-  def login() = Action.async { implicit request: Request[AnyContent] =>
+  def login() = action.async { implicit request: Request[AnyContent] =>
     logger.debug(request.toString())
     val authHeader = request.headers.get("Authorization").getOrElse(null)
 
@@ -57,17 +59,27 @@ class AuthenticationController @Inject() (
       val decoded = BaseEncoding.base64().decode(baStr)
       // Store user password into variables
       val Array(user, password) = new String(decoded).split(":")
-      // Create Json object
-      val userConnected = Json.obj(
-        ApiConstants.Session.UserKeys.login -> user,
-        ApiConstants.Session.UserKeys.password -> password)
-      // Encrypt object
-      val encryptedUser = this.encryptionService.encrypt(
-        Json.stringify(userConnected))
-      // Store in session
-      //        TODO CALL elasticsearch for authentication
-      Future.successful(Ok(Json.parse("{\"message\": \"OK\"}"))
-        .withSession(encryptedUserConnectedKey -> encryptedUser))
+      authenticationService.login(user, password).map(
+        authenticate => {
+          if (authenticate) {
+            // Create Json object
+            val userConnected = Json.obj(
+              ApiConstants.Session.UserKeys.login -> user,
+              ApiConstants.Session.UserKeys.password -> password)
+            // Encrypt object
+            val encryptedUser = this.encryptionService.encrypt(
+              Json.stringify(userConnected))
+            // Store in session
+            //        TODO CALL elasticsearch for authentication
+            Ok(Json.parse("{\"message\": \"OK\"}"))
+              .withSession(encryptedUserConnectedKey -> encryptedUser)
+          } else {
+            val response: play.api.mvc.Result = Unauthorized(
+              Json.parse("{\"message\": \"Couple login/password invalid\"}"))
+            response
+          }
+        })
+
     } else {
       val response: play.api.mvc.Result = BadRequest(
         Json.parse("{\"message\": \"No authentication provided\"}"))
@@ -75,7 +87,7 @@ class AuthenticationController @Inject() (
     }
   }
 
-  def logout() = Action.async { implicit request: Request[AnyContent] =>
+  def logout() = action.async { implicit request: Request[AnyContent] =>
     val requestSession: play.api.mvc.Session = request.session
     requestSession.get(encryptedUserConnectedKey)
       .map { user =>
