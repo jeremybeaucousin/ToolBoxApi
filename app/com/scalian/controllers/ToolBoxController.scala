@@ -50,8 +50,11 @@ class ToolBoxController @Inject() (
         case (total, toolBoxSheets, error) => {
           if (error) {
             InternalServerError(Json.toJson(toolBoxSheets))
+              .withSession(request.session)
           } else {
-            Ok(Json.toJson(toolBoxSheets)).withHeaders(ControllerConstants.HeaderFields.xTotalCount -> total.toString())
+            Ok(Json.toJson(toolBoxSheets))
+              .withHeaders(ControllerConstants.HeaderFields.xTotalCount -> total.toString())
+              .withSession(request.session)
           }
         }
       })
@@ -65,8 +68,10 @@ class ToolBoxController @Inject() (
             case (found, toolBoxSheet) => {
               if (found) {
                 Ok(Json.toJson(toolBoxSheet))
+                  .withSession(request.session)
               } else {
                 NotFound(Json.toJson(toolBoxSheet))
+                  .withSession(request.session)
               }
             }
           })
@@ -88,14 +93,19 @@ class ToolBoxController @Inject() (
                 case (id, jsonResponse) => {
                   if (id != null) {
                     var returnedLocation = ControllerConstants.HeaderFields.location -> (routes.ToolBoxController.getToolBoxSheet(id).toString())
-                    Created(Json.toJson(jsonResponse)).withHeaders(returnedLocation)
+                    Created(Json.toJson(jsonResponse))
+                      .withHeaders(returnedLocation)
+                      .withSession(request.session)
                   } else {
                     InternalServerError(Json.toJson(jsonResponse))
+                      .withSession(request.session)
                   }
                 }
               })
             } else {
-              Future.successful(BadRequest(Json.parse(ControllerConstants.noJsonMessage)))
+              Future.successful(
+                BadRequest(Json.parse(ControllerConstants.noJsonMessage))
+                  .withSession(request.session))
             }
           }
         }
@@ -115,13 +125,17 @@ class ToolBoxController @Inject() (
               case (updated, jsonResponse) => {
                 if (updated) {
                   Ok(Json.toJson(jsonResponse))
+                    .withSession(request.session)
                 } else {
                   InternalServerError(Json.toJson(jsonResponse))
+                    .withSession(request.session)
                 }
               }
             })
           } else {
-            Future.successful(BadRequest(Json.parse(ControllerConstants.noJsonMessage)))
+            Future.successful(
+              BadRequest(Json.parse(ControllerConstants.noJsonMessage))
+                .withSession(request.session))
           }
         }
     }
@@ -133,8 +147,10 @@ class ToolBoxController @Inject() (
           case (updated, jsonResponse) => {
             if (updated) {
               Ok(Json.toJson(jsonResponse))
+                .withSession(request.session)
             } else {
               NotFound(Json.toJson(jsonResponse))
+                .withSession(request.session)
             }
           }
         })
