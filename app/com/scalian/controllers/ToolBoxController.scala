@@ -76,22 +76,27 @@ class ToolBoxController @Inject() (
   def addToolBoxSheet() =
     actionBuilder.SubjectPresentAction().defaultHandler() {
       request =>
-        user(request, encryptionService).flatMap { user =>
-          val jsonBody: Option[JsValue] = request.body.asJson
-          val json = jsonBody.getOrElse(null)
-          // If there is a body we continue
-          // else in case of empty body or write error send code error
-          if (json != null) {
-            val data = json.as[JsObject]
-            toolBoxDao.insert(user, data).map({
-              case (id, jsonResponse) => {
-                //                routes.ToolBoxController.getToolBoxSheet(id).absoluteURL()
-                var returnedLocation = ControllerConstants.HeaderFields.location -> ("")
-                Created(Json.toJson(jsonResponse)).withHeaders(returnedLocation)
-              }
-            })
-          } else {
-            Future.successful(BadRequest(Json.parse(ControllerConstants.noJsonMessage)))
+        {
+          user(request, encryptionService).flatMap { user =>
+            val jsonBody: Option[JsValue] = request.body.asJson
+            val json = jsonBody.getOrElse(null)
+            // If there is a body we continue
+            // else in case of empty body or write error send code error
+            if (json != null) {
+              val data = json.as[JsObject]
+              toolBoxDao.insert(user, data).map({
+                case (id, jsonResponse) => {
+                  if (id != null) {
+                    var returnedLocation = ControllerConstants.HeaderFields.location -> (routes.ToolBoxController.getToolBoxSheet(id).toString())
+                    Created(Json.toJson(jsonResponse)).withHeaders(returnedLocation)
+                  } else {
+                    InternalServerError(Json.toJson(jsonResponse))
+                  }
+                }
+              })
+            } else {
+              Future.successful(BadRequest(Json.parse(ControllerConstants.noJsonMessage)))
+            }
           }
         }
     }
